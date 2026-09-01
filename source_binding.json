@@ -1,0 +1,24 @@
+{
+  "schema": "corner-relay-alpha/source-binding/v1",
+  "frozen_on": "2026-08-31",
+  "sources": [
+    {
+      "title": "Architectural_Construction_Stress_Battery_v0.1.docx",
+      "drive_file_id": "1D8fHCw46_n9Ze3fFaXY30T1tVV8IOZTg",
+      "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "modified_time": "2026-08-31T03:02:06.318Z",
+      "role": "frozen shared architecture packet and C6 challenge"
+    },
+    {
+      "title": "questions for calls",
+      "drive_file_id": "1q37Zi_fQNFxrVxPb7vIt50QVTE_NmUUN8oA2kYxxAMY",
+      "mime_type": "application/vnd.google-apps.document",
+      "modified_time": "2026-08-31T03:16:23.204Z",
+      "role": "independent exact C6 prompt witness"
+    }
+  ],
+  "frozen_packet_file": "FROZEN_PACKET.txt",
+  "frozen_packet_sha256": "64ddf20760d202e4e63b817ad849e56bf6f7a9385fe9aa0055e9b88d8391dce6",
+  "track": "Python 3 code plus tests",
+  "claim_scope": "mechanically checkable Corner Relay alpha transition behavior"
+}

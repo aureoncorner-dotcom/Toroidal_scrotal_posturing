@@ -1,0 +1,63 @@
+{
+  "schema": "corner-relay-alpha/execution-provenance/v1",
+  "artifact_id": "Corner-Relay-alpha-C6-reference-v0.1",
+  "track": "Python 3 code plus tests",
+  "execution_status": "PASS",
+  "return_code": 0,
+  "test_return_code": 0,
+  "tests_run": 20,
+  "command": "python -m unittest -v test_corner_relay.py",
+  "started_utc": "2026-09-01T07:15:03.726625+00:00",
+  "finished_utc": "2026-09-01T07:15:03.811680+00:00",
+  "duration_seconds": 0.085064,
+  "runtime": {
+    "python_version": "3.12.13",
+    "python_implementation": "CPython",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.39",
+    "executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3"
+  },
+  "artifact_file_sha256": {
+    "corner_relay.py": "28ccc31b4304222d5d2429c6054a64ca366316167e8162aeb63d91bba24a4a97",
+    "test_corner_relay.py": "06e013c1c910722d028374ab877fb9eaf7bea603239a6d00ac40b37e94d889cf",
+    "run_with_provenance.py": "a056d74725a7eda7b0910e35c47b800c1fb228de9e44ce723f129a30ff3a061c",
+    "reference_trace.py": "ed434ab4c0a41d99bf0d074db3407df2ad5655b45ac18fffd1a22735b4ba097d",
+    "README.md": "0d12a8ad4463eaccc166f6ad5b5279795b6d57a4adce47b9e008ab94f787d261",
+    "C6_RESULT.md": "f2267d8172d3e0e2c3b1e4fe7639a122ca3d4c783098e921619cbaf27efb196e",
+    "FROZEN_PACKET.txt": "64ddf20760d202e4e63b817ad849e56bf6f7a9385fe9aa0055e9b88d8391dce6",
+    "source_binding.json": "4eb66aea9d521e52159bbe99b974189eb4b104c7dacd1736ad6570d4b6629841",
+    "reference_trace.json": "17d4c355bc81c422ec7121cba0a411e37aec42cff96da87949ef9d83f72f64b1"
+  },
+  "test_output_sha256": "7f08a035a4d6c3fd364396e2bf23bf0c719fbf3fdfbedd6461820e4fc61560ef",
+  "test_output": "test_ack_requires_a_locally_received_send (test_corner_relay.CornerRelayC6Tests.test_ack_requires_a_locally_received_send) ... ok\ntest_all_reorderings_converge_to_same_view_and_keep_distinct_raw_order (test_corner_relay.CornerRelayC6Tests.test_all_reorderings_converge_to_same_view_and_keep_distinct_raw_order) ... ok\ntest_delivery_after_exit_is_rejected_and_witnessed (test_corner_relay.CornerRelayC6Tests.test_delivery_after_exit_is_rejected_and_witnessed) ... ok\ntest_duplicate_delivery_retained_in_raw_but_deduplicated_in_view (test_corner_relay.CornerRelayC6Tests.test_duplicate_delivery_retained_in_raw_but_deduplicated_in_view) ... ok\ntest_event_hash_covers_declared_transition_input (test_corner_relay.CornerRelayC6Tests.test_event_hash_covers_declared_transition_input) ... ok\ntest_every_raw_record_names_required_transition_witness_fields (test_corner_relay.CornerRelayC6Tests.test_every_raw_record_names_required_transition_witness_fields) ... ok\ntest_exactly_two_endpoint_key_slots_and_lambda_holds_none (test_corner_relay.CornerRelayC6Tests.test_exactly_two_endpoint_key_slots_and_lambda_holds_none) ... ok\ntest_exit_blocks_retrying_prior_transport_effects (test_corner_relay.CornerRelayC6Tests.test_exit_blocks_retrying_prior_transport_effects) ... ok\ntest_exit_is_local_valid_and_retains_history (test_corner_relay.CornerRelayC6Tests.test_exit_is_local_valid_and_retains_history) ... ok\ntest_forged_actor_key_binding_is_rejected (test_corner_relay.CornerRelayC6Tests.test_forged_actor_key_binding_is_rejected) ... ok\ntest_frozen_packet_bytes_match_source_binding_hash (test_corner_relay.CornerRelayC6Tests.test_frozen_packet_bytes_match_source_binding_hash) ... ok\ntest_lambda_routes_payload_as_opaque_bytes (test_corner_relay.CornerRelayC6Tests.test_lambda_routes_payload_as_opaque_bytes) ... ok\ntest_one_endpoint_exit_does_not_exit_or_authorize_the_other (test_corner_relay.CornerRelayC6Tests.test_one_endpoint_exit_does_not_exit_or_authorize_the_other) ... ok\ntest_partition_retains_queue_then_delivery_resumes_without_special_authority (test_corner_relay.CornerRelayC6Tests.test_partition_retains_queue_then_delivery_resumes_without_special_authority) ... ok\ntest_raw_is_immutable_snapshot_and_view_is_recomputable (test_corner_relay.CornerRelayC6Tests.test_raw_is_immutable_snapshot_and_view_is_recomputable) ... ok\ntest_raw_ledger_verifier_detects_tampering (test_corner_relay.CornerRelayC6Tests.test_raw_ledger_verifier_detects_tampering) ... ok\ntest_reference_trace_is_deterministic_and_exposes_raw_and_view (test_corner_relay.CornerRelayC6Tests.test_reference_trace_is_deterministic_and_exposes_raw_and_view) ... ok\ntest_same_transition_id_cannot_create_second_effect (test_corner_relay.CornerRelayC6Tests.test_same_transition_id_cannot_create_second_effect) ... ok\ntest_send_receive_ack_round_trip_has_explicit_independent_effects (test_corner_relay.CornerRelayC6Tests.test_send_receive_ack_round_trip_has_explicit_independent_effects) ... ok\ntest_send_retry_is_idempotent (test_corner_relay.CornerRelayC6Tests.test_send_retry_is_idempotent) ... ok\n\n----------------------------------------------------------------------\nRan 20 tests in 0.013s\n\nOK\n",
+  "reference_trace_sha256": "be80778e224fcfe862e42698c4e14e21d89a38d313914ed40bd827a52b59424e",
+  "source_binding": {
+    "schema": "corner-relay-alpha/source-binding/v1",
+    "frozen_on": "2026-08-31",
+    "sources": [
+      {
+        "title": "Architectural_Construction_Stress_Battery_v0.1.docx",
+        "drive_file_id": "1D8fHCw46_n9Ze3fFaXY30T1tVV8IOZTg",
+        "mime_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "modified_time": "2026-08-31T03:02:06.318Z",
+        "role": "frozen shared architecture packet and C6 challenge"
+      },
+      {
+        "title": "questions for calls",
+        "drive_file_id": "1q37Zi_fQNFxrVxPb7vIt50QVTE_NmUUN8oA2kYxxAMY",
+        "mime_type": "application/vnd.google-apps.document",
+        "modified_time": "2026-08-31T03:16:23.204Z",
+        "role": "independent exact C6 prompt witness"
+      }
+    ],
+    "frozen_packet_file": "FROZEN_PACKET.txt",
+    "frozen_packet_sha256": "64ddf20760d202e4e63b817ad849e56bf6f7a9385fe9aa0055e9b88d8391dce6",
+    "track": "Python 3 code plus tests",
+    "claim_scope": "mechanically checkable Corner Relay alpha transition behavior"
+  },
+  "source_binding_verification": {
+    "status": "PASS",
+    "expected_frozen_packet_sha256": "64ddf20760d202e4e63b817ad849e56bf6f7a9385fe9aa0055e9b88d8391dce6",
+    "observed_frozen_packet_sha256": "64ddf20760d202e4e63b817ad849e56bf6f7a9385fe9aa0055e9b88d8391dce6"
+  },
+  "claim_boundary": "This execution establishes only that this artifact passed its declared tests in the recorded environment. It does not identify a hidden source or mechanism."
+}
