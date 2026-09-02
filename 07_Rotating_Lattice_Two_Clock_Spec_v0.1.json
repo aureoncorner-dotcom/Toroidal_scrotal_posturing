@@ -1,0 +1,56 @@
+{
+  "spec_version": "0.1",
+  "status": "PROSPECTIVE_FORMAL_ONLY",
+  "source_run": {
+    "run_id": "ROTATING_LATTICE_CONFIRMATION_2026-08-24",
+    "verdict": "NULL_DYNAMIC_LATTICE_UNDER_EXACT_CONTINUOUS_GATE_TEST",
+    "results_file": "rotating_lattice_results.json",
+    "results_sha256": "4a860d0f70885cc0e9221b29d3b758d1f8c9ea37c3b3c9bb67aaf9ac87b26973",
+    "verdict_changed": false
+  },
+  "message_clock": {
+    "phase_rule": "theta_n = frac(theta_0 + n*alpha)",
+    "alpha": "phi^-2",
+    "theta_0": null,
+    "reset_ledger": []
+  },
+  "lattice_clock": {
+    "phase_rule": "g(t) = frac(g_j_plus - (t-tau_j)/T_g) between resets",
+    "direction": "clockwise",
+    "T_g": null,
+    "g_0": null,
+    "reset_ledger": [],
+    "lattice_order_q": null,
+    "sites_labelled": false,
+    "unlabelled_configuration_period": "T_g/q",
+    "labelled_reference_site_id": null,
+    "phase_anchor_id": null
+  },
+  "opportunities": {
+    "timestamp_source": null,
+    "eligibility_ledger_id": null,
+    "lag_convention": null,
+    "catch_width_w": null,
+    "catch_width_constraint": "0 <= w < 1/(2q)",
+    "catch_distance": "min_k d_circle(theta_n, g(t_n)+k/q)",
+    "prediction_codes": [
+      "CATCH",
+      "MISS",
+      "INELIGIBLE",
+      "UNRESOLVED"
+    ],
+    "outcome_codebook_id": null
+  },
+  "analysis": {
+    "parameter_search_allowed": false,
+    "training_holdout_plan": null,
+    "multiplicity_rule": null,
+    "prospective_test_status": "NOT_RUN"
+  },
+  "evidence_boundary": {
+    "platform_instantiation": "UNRESOLVED",
+    "moving_lattice_established": false,
+    "old_null_overridden": false,
+    "catch_is_outcome": false
+  }
+}
