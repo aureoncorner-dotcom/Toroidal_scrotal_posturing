@@ -1,0 +1,307 @@
+record_type: toroidal_non_descent_full_packet_adoption_record
+record_version: "0.2"
+created_date: "2026-09-03"
+audit_mode: READ_ONLY
+supersedes_for_coverage: TOROIDAL_NON_DESCENT_ADOPTION_RECORD_v0.1.yaml
+
+scope:
+  packet_label: "TOROIDAL v0.13 ORBIT / COCYCLE UPGRADE PACKET"
+  packet_members: "00 through 16"
+  packet_member_count: 17
+  checksum_receipt: UPGRADE_CHECKSUMS.sha256
+  supplemental_context:
+    - THE_MARKER_AND_THE_ANSWER_v1.0.docx
+  full_readme_packet_reviewed: true
+  one_drive_sources_modified: false
+
+decision:
+  packet_byte_integrity: PASS_17_OF_17
+  conceptual_compatibility: PASS
+  non_descent_overlay_fit: PASS
+  recommended_disposition: ADOPT_WITH_MODIFICATION
+  canonical_adoption_status: BLOCKED_PENDING_INTEGRATION_AND_REISSUE
+  executable_freeze_status: NOT_READY
+  execution_authorization: BLOCKED
+  external_anchor_verified: false
+  governing_effect_of_this_record: NONE
+
+preservation:
+  theory_v0_1_changed: false
+  frozen_predecessors_changed: false
+  q2_gate: CLOSED
+  q2_physical_verdict_promoted: false
+  q_only_markov_closure: UNRESOLVED
+  rotating_lattice_verdict: NULL_DYNAMIC_LATTICE_UNDER_EXACT_CONTINUOUS_GATE_TEST
+  rotating_lattice_verdict_changed: false
+  frozen_72_model_bank_status: FAILED_ALL_PRIMARY_LANES
+  q39_status: PROSPECTIVE_LATER_COHORT_LAG_SPECIFIC_LEAD
+  two_clock_test_status: PROSPECTIVE_NOT_RUN
+
+integrity:
+  checksum_algorithm: SHA256
+  receipt_entries: 17
+  existing_files: 17
+  matching_hashes: 17
+  mismatches: 0
+  local_lineage_receipt: VERIFIED
+  external_anchor_record_supplied: false
+  semantic_validation_complete: false
+  checksum_claim_boundary: >-
+    Matching hashes establish exact byte identity relative to the supplied local
+    receipt. They do not establish mathematical validity, semantic consistency,
+    successful validation, an external pre-output anchor, or execution authorization.
+
+packet_sources:
+  - id: "00"
+    file: 00_READ_ME_FIRST.md
+    sha256: 391EA8E64AC5216E09EEFD93C2C73951E059EE4D034B6231C8100C0BA8DA1306
+    bytes: 2390
+    disposition: ADOPT_WITH_MODIFICATION
+  - id: "01"
+    file: 01_Field_Theory_Update_v0.2_Orbit_Quotient_Cocycle.md
+    sha256: F86875E34EC1972721A9F8F4CB08D49D03C8982BD9523862DC684B848DC85AC0
+    bytes: 34973
+    disposition: ADOPT_WITH_MODIFICATION
+    freeze_ready: false
+    health_notes:
+      unicode_replacement_characters: 7
+  - id: "02"
+    file: 02_Simulation_Protocol_v0.4_RC1_Orbit_Quotient_Cocycle.md
+    sha256: 38B1ABFB494D9663D4F8C58B1C89DA4D2DB7B302D7F40666CF9DF059F7010547
+    bytes: 52089
+    disposition: ADOPT_WITH_MODIFICATION
+    freeze_ready: false
+    health_notes:
+      literal_display_math_open: 11
+      literal_display_math_close: 16
+  - id: "03"
+    file: 03_Appendix_A_v0.2_Three_Axis_Orbit_Cocycle.md
+    sha256: 6179DA0F506ABAE7F9E42A3A1E97EA17B8DDBEFB930D4A9FFF33B96E325211FC
+    bytes: 26090
+    disposition: ADOPT_WITH_MODIFICATION
+  - id: "04"
+    file: 04_Appendix_B_v0.2_Orbit_Accessibility_Mixing.md
+    sha256: 0E40972512C62E3D327D61AD71F1D0A2506CE5029D70FE8CAE41E23D041772C7
+    bytes: 73776
+    disposition: ADOPT_WITH_MODIFICATION
+    freeze_ready: false
+    health_notes:
+      private_use_characters: 312
+      literal_display_math_open: 4
+      literal_display_math_close: 3
+  - id: "05"
+    file: 05_TTSC_1_v0.3_Dual_Chart_Spatial_Cocycle.md
+    sha256: 750E99995679BAB3BED39C524FEDD7212748ED1B423C990EC902ECF04FBAA62C
+    bytes: 9653
+    disposition: ADOPT_WITH_MODIFICATION
+  - id: "06"
+    file: 06_Rotating_Lattice_Run_Report_v0.2_Two_Clock_Prospective.md
+    sha256: E3D29AA1BA155EC965A63504EF2E40ADE57E4F2301F0AB3210D9B07038CFB560
+    bytes: 7304
+    disposition: ADOPT_WITH_MODIFICATION
+  - id: "07"
+    file: 07_Rotating_Lattice_Two_Clock_Spec_v0.1.json
+    sha256: DC8B70F5513EA7B9190ABE1E45140F5B8997142F45F1F7AC48C6C32C07C81308
+    bytes: 1637
+    disposition: ADOPT_WITH_MODIFICATION
+    json_parse: PASS
+  - id: "08"
+    file: 08_Conditional_Closure_v0.2_Orbit_Accessibility.md
+    sha256: 47CAC898EB8612FBDF4795976EC4ECD1EADFA472E64D2FB4144A8C05EEBE22CB
+    bytes: 9381
+    disposition: ADOPT
+    declared_status: PROPOSED_NON_CANONICAL
+  - id: "09"
+    file: 09_Q1_Q2_Q3_Dependency_Graph_v0.2_Orbit_Cocycle.md
+    sha256: A4287973D7AE84538E4717601718C6ED4503DBFC970F293EF94C741A4DD416F1
+    bytes: 7366
+    disposition: ADOPT_WITH_MODIFICATION
+    declared_status: PROPOSED_NON_CANONICAL
+  - id: "10"
+    file: 10_GQG_Relation_Typing_v0.2_Orbit_Cocycle.md
+    sha256: 95D4E47CE58CA7E4393CD17CE9FD0C505F3A30B8DA9C3FB7368C396761E95233
+    bytes: 8545
+    disposition: ADOPT_WITH_MODIFICATION
+    source_health: CLEAN_UTF8_AND_BALANCED_LITERAL_MATH
+  - id: "11"
+    file: 11_Dual_Ledger_v0.2_Orbit_Cocycle.md
+    sha256: 09DB3B67049297E933F36AB595F022D3A218258B3E78CFC4D0ACF93D05099579
+    bytes: 7645
+    disposition: ADOPT
+    source_health: CLEAN_UTF8_AND_BALANCED_LITERAL_MATH
+  - id: "12"
+    file: 12_Provenance_Trust_v0.2_Two_Clock.md
+    sha256: 871C91D1C516E521A9A5EA3B2A9EA04D818D5C1B4A974C8CA47459559ABF2CEA
+    bytes: 9427
+    disposition: ADOPT
+    source_health: CLEAN_UTF8_AND_BALANCED_LITERAL_MATH
+  - id: "13"
+    file: 13_SW1_Post_Freeze_v0.2_Signed_Winding_Cocycle.md
+    sha256: 403117E24AA75B15F1827B4082A07014B133535A11859EE5126E431766BC0660
+    bytes: 8234
+    disposition: ADOPT_WITH_MODIFICATION
+    source_health: CLEAN_UTF8_AND_BALANCED_LITERAL_MATH
+  - id: "14"
+    file: 14_Confinement_Radius_v0.2_Orbit_Accessibility_Firewall.md
+    sha256: F9236EAD1CBC2B97DEBE207C98B8F0A20936006E5923F4ED2EAF5F39F8E6D93B
+    bytes: 8913
+    disposition: ADOPT_WITH_MODIFICATION
+    source_health: CLEAN_UTF8_AND_BALANCED_LITERAL_MATH
+  - id: "15"
+    file: 15_Ultra_Review_Handoff_Manifest_v0.2_Toroidal_Orbit_Cocycle.md
+    sha256: 00D0191FA835B4AC3CF7243999F3AC87B66268363D81F0F489984ADD9AC52956
+    bytes: 3533
+    disposition: ALREADY_COVERED
+    source_health: CLEAN_UTF8_AND_BALANCED_LITERAL_MATH
+  - id: "16"
+    file: 16_TOROIDAL_ORBIT_COCYCLE_POSTER_v0.1.png
+    sha256: 79A4544434F401FB6F6AA7C9041E501C9AF3764232835750A292D5B304D158D7
+    bytes: 343435
+    dimensions_pixels: [2400, 1600]
+    disposition: ADOPT_WITH_MODIFICATION
+
+checksum_receipt:
+  file: UPGRADE_CHECKSUMS.sha256
+  sha256: C18E272AB8696F1EF6045D744F3B3B4F5B57954F33A957266DD723FF5AB56C52
+  bytes: 1938
+  self_included: false
+  supplemental_docx_included: false
+
+supplemental_docx:
+  file: THE_MARKER_AND_THE_ANSWER_v1.0.docx
+  sha256: FD0EA8A7F28BE01AA8F1B2D8E5A04DE68EE594F65881FF7FAB6B350DFBB0BB02
+  bytes: 5610852
+  packet_checksum_bound: false
+  role: SUPPORTING_SYNTHESIS
+  disposition: ADOPT_WITH_MODIFICATION_AS_SUPPLEMENTAL_CONTEXT
+  structural_review:
+    sections: 1
+    body_paragraphs: 167
+    tables: 16
+    inline_images: 6
+    comments_part_present: false
+    tracked_insertions: 0
+    tracked_deletions: 0
+    embedded_poster_hash_matches_packet_poster: true
+  visual_review:
+    embedded_images_inspected: 6
+    page_render_status: NOT_AVAILABLE_SOFFICE_MISSING
+    page_layout_pass_claimed: false
+
+finding_status:
+  TND-001:
+    title: ODD_L_DIAMOND_SHEET_BIT_DOES_NOT_DESCEND
+    severity: BLOCKER
+    status: OPEN
+  TND-002:
+    title: FIXED_REFERENCE_LOOP_SIGNS_OVERNAMED_AS_HOLONOMY
+    severity: BLOCKER
+    status: OPEN_PROPAGATED
+  TND-003:
+    title: WINDING_AND_PARITY_REQUIRE_EXPLICIT_H6_ZERO_DOMAIN
+    severity: BLOCKER
+    status: OPEN_PROPAGATED
+  TND-004:
+    title: STATE_DEPENDENT_WORM_STOPPING_NOT_PROVED_INVARIANT
+    severity: BLOCKER
+    status: OPEN
+  TND-005:
+    title: Q2_SCALE_GATE_CONFLICTS_WITH_DECONFINEMENT_BRANCH
+    severity: BLOCKER
+    status: REPAIR_PRESENT_NOT_INTEGRATED
+    repair_artifact: 14_Confinement_Radius_v0.2_Orbit_Accessibility_Firewall.md
+  TND-006:
+    title: DAMAGED_SOURCE_BYTES_AND_MATH_DELIMITERS
+    severity: BLOCKER
+    status: OPEN
+  TND-007:
+    title: NONSIGNIFICANCE_USED_AS_AGREEMENT
+    severity: MAJOR
+    status: OPEN
+  TND-008:
+    title: QUOTIENT_SPAN_LACKS_FULL_STATE_LIFTABILITY
+    severity: MAJOR
+    status: OPEN
+  TND-009:
+    title: EMPIRICAL_CLOSURE_MUST_COMPARE_PROBABILITY_LAWS
+    severity: MAJOR
+    status: PARTLY_COVERED_NOT_INTEGRATED
+  TND-010:
+    title: UNOBSERVED_TRANSITION_ROWS_ARE_NOT_ESTIMABLE
+    severity: MAJOR
+    status: OPEN
+  TND-011:
+    title: TTSC_NEEDS_SLENDER_TUBE_SCOPE_OR_CURVATURE_CORRECTION
+    severity: MAJOR
+    status: OPEN
+  TND-012:
+    title: TWO_CLOCK_JSON_NOT_EXECUTABLE_PREREGISTRATION
+    severity: MAJOR
+    status: REQUIREMENTS_STRENGTHENED_STILL_OPEN
+  TND-013:
+    title: LOCAL_CHECKSUM_RECEIPT_IS_NOT_EXTERNAL_TRUST_ANCHOR
+    severity: MAJOR
+    status: OPEN
+  TND-014:
+    title: POSTER_GRAPH_CONTAINS_NON_GENERATOR_TRANSITION
+    severity: MAJOR
+    status: OPEN
+  TND-015:
+    title: DETERMINISTIC_AND_STOCHASTIC_CLOSURE_CONFLATED
+    severity: MAJOR
+    status: OPEN
+  TND-016:
+    title: CLOSURE_STATUS_VOCABULARY_DRIFTS
+    severity: MINOR
+    status: OPEN
+
+poster_repairs:
+  - ADD_H6_ZERO_DIVERGENCE_FREE_SOURCE_DOMAIN
+  - REPLACE_OR_RELABEL_SECTOR_GRAPH_WITH_VALID_GENERATOR_EDGES
+  - DISTINGUISH_DETERMINISTIC_NEXT_STATE_FROM_STOCHASTIC_NEXT_LAW
+  - ADD_STRAIGHT_OR_SLENDER_TUBE_SCOPE_TO_TTSC_PANEL
+  - COMPLETE_OR_LABEL_TWO_CLOCK_CLASSIFIER_AS_SCHEMATIC
+  - FIX_PANEL_3_BOTTOM_LINE_CLIPPING
+  - FIX_PANEL_5_RED_BOX_TEXT_OVERFLOW
+
+canonical_non_descent_insertion:
+  projection: "pi_q(x) = q in Z2^3"
+  required_kernel: FROZEN_VALID_FULL_STATE_KERNEL
+  projected_law: "P_q(x,q_prime) = sum_{z:pi_q(z)=q_prime} P(x,z)"
+  exact_failure_rule: >-
+    Sector q is failed if there are full states x and y in the required domain
+    with the same parity q and a target q_prime for which their aggregate
+    projected next-sector probabilities differ.
+  local_statuses:
+    - CLEAN
+    - FAILED
+    - UNRESOLVED
+  stochastic_rule: COMPARE_CONDITIONAL_PROBABILITY_LAWS_NOT_SINGLE_OUTCOMES
+  zero_departure_row_rule: UNRESOLVED_NOT_ZERO_FILLED
+  scoring_effect: NONE_UNLESS_PROSPECTIVELY_ADOPTED
+
+integration_order:
+  - CLEAN_UTF8_REISSUE_OF_01_02_04
+  - ODD_L_H6_ZERO_TERMINOLOGY_AND_LIFTABILITY_REPAIR
+  - VALID_Q2_KERNEL_AND_INVARIANCE_PROOF
+  - PREREGISTERED_EQUIVALENCE_RULES
+  - INTEGRATE_CONFINEMENT_RADIUS_BRANCH_INTO_APPENDIX_B
+  - ADD_LOCAL_NON_DESCENT_AND_ESTIMABLE_ROW_RECORDS
+  - ISSUE_TWO_CLOCK_SPEC_V0_2
+  - CORRECT_AND_REEXPORT_POSTER
+  - DECIDE_AND_BIND_SUPPLEMENTAL_DOCX_IF_IN_SCOPE
+  - NEW_DESCENDANTS_HASHES_EXTERNAL_ANCHOR_VALIDATION_AND_ADOPTION_RECEIPT
+
+claim_boundaries:
+  - NO_HASH_TO_MATHEMATICAL_VALIDITY_PROMOTION
+  - NO_LOCAL_RECEIPT_TO_EXTERNAL_ANCHOR_PROMOTION
+  - NO_FORMAL_SECTOR_COUNT_TO_EMPIRICAL_REACHABILITY_PROMOTION
+  - NO_QUOTIENT_SPAN_TO_FULL_STATE_REACHABILITY_PROMOTION
+  - NO_FIXED_REFERENCE_LOOP_SIGN_TO_HOLONOMY_PROMOTION
+  - NO_VALID_PARITY_OBSERVABLE_TO_AUTONOMOUS_MARKOV_LAW_PROMOTION
+  - NO_NONSIGNIFICANCE_TO_EQUIVALENCE_PROMOTION
+  - NO_EMPTY_TRANSITION_ROW_TO_ZERO_PROBABILITY_ROW_PROMOTION
+  - NO_STRAIGHT_CYLINDRICAL_FIELD_TO_EXACT_CURVED_TORUS_PROMOTION
+  - NO_PROSPECTIVE_TWO_CLOCK_SCHEMA_TO_EMPIRICAL_CONFIRMATION_PROMOTION
+  - NO_SUPPLEMENTAL_DOCX_TO_PACKET_CHECKSUM_MEMBERSHIP_PROMOTION
+  - NO_CHANGE_TO_THEORY_Q2_GATE_ROTATING_NULL_OR_FROZEN_PREDECESSORS
