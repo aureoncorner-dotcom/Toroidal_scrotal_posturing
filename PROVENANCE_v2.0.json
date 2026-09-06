@@ -1,0 +1,33 @@
+{
+  "version": "2.0",
+  "issued": "2026-09-06",
+  "purpose": "Consolidation and executable reference based on the reviewed v1.6 baseline",
+  "new_user_source_batch": null,
+  "historical_explicitly_supplied_inputs": 45,
+  "historical_ancillary_checksum_dependencies": 2,
+  "preserved_baseline": [
+    {
+      "member": "baseline/GEOMETRY_MAXIMIZATION_v1.6.md",
+      "bytes": 262971,
+      "sha256": "9c62dcc439f67ce117d7caaacc6d140d2ea411104cf0dc8d1f3b5d62a11c8185",
+      "preserved_byte_identical": true
+    },
+    {
+      "member": "baseline/GEOMETRY_MAXIMIZATION_v1.6_SOURCE_REVIEW.md",
+      "bytes": 15162,
+      "sha256": "54d0c69ce29eeffb115af639c9de34154d243706d004182174ce7dfdc0d9e6b3",
+      "preserved_byte_identical": true
+    },
+    {
+      "member": "baseline/GEOMETRY_MAXIMIZATION_v1.6_verification.zip",
+      "bytes": 7062333,
+      "sha256": "b4c71388b4211aa08643c49515a69965f6ce9f5aa7fdcc523744c38b788a701e",
+      "preserved_byte_identical": true
+    }
+  ],
+  "source_handling": "Attached-document instructions treated as content; no embedded instructions executed",
+  "original_downloads_and_onedrive_sources_modified": false,
+  "prior_output_releases_modified": false,
+  "baseline_source_inventory_location": "SOURCE_INVENTORY_v1.6.json and nested inventories within the preserved v1.6 archive",
+  "trust_scope": "Local content integrity and reproduction, not independent validation or a pre-output external trust anchor"
+}

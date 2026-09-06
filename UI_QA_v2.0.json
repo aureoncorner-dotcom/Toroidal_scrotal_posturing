@@ -1,0 +1,26 @@
+{
+  "version": "2.0",
+  "date": "2026-09-06",
+  "status": "PASS_WITH_NOTED_BROWSER_LIMITS",
+  "browser": "Codex in-app browser",
+  "surface": "local-only HTTP preview of EXPLORER.html",
+  "observations": {
+    "default_run": {"departures": 507, "slips": 53, "ideal_certified": 502, "numeric_mismatches": 0},
+    "stronger_warp_and_physical_view": "39 departures, 5 slips, 3 numerical mismatches; transported bin 14 at departure 1",
+    "boundary_warning": "At initial phase 19/39, exact bin 19 and numerical bin 18 are visibly distinguished",
+    "threshold_start": "At initial rho=tau, departure 0 has no slip and bin jump 15; next departure has a slip",
+    "playback": "Play advanced to departure 1; pause/end behavior and keyboard Home/End observed",
+    "import_10000_rows": "Loaded generated run.json; 1034 slips; final displayed departure 9999 -> 10000",
+    "invalid_import": "Configuration file rejected as wrong run schema; previous 39-row run and 4 slips retained",
+    "csv_export": {"preview": "opened", "copy_status": "CSV copied.", "lines_including_header": 508, "last_departure": 506, "header_checked": true, "prior_empty_browser_clipboard_restored": true},
+    "layout": {"viewport_width": 1265, "document_scroll_width": 1265, "horizontal_overflow": false, "normal_size_top_and_bottom_screenshots_inspected": true},
+    "page_console_errors_observed": 0
+  },
+  "limits": {
+    "direct_file_url_check": "BLOCKED_BY_BROWSER_URL_SECURITY_POLICY; no bypass attempted",
+    "browser_file_save": "Download completion was not observable in this app; CSV preview/copy and Python-generated trace.csv provide verified alternatives",
+    "mobile_viewport": "not tested",
+    "offline_design": "Single HTML with embedded run data, inline script and styles; no external runtime assets or fetch calls. Direct offline-file execution was not tool-verified.",
+    "full_page_capture": "A stitched full-page capture was not used as layout evidence; ordinary viewport captures were inspected"
+  }
+}

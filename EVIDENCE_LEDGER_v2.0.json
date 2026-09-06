@@ -1,0 +1,118 @@
+{
+  "version": "2.0",
+  "status_rule": "Status describes this specific claim and its stated scope; no empirical status is inherited from an algebraic identity",
+  "claims": [
+    {
+      "id": "GM-01",
+      "claim": "Deterministic descent and predictive refinement",
+      "status": "PROVED_IN_BASELINE",
+      "evidence": "baseline/GEOMETRY_MAXIMIZATION_v1.6.md §§2–3",
+      "conditions": "Full declared invariant domain; retained output fixed"
+    },
+    {
+      "id": "GM-02",
+      "claim": "Exact 39-screen and minimal phase tower",
+      "status": "PROVED_IN_BASELINE",
+      "evidence": "baseline/GEOMETRY_MAXIMIZATION_v1.6.md §§4–6",
+      "conditions": "Half-open departing convention; full circle; minimality relative to stated future output"
+    },
+    {
+      "id": "GM-03",
+      "claim": "Exact count discrepancy, gaps and correlations",
+      "status": "PROVED_IN_BASELINE",
+      "evidence": "baseline/GEOMETRY_MAXIMIZATION_v1.6.md §§4–6",
+      "conditions": "All starts for the count; Haar start for probabilities; no iid assumption"
+    },
+    {
+      "id": "GM-04",
+      "claim": "Smooth transported observation and invariant measure",
+      "status": "PROVED_IN_BASELINE",
+      "evidence": "baseline/GEOMETRY_MAXIMIZATION_v1.6.md §25",
+      "conditions": "h prime strictly positive; observations transported with h"
+    },
+    {
+      "id": "GM-05",
+      "claim": "Second-order phase residual and finite-horizon bound",
+      "status": "PROVED_IN_BASELINE",
+      "evidence": "baseline/GEOMETRY_MAXIMIZATION_v1.6.md §32.1",
+      "conditions": "Ideal real-valued maps, |epsilon|<1, identical initial data"
+    },
+    {
+      "id": "GM-06",
+      "claim": "Conservative rational residual and exact label-margin comparisons",
+      "status": "PROVED_HERE",
+      "evidence": "GEOMETRY_MAXIMIZATION_v2.0.md §5",
+      "conditions": "Rational epsilon; c<=1/pi<1/3; strict margin except exact initial/equal-map cases"
+    },
+    {
+      "id": "GM-07",
+      "claim": "Reference code and 10000-departure independent comparison",
+      "status": "EXACTLY_CHECKED",
+      "evidence": "simulator/test_geometry_reference.py; VERIFICATION_RESULTS_v2.0.json",
+      "conditions": "Constructed fixtures, independent integer-square-root oracle, endpoint and nonzero-phase checks; finite checks do not prove all implementation inputs"
+    },
+    {
+      "id": "GM-08",
+      "claim": "Physical inverse, approximate trajectory and floating boundary mismatch",
+      "status": "NUMERICALLY_CHECKED",
+      "evidence": "examples/; VERIFICATION_RESULTS_v2.0.json",
+      "conditions": "Floating point, finite fixtures; no interval arithmetic or universal execution certificate"
+    },
+    {
+      "id": "GM-09",
+      "claim": "Density calculus, integration map, cover factors and quadrature window",
+      "status": "PROVED_IN_BASELINE",
+      "evidence": "baseline/GEOMETRY_MAXIMIZATION_v1.6.md §§35–36, 39–40",
+      "conditions": "Specified smooth algebra and modules; uniform phase quadrature q>3B; no physical central-charge assignment"
+    },
+    {
+      "id": "GM-10",
+      "claim": "Linearization, cyclic/cohomological and representation literature",
+      "status": "CITED_CONDITIONAL",
+      "evidence": "baseline/GEOMETRY_MAXIMIZATION_v1.6.md §§18, 26, 28, 31, 33, 37, 41 and source reviews",
+      "conditions": "Only retained qualified statements and supplied comparisons; no blanket adoption of source surveys"
+    },
+    {
+      "id": "FT-01",
+      "claim": "Onsite sixfold selection and domain-correct toroidal invariants",
+      "status": "PROVED_IN_BASELINE",
+      "evidence": "baseline/GEOMETRY_MAXIMIZATION_v1.6.md §19; FIELD_THEORY_UPDATE_v0.3.md §§1–3",
+      "conditions": "Declared field content, divergence constraints, fixed-reference ensembles and nonnegative weights"
+    },
+    {
+      "id": "FT-02",
+      "claim": "Named FH-REF-1 q-only failure and sampling/stopping qualifications",
+      "status": "PROVED_IN_BASELINE",
+      "evidence": "baseline/GEOMETRY_MAXIMIZATION_v1.6.md §§13, 20",
+      "conditions": "Failure belongs to the named kernel/domain; stopping counterexample does not diagnose an unspecified actual worm kernel"
+    },
+    {
+      "id": "FT-03",
+      "claim": "Field production kernel and validation",
+      "status": "NOT_IMPLEMENTED",
+      "evidence": "SIMULATION_PROTOCOL_v0.5.md §§5–6",
+      "conditions": "Stationarity, paths, observed mixing, estimators and scale evidence still required"
+    },
+    {
+      "id": "FT-04",
+      "claim": "Deconfinement, critical exponent and physical interpretation",
+      "status": "NOT_ESTABLISHED",
+      "evidence": "FIELD_THEORY_UPDATE_v0.3.md §§1, 5–6",
+      "conditions": "No new physical experiment or verdict; Q1/Q2/Q3 stay separately measured"
+    },
+    {
+      "id": "EMP-01",
+      "claim": "Historical rotating-lattice, Unified Return, Pell and software records",
+      "status": "REPORTED_HISTORICAL",
+      "evidence": "baseline/GEOMETRY_MAXIMIZATION_v1.6.md §23.3",
+      "conditions": "Distinct source cohorts and denominators; underlying analyses not rerun"
+    },
+    {
+      "id": "EMP-02",
+      "claim": "Two-clock empirical confirmation",
+      "status": "NOT_ESTABLISHED",
+      "evidence": "SIMULATION_PROTOCOL_v0.5.md §7",
+      "conditions": "Experiment-specific periods, origins, resets, outcomes and prospective holdout absent"
+    }
+  ]
+}

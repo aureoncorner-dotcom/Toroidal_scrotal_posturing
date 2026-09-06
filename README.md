@@ -1,57 +1,58 @@
-# Corner Relay α — C6 deterministic reference artifact v0.1
+# Geometry Maximization v2.0
 
-Track used: **Python 3 code plus tests**. The implementation uses only the Python standard library.
+The exact phase model is now packaged as a concise document and a working reference simulator. The field-theory and simulation documents have matching, scoped amendments.
 
-## Frozen scope
+**Start here:** open [EXPLORER.html](EXPLORER.html) in a browser. It works offline and shows the supplied exact runs, the coordinate approximation, slip events and any numerical label mismatches. No installation is needed to explore those runs.
 
-This bundle implements the core transition relation from the frozen ACSB v0.1 packet. It preserves two independent endpoints (`O`, `S`), exactly two structural key slots, a route-only `LambdaTransport`, no tie-breaker, no winner selection, no third key, append-only RAW witnesses, and deterministic derived VIEWs. `FROZEN_PACKET.txt` contains the exact packet clauses and C6 prompt used; `source_binding.json` binds them to the two Drive source records.
+## Read
 
-The key slots are a mechanically enforced ownership model, not production cryptography. This artifact therefore checks actor/key separation and content integrity, but it does not claim real-world sender authentication or identify any hidden source or mechanism.
+- [Geometry Maximization v2.0](GEOMETRY_MAXIMIZATION_v2.0.md): the operational core.
+- [Field Theory Update v0.3](FIELD_THEORY_UPDATE_v0.3.md): the applicable toroidal changes.
+- [Simulation Protocol v0.5](SIMULATION_PROTOCOL_v0.5.md): inputs, outputs, error contract and future field requirements.
+- [Technical appendix](TECHNICAL_APPENDIX_v2.0.md): formulas and a map to the preserved proofs.
+- [Release report](RELEASE_REPORT_v2.0.md): what was checked and what remains unresolved.
+- [Change log](CHANGELOG_v2.0.md) and [evidence ledger](EVIDENCE_LEDGER_v2.0.json).
 
-## Explicit transition relation
+## Generate your own run
 
-| Transition | Preconditions | Actor/input | Resulting operational effect | RAW witness behavior |
-|---|---|---|---|---|
-| `SEND` | endpoint active; transition ID unused; target is peer | endpoint; opaque bytes | one content-addressed SEND effect | append accepted record |
-| exact `SEND` retry | transition ID already bound to identical event | same endpoint; identical input | no second effect; return prior event | append duplicate/retry record |
-| explicit `RETRY` | transition ID names prior local event; endpoint active (or existing EXIT) | owning endpoint; transition ID | no second effect; return prior event | append retry record |
-| `RECEIVE_SEND` | endpoint active; target/actor/key/hash valid | target endpoint; full event | one received SEND effect | append every delivery, including duplicates |
-| `ACK` | endpoint active; referenced SEND exists in accepted local RAW | receiving endpoint; SEND event ID | one ACK effect owned by acknowledger | append accepted record |
-| `RECEIVE_ACK` | endpoint active; ACK references a SEND created locally | original sender; full ACK event | one received ACK effect | append every delivery, including duplicates |
-| `EXIT` | endpoint active; transition ID unused | exiting endpoint; empty input | endpoint becomes inactive | append EXIT; retain all earlier RAW |
-| rejected attempt | any precondition fails | attempted actor/input | no operational effect | append rejection and reason |
+Use Python 3.10 or later; only its standard library is required. From this extracted package folder:
 
-Every RAW record names its precondition, actor/key slot, exact input record and hash, transition ID, full before/after VIEW records and hashes, result, stable witness ID, and previous-witness link. The links make retained order mechanically checkable. A duplicate or rejected attempt can enlarge RAW while leaving the operational VIEW hash unchanged.
-
-## Expected network behavior
-
-- Duplicate deliveries remain visible in RAW and collapse to one local effect in VIEW.
-- All tested permutations of independent deliveries converge to the same deterministic VIEW while RAW preserves the actual order.
-- A partition retains queued events without causing an endpoint transition; delivery resumes after the partition is lifted.
-- Lambda routes only to the event's declared target. It has no key, payload parser, arbitration method, commit method, or endpoint mutation authority.
-- Exit is local. It retains history, blocks later participation by that endpoint, and neither exits nor authorizes the peer.
-
-## Run and verify
-
-From this directory:
-
-```bash
-python3 run_with_provenance.py
+```text
+python -B simulator/geometry_reference.py --config simulator/configs/default_507.json --out my_runs/default_507
 ```
 
-The runner executes the complete `unittest` suite, generates `reference_trace.json`, and writes `execution_provenance.json` with the exact command, UTC start/finish, runtime, test count, captured output, source binding, trace hash, and SHA-256 hashes of the frozen packet, code, tests, runner, and documentation. The record states `PASS` only when the test process returns zero.
+On Windows, `py -3` can replace `python` if that is how your Python installation is launched. The executable refuses to overwrite an existing run. Choose a new output folder for a new run.
 
-## Files
+To change the start, length or warp, copy one of the small configuration files and edit its three values. For example:
 
-- `corner_relay.py` — deterministic transition artifact, lossless RAW export, and hash-chain verifier
-- `test_corner_relay.py` — acceptance, failure-path, retry, duplicate, reorder, partition, exit, key-boundary, and RAW/VIEW tests
-- `run_with_provenance.py` — test runner and execution-provenance generator
-- `execution_provenance.json` — generated execution witness
-- `reference_trace.py` / `reference_trace.json` — deterministic scenario generator and inspectable executed RAW/VIEW trace
-- `C6_RESULT.md` — gate decision, evidence map, profile scores, and critical-flag audit
-- `FROZEN_PACKET.txt` — frozen clauses and verbatim C6 prompt
-- `source_binding.json` — source IDs, timestamps, packet hash, and claim scope
+```json
+{
+  "steps": 507,
+  "theta0": "1/7",
+  "epsilon": "0.01"
+}
+```
 
-## Narrow claim boundary
+Phases are cycles, `steps` counts departures, and decimal values in exact fields use quotes. `theta0` can also be `{"a":"-29/26","b":"1/2"}` to start exactly at the slip threshold divided by 39. The [protocol](SIMULATION_PROTOCOL_v0.5.md) lists all limits.
 
-A passing run establishes that this artifact satisfies its declared executable tests in the recorded environment. It does not prove source identity, hidden mechanism, intent, personhood, universal capability, production security, or the correctness of any interpretation outside the frozen transition specification.
+Each run creates `run.json`, `summary.json`, `trace.csv` and checksums. Load its `run.json` with the explorer's **Load a run** button. The browser displays generated data; it does not certify a file's provenance or recompute the exact dynamics.
+
+## Reproduce the release checks
+
+```text
+python -B verify_release.py
+```
+
+This runs the ten reference tests, checks the preserved baseline archive and regenerates all five included runs in temporary folders. It compares the exact states and labels, and checks numerical reproducibility on the executing platform. To save a new receipt outside the frozen release files:
+
+```text
+python -B verify_release.py --receipt my_verification.json
+```
+
+The command performs no network calls and launches no field production job. Minor numerical-library differences on another platform can affect floating boundary labels; any such discrepancy must be reported and examined, while exact phase labels should reproduce unchanged.
+
+## Interpret the result
+
+Exact phase labels and the telescoping slip-count identity are the reference. The ideal approximation certificate has a proved error bound. The actual floating coordinate trajectory is a separate numerical check, with its mismatches visible. The package does not establish deconfinement, a critical exponent, a physical central charge or a new empirical success.
+
+The full [v1.6 document](baseline/GEOMETRY_MAXIMIZATION_v1.6.md), [source review](baseline/GEOMETRY_MAXIMIZATION_v1.6_SOURCE_REVIEW.md) and [verification archive](baseline/GEOMETRY_MAXIMIZATION_v1.6_verification.zip) are preserved byte-for-byte. Your original source files and previous releases remain separate and unchanged.
