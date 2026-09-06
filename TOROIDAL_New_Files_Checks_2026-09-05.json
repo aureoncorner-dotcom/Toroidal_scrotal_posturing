@@ -1,0 +1,238 @@
+{
+  "scope": "New-document review diagnostics only; no field simulation or resonator load test executed",
+  "all_passed": true,
+  "checks": [
+    {
+      "name": "One-step witness factors through refined label",
+      "passed": true,
+      "detail": {
+        "projection": {
+          "x": 0,
+          "y": 0,
+          "u": 0,
+          "v": 0,
+          "a": 1,
+          "b": 0
+        },
+        "update": {
+          "x": "u",
+          "y": "v",
+          "u": "a",
+          "v": "b",
+          "a": "a",
+          "b": "b"
+        },
+        "witness": {
+          "x": 0,
+          "y": 0,
+          "u": 1,
+          "v": 0,
+          "a": 1,
+          "b": 0
+        },
+        "refined": {
+          "x": [
+            0,
+            0
+          ],
+          "y": [
+            0,
+            0
+          ],
+          "u": [
+            0,
+            1
+          ],
+          "v": [
+            0,
+            0
+          ],
+          "a": [
+            1,
+            1
+          ],
+          "b": [
+            0,
+            0
+          ]
+        }
+      }
+    },
+    {
+      "name": "Refined label still fails dynamic closure",
+      "passed": true,
+      "detail": {
+        "equal_present": [
+          0,
+          0
+        ],
+        "next_x": [
+          0,
+          1
+        ],
+        "next_y": [
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "name": "Uniform Villain witness a=0.01",
+      "passed": true,
+      "detail": {
+        "p1": 0.975614712250357,
+        "p2": 0.9569655926356141,
+        "gap": 0.018649119614742915,
+        "formula": 0.018649119614742915
+      }
+    },
+    {
+      "name": "Uniform Villain witness a=0.1",
+      "passed": true,
+      "detail": {
+        "p1": 0.8032653298563167,
+        "p2": 0.7032848298702996,
+        "gap": 0.0999804999860171,
+        "formula": 0.09998049998601714
+      }
+    },
+    {
+      "name": "Uniform Villain witness a=1",
+      "passed": true,
+      "detail": {
+        "p1": 0.5033689734995427,
+        "p2": 0.5000617049020434,
+        "gap": 0.003307268597499302,
+        "formula": 0.0033072685974993936
+      }
+    },
+    {
+      "name": "Uniform Villain witness a=5",
+      "passed": true,
+      "detail": {
+        "p1": 0.500000000006944,
+        "p2": 0.5,
+        "gap": 6.944000929820504e-12,
+        "formula": 6.943971918169418e-12
+      }
+    },
+    {
+      "name": "Binary total variation and midpoint approximation",
+      "passed": true,
+      "detail": {
+        "diameter_lower_bound": 0.13548953232810035,
+        "minimax_pair_error": 0.06774476616405017
+      }
+    },
+    {
+      "name": "FH-REF-1 retains non-descent through state-independent mixture",
+      "passed": true,
+      "detail": {
+        "axis_sector_family_probability": 0.08333333333333333,
+        "full_kernel_TV_pair": 0.01129079436067503,
+        "minimum_uniform_error_on_pair": 0.005645397180337515,
+        "scope": "Villain weights; analytic transition law, not an implemented sampler"
+      }
+    },
+    {
+      "name": "Discrete bad-set boundary is empty",
+      "passed": true,
+      "detail": {
+        "bad": [
+          0,
+          3
+        ],
+        "boundary": []
+      }
+    },
+    {
+      "name": "Anchor row uses whole bar before edge allowance",
+      "passed": true,
+      "detail": {
+        "holes": 5,
+        "spacing_in": 2,
+        "bar_in": 8,
+        "span_in": 8,
+        "remaining_in": 0
+      }
+    },
+    {
+      "name": "Allowed nominal combination can violate vessel clearance",
+      "passed": true,
+      "detail": {
+        "spine_depth_in": 3,
+        "face_clearance_in": 3,
+        "outer_string_offset_in": 4,
+        "required_clear_ID_in": 14.041594578792296,
+        "actual_clear_ID_in": 12
+      }
+    },
+    {
+      "name": "Four equally spaced point feet support a square",
+      "passed": true,
+      "detail": {
+        "13": {
+          "inradius_in": 4.596194077712559,
+          "centered_height_limit_in": 26.06631191236582
+        },
+        "14": {
+          "inradius_in": 4.949747468305833,
+          "centered_height_limit_in": 28.071412828701654
+        }
+      }
+    },
+    {
+      "name": "Ideal-string density scales inversely with squared frequency",
+      "passed": true,
+      "detail": {
+        "length_m": 0.8128,
+        "tension_N": 88.96443230521,
+        "maximum_kg_per_m": {
+          "55": 0.01112919242828054,
+          "110": 0.002782298107070135,
+          "220": 0.0006955745267675338
+        }
+      }
+    },
+    {
+      "name": "Amplitude decay produces 10 dB Q relation",
+      "passed": true,
+      "detail": {
+        "f0_Hz": 110,
+        "t10_s": 0.5,
+        "Q": 150.08139892260255
+      }
+    },
+    {
+      "name": "All four original inputs unchanged",
+      "passed": true,
+      "detail": "SHA-256 rechecked against review-start inventory"
+    }
+  ],
+  "inputs": [
+    {
+      "name": "TOROIDAL_GEOMETRY_HANDOFF_v1.0.md",
+      "source": "C:\\Users\\drewd\\OneDrive\\Desktop\\Toroidal_scrotal_posturing-main\\TOROIDAL_GEOMETRY_HANDOFF_v1.0.md",
+      "bytes": 50726,
+      "sha256": "5fa19aef5aa349947ddca4437b5eb3a975b5f6722c8f6014c9e085e1cdb7f8f9"
+    },
+    {
+      "name": "TOROIDAL_GEOMETRY_OMNIBUS_v1.1.md",
+      "source": "C:\\Users\\drewd\\OneDrive\\Desktop\\Toroidal_scrotal_posturing-main\\TOROIDAL_GEOMETRY_OMNIBUS_v1.1.md",
+      "bytes": 72641,
+      "sha256": "10e5ea92b82cec0a8c8be21656e30a6effcb43de16e3d94d6f1b8602b814d37f"
+    },
+    {
+      "name": "monkey_myth_source_pass_memo_2026-09-04.md",
+      "source": "C:\\Users\\drewd\\OneDrive\\Desktop\\Toroidal_scrotal_posturing-main\\monkey_myth_source_pass_memo_2026-09-04.md",
+      "bytes": 9394,
+      "sha256": "e726a9a0cd72d52089b5ba0dd4dcd9d3dd507358ca0e5d2711e5d808a7d84356"
+    },
+    {
+      "name": "Five_String_Acoustic_Resonator_Rev_A.docx",
+      "source": "C:\\Users\\drewd\\OneDrive\\Desktop\\Toroidal_scrotal_posturing-main\\Five_String_Acoustic_Resonator_Rev_A.docx",
+      "bytes": 246252,
+      "sha256": "bdd4219835f3d3655eed8f816067623e4b548d8a3ca45ea40b72e1141100ffed"
+    }
+  ]
+}

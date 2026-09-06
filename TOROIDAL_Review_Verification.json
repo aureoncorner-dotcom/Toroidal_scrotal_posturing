@@ -1,0 +1,772 @@
+{
+  "scope": "independent algebra, finite examples, local byte integrity, and supplied software tests; not field-simulation or platform-data replication",
+  "check_count": 36,
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "Fibonacci pair orbit modulo four has period six",
+      "passed": true,
+      "evidence": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "check": "leading onsite phase anisotropy has degree six",
+      "passed": true,
+      "evidence": {
+        "allowed_monomials_degree_at_most_six": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            6,
+            0
+          ]
+        ],
+        "phase_selecting_monomials": [
+          [
+            0,
+            6
+          ],
+          [
+            6,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "check": "charge-two exponent identities",
+      "passed": true,
+      "evidence": {
+        "Delta_2": "123629/100000",
+        "chi_exponent": 0.52742,
+        "eta_Phi": 1.47258,
+        "beta_Phi_using_nu_0_6717": 0.830415993
+      }
+    },
+    {
+      "check": "diamond components L=2..21",
+      "passed": true,
+      "evidence": {
+        "2": 2,
+        "3": 1,
+        "4": 2,
+        "5": 1,
+        "6": 2,
+        "7": 1,
+        "8": 2,
+        "9": 1,
+        "10": 2,
+        "11": 1,
+        "12": 2,
+        "13": 1,
+        "14": 2,
+        "15": 1,
+        "16": 2,
+        "17": 1,
+        "18": 2,
+        "19": 1,
+        "20": 2,
+        "21": 1
+      }
+    },
+    {
+      "check": "odd-L parity counterexample",
+      "passed": true,
+      "evidence": {
+        "L": 3,
+        "legal_diagonal_move": [
+          [
+            2,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "representative_parities": [
+          0,
+          1
+        ]
+      }
+    },
+    {
+      "check": "finite-h6 volume winding is not integer",
+      "passed": true,
+      "evidence": {
+        "L": 4,
+        "current_on_one_positive_x_link": 6,
+        "volume_average_Wx": "3/2",
+        "divergence": [
+          6,
+          -6,
+          0,
+          0
+        ],
+        "n": [
+          -1,
+          1,
+          0,
+          0
+        ],
+        "sum_n": 0,
+        "cut_fluxes": [
+          6,
+          0,
+          0,
+          0
+        ],
+        "mod6_cut_classes": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "parity_cut_classes": [
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    {
+      "check": "Walsh-Hadamard normalization",
+      "passed": true,
+      "evidence": {
+        "H_squared": [
+          [
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            8,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            8,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            8,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            8,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            8
+          ]
+        ]
+      }
+    },
+    {
+      "check": "sector inversion and odd-fraction ratio",
+      "passed": true,
+      "evidence": {
+        "example_coefficients": [
+          "100",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
+        "Zh": [
+          "16",
+          "12",
+          "23/2",
+          "25/2",
+          "21/2",
+          "25/2",
+          "25/2",
+          "25/2"
+        ],
+        "f_odd": [
+          "1/8",
+          "9/64",
+          "11/64"
+        ]
+      }
+    },
+    {
+      "check": "poster edge is not a one-generator move",
+      "passed": true,
+      "evidence": {
+        "edge": [
+          "001",
+          "010"
+        ],
+        "xor": "011",
+        "bits_changed": 2
+      }
+    },
+    {
+      "check": "replacement Gray cycle",
+      "passed": true,
+      "evidence": {
+        "cycle": [
+          "000",
+          "001",
+          "011",
+          "010",
+          "110",
+          "111",
+          "101",
+          "100",
+          "000"
+        ]
+      }
+    },
+    {
+      "check": "Villain sector subkernel is not strongly lumpable at L=2,J=1",
+      "passed": true,
+      "evidence": {
+        "x": "M=0,I=0,q=0",
+        "y": "M=0,I=2 Gamma_x,q=0",
+        "proposal": "I -> I +/- Gamma_x with equal probability",
+        "P_qx_flip_from_x": 0.36787944117144233,
+        "P_qx_flip_from_y": 0.5033689734995427,
+        "scope": "sector subkernel; also a state-independent random-scan mixture with this subkernel; not a proof about the unspecified complete macro-sweep"
+      }
+    },
+    {
+      "check": "q plus W still fails sector closure",
+      "passed": true,
+      "evidence": {
+        "L": 4,
+        "J": 2,
+        "states": "I=0 versus I=2 boundary of one xy plaquette, both M=0,q=0,W=0",
+        "reference_cycle_current_sums": [
+          0,
+          2
+        ],
+        "flip_probabilities": [
+          0.36787944117144233,
+          0.5676676416183064
+        ]
+      }
+    },
+    {
+      "check": "reference-cycle current sum closes the Villain sector subkernel",
+      "passed": true,
+      "evidence": {
+        "formula": "accept=min(1, exp[-(2 sign S_alpha + L)/(2J)]); S_alpha -> S_alpha+sign L; q -> q xor e_alpha",
+        "explicit_energy_checks": [
+          {
+            "sign": -1,
+            "actual_delta_sum_I_squared": 0,
+            "predicted": 0
+          },
+          {
+            "sign": 1,
+            "actual_delta_sum_I_squared": 8,
+            "predicted": 8
+          }
+        ],
+        "scope": "fixed, link-disjoint reference cycles; sector-only kernel; does not include local plaquette or worm moves"
+      }
+    },
+    {
+      "check": "reversible substeps can have nonreversible composition",
+      "passed": true,
+      "evidence": {
+        "K1": "[[Fraction(1, 2), Fraction(1, 2), 0], [Fraction(1, 2), Fraction(1, 2), 0], [0, 0, 1]]",
+        "K2": "[[1, 0, 0], [0, Fraction(1, 2), Fraction(1, 2)], [0, Fraction(1, 2), Fraction(1, 2)]]",
+        "P": "[[Fraction(1, 2), Fraction(1, 4), Fraction(1, 4)], [Fraction(1, 2), Fraction(1, 4), Fraction(1, 4)], [0, Fraction(1, 2), Fraction(1, 2)]]",
+        "stationary": "uniform",
+        "P01": "1/4",
+        "P10": "1/2"
+      }
+    },
+    {
+      "check": "accepted-move stopping can bias a valid MH chain",
+      "passed": true,
+      "evidence": {
+        "MH": "[[0, 1], [Fraction(1, 2), Fraction(1, 2)]]",
+        "original_stationary": "(1/3,2/3)",
+        "after_stopping_at_one_accepted_move": "[[0, 1], [1, 0]]",
+        "stopped_chain_stationary": "(1/2,1/2)",
+        "scope": "counterexample to a general inference, not a simulation of the packet worm"
+      }
+    },
+    {
+      "check": "exact curved-tube divergence correction",
+      "passed": true,
+      "evidence": {
+        "symbolic_old_numerator_after_factoring_U_prime": "{(2, 1): Fraction(3, 2)}",
+        "symbolic_new_numerator_after_factoring_U_prime": "{}",
+        "old_divergence": "3 r cos(phi) U'(s)/(2 a H)",
+        "new_vr": "-r U'(s)/(2 H)",
+        "new_divergence": "0",
+        "material_radius": "R0 sqrt(U0/U(s))",
+        "tangency_equation": "dR/ds = H vr/U = -R U'/(2U)",
+        "domain": "H=1-r cos(phi)/a; planar circular tube; U>0; r<a; physical orthonormal components"
+      }
+    },
+    {
+      "check": "fixed-wall flux cancellation",
+      "passed": true,
+      "evidence": {
+        "wall_flux_per_dphi_ds": "-Rc^2 U'(s)/2",
+        "integral_over_phi": "-pi Rc^2 U'(s)",
+        "slab_side_flux": "-pi Rc^2 [U(b)-U(a)]"
+      }
+    },
+    {
+      "check": "logging lower bound exceeds cap at 100 bytes per row",
+      "passed": true,
+      "evidence": {
+        "L": 192,
+        "chains": 8,
+        "minimum_production_sweeps_per_chain": 65536,
+        "cube_plus_plaquette_attempts_per_sweep": 28311552,
+        "rows": 14843406974976,
+        "decimal_TB_at_100_bytes_per_row": 1484.3406974976,
+        "decimal_PB_at_100_bytes_per_row": 1.4843406974976,
+        "cap_decimal_TB": 2,
+        "excluded": "all worm records, other moves, pilots, thermalization, other sizes and points"
+      }
+    },
+    {
+      "check": "Q3 zero-field ladder has only two four-dof windows",
+      "passed": true,
+      "evidence": {
+        "model": "D6=a L^y, two fitted parameters",
+        "windows": [
+          {
+            "L_min": 12,
+            "sizes_left": 7,
+            "residual_dof_2_parameter_fit": 5,
+            "meets_four_dof": true
+          },
+          {
+            "L_min": 16,
+            "sizes_left": 6,
+            "residual_dof_2_parameter_fit": 4,
+            "meets_four_dof": true
+          },
+          {
+            "L_min": 24,
+            "sizes_left": 5,
+            "residual_dof_2_parameter_fit": 3,
+            "meets_four_dof": false
+          },
+          {
+            "L_min": 32,
+            "sizes_left": 4,
+            "residual_dof_2_parameter_fit": 2,
+            "meets_four_dof": false
+          },
+          {
+            "L_min": 48,
+            "sizes_left": 3,
+            "residual_dof_2_parameter_fit": 1,
+            "meets_four_dof": false
+          }
+        ],
+        "qualification": "applies if the common four-residual-dof rule is used for Q3"
+      }
+    },
+    {
+      "check": "block-aggregated sufficient statistics do not reweight exactly",
+      "passed": true,
+      "evidence": {
+        "sample_N_A": [
+          0,
+          2
+        ],
+        "sample_N_B": [
+          1,
+          1
+        ],
+        "both_block_sums": 2,
+        "weight": "exp(N)",
+        "mean_weight_A": 4.194528049465325,
+        "mean_weight_B": 2.718281828459045
+      }
+    },
+    {
+      "check": "two-clock quotient-distance reduction",
+      "passed": true,
+      "evidence": {
+        "q_values": "1..14",
+        "pairs_per_q": 101,
+        "max_absolute_error": 2.732189474663471e-16
+      }
+    },
+    {
+      "check": "distance-only state is not deterministically closed",
+      "passed": true,
+      "evidence": {
+        "initial_phases": [
+          0.1,
+          -0.1
+        ],
+        "phase_step": 0.1,
+        "equal_initial_distance": 0.1,
+        "next_distances": [
+          0.2,
+          0
+        ]
+      }
+    },
+    {
+      "check": "triadic period mismatch is nonzero",
+      "passed": true,
+      "evidence": {
+        "f_P_Hz": "47.2105263157894736842105263157894736842105263157894736842105",
+        "f_S_Hz": "47.0771644662753534516329301220891125321086015698504874269452",
+        "f_B_Hz": "0.1333618495141202325775961937003611521019247459389862572653",
+        "T_B_seconds": "7.49839630781455906679420973948498905760916884257200186385760",
+        "T_G_seconds": "7.45562130177514792899408284023668639053254437869822485207101",
+        "period_gap_ms": "42.7750060394111378001268992483026670766244638737770117865900",
+        "frequency_mismatch_Hz": "-0.000765134612863894406530790426622974882202238187997869718827",
+        "phase_drift_degrees_per_gate_cycle": "-2.05363941062167161421518661252178347081026770459073197905260",
+        "full_slip_seconds": "1306.95956396091638726211944765182484846587602740432346229306",
+        "exact_matching_BPM": "168.035930387791493047771204062455051648425179883122684154278",
+        "matching_master_frequency_Hz": "39.2237540196871101660639971372583832370651046360254478449884"
+      }
+    },
+    {
+      "check": "Pell recurrence and invariant",
+      "passed": true,
+      "evidence": [
+        [
+          3,
+          1
+        ],
+        [
+          17,
+          6
+        ],
+        [
+          99,
+          35
+        ],
+        [
+          577,
+          204
+        ],
+        [
+          3363,
+          1189
+        ]
+      ]
+    },
+    {
+      "check": "Word summary arithmetic",
+      "passed": true,
+      "evidence": {
+        "checking_failure_rate": 0.152,
+        "absent_failure_rate": 0.45907473309608543,
+        "risk_ratio": 0.33110077519379844,
+        "crude_odds_ratio": 0.21120374433230948,
+        "shared_opportunity_Jaccard": 0.7644341801385681,
+        "later_q39_missing_output_RR": 0.24068067712267294
+      }
+    },
+    {
+      "check": "original execution-provenance file hashes",
+      "passed": true,
+      "evidence": {
+        "corner_relay.py": true,
+        "test_corner_relay.py": true,
+        "run_with_provenance.py": true,
+        "reference_trace.py": true,
+        "README.md": true,
+        "C6_RESULT.md": true,
+        "FROZEN_PACKET.txt": true,
+        "source_binding.json": true,
+        "reference_trace.json": true
+      }
+    },
+    {
+      "check": "original test-output hash",
+      "passed": true,
+      "evidence": "7f08a035a4d6c3fd364396e2bf23bf0c719fbf3fdfbedd6461820e4fc61560ef"
+    },
+    {
+      "check": "saved reference trace reproduces exactly",
+      "passed": true,
+      "evidence": "be80778e224fcfe862e42698c4e14e21d89a38d313914ed40bd827a52b59424e"
+    },
+    {
+      "check": "supplied Corner Relay test suite",
+      "passed": true,
+      "evidence": {
+        "tests_run": 20,
+        "failures": 0,
+        "errors": 0,
+        "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]"
+      }
+    },
+    {
+      "check": "diagnostic: peer transition-id conflict is accepted twice",
+      "passed": true,
+      "evidence": {
+        "accepted": [
+          true,
+          true
+        ],
+        "effects_applied": [
+          true,
+          true
+        ],
+        "scope": "two hash-valid events built directly through the public Event API; a compliant single sender Endpoint would prevent this conflict"
+      }
+    },
+    {
+      "check": "diagnostic: unsupported schema and empty id pass receive validation",
+      "passed": true,
+      "evidence": {
+        "schema": "unsupported-review-schema",
+        "transition_id": "",
+        "integrity_errors": [],
+        "accepted": true
+      }
+    },
+    {
+      "check": "Word structural and poster identity check",
+      "passed": true,
+      "evidence": {
+        "embedded_images": 6,
+        "tables": 16,
+        "tracked_insertions": 0,
+        "tracked_deletions": 0,
+        "comments_part_present": false,
+        "embedded_poster_matches": true
+      }
+    },
+    {
+      "check": "earlier audit manifest packet and output hashes",
+      "passed": true,
+      "evidence": {
+        "00_READ_ME_FIRST.md": true,
+        "01_Field_Theory_Update_v0.2_Orbit_Quotient_Cocycle.md": true,
+        "02_Simulation_Protocol_v0.4_RC1_Orbit_Quotient_Cocycle.md": true,
+        "03_Appendix_A_v0.2_Three_Axis_Orbit_Cocycle.md": true,
+        "04_Appendix_B_v0.2_Orbit_Accessibility_Mixing.md": true,
+        "05_TTSC_1_v0.3_Dual_Chart_Spatial_Cocycle.md": true,
+        "06_Rotating_Lattice_Run_Report_v0.2_Two_Clock_Prospective.md": true,
+        "07_Rotating_Lattice_Two_Clock_Spec_v0.1.json": true,
+        "08_Conditional_Closure_v0.2_Orbit_Accessibility.md": true,
+        "09_Q1_Q2_Q3_Dependency_Graph_v0.2_Orbit_Cocycle.md": true,
+        "10_GQG_Relation_Typing_v0.2_Orbit_Cocycle.md": true,
+        "11_Dual_Ledger_v0.2_Orbit_Cocycle.md": true,
+        "12_Provenance_Trust_v0.2_Two_Clock.md": true,
+        "13_SW1_Post_Freeze_v0.2_Signed_Winding_Cocycle.md": true,
+        "14_Confinement_Radius_v0.2_Orbit_Accessibility_Firewall.md": true,
+        "15_Ultra_Review_Handoff_Manifest_v0.2_Toroidal_Orbit_Cocycle.md": true,
+        "16_TOROIDAL_ORBIT_COCYCLE_POSTER_v0.1.png": true,
+        "TOROIDAL_NON_DESCENT_FULL_PACKET_AUDIT_v0.2.md": true,
+        "TOROIDAL_NON_DESCENT_FULL_PACKET_ADOPTION_RECORD_v0.2.yaml": true
+      }
+    },
+    {
+      "check": "upgrade receipt 17 of 17",
+      "passed": true,
+      "evidence": [
+        {
+          "file": "01_Field_Theory_Update_v0.2_Orbit_Quotient_Cocycle.md",
+          "matches": true
+        },
+        {
+          "file": "02_Simulation_Protocol_v0.4_RC1_Orbit_Quotient_Cocycle.md",
+          "matches": true
+        },
+        {
+          "file": "03_Appendix_A_v0.2_Three_Axis_Orbit_Cocycle.md",
+          "matches": true
+        },
+        {
+          "file": "04_Appendix_B_v0.2_Orbit_Accessibility_Mixing.md",
+          "matches": true
+        },
+        {
+          "file": "05_TTSC_1_v0.3_Dual_Chart_Spatial_Cocycle.md",
+          "matches": true
+        },
+        {
+          "file": "06_Rotating_Lattice_Run_Report_v0.2_Two_Clock_Prospective.md",
+          "matches": true
+        },
+        {
+          "file": "07_Rotating_Lattice_Two_Clock_Spec_v0.1.json",
+          "matches": true
+        },
+        {
+          "file": "08_Conditional_Closure_v0.2_Orbit_Accessibility.md",
+          "matches": true
+        },
+        {
+          "file": "09_Q1_Q2_Q3_Dependency_Graph_v0.2_Orbit_Cocycle.md",
+          "matches": true
+        },
+        {
+          "file": "10_GQG_Relation_Typing_v0.2_Orbit_Cocycle.md",
+          "matches": true
+        },
+        {
+          "file": "11_Dual_Ledger_v0.2_Orbit_Cocycle.md",
+          "matches": true
+        },
+        {
+          "file": "12_Provenance_Trust_v0.2_Two_Clock.md",
+          "matches": true
+        },
+        {
+          "file": "13_SW1_Post_Freeze_v0.2_Signed_Winding_Cocycle.md",
+          "matches": true
+        },
+        {
+          "file": "14_Confinement_Radius_v0.2_Orbit_Accessibility_Firewall.md",
+          "matches": true
+        },
+        {
+          "file": "15_Ultra_Review_Handoff_Manifest_v0.2_Toroidal_Orbit_Cocycle.md",
+          "matches": true
+        },
+        {
+          "file": "16_TOROIDAL_ORBIT_COCYCLE_POSTER_v0.1.png",
+          "matches": true
+        },
+        {
+          "file": "00_READ_ME_FIRST.md",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "check": "reference ZIP 10 of 10 loose-file identities",
+      "passed": true,
+      "evidence": {
+        "Corner_Relay_Alpha_C6_Reference_v0.1/test_corner_relay.py": true,
+        "Corner_Relay_Alpha_C6_Reference_v0.1/C6_RESULT.md": true,
+        "Corner_Relay_Alpha_C6_Reference_v0.1/reference_trace.json": true,
+        "Corner_Relay_Alpha_C6_Reference_v0.1/FROZEN_PACKET.txt": true,
+        "Corner_Relay_Alpha_C6_Reference_v0.1/reference_trace.py": true,
+        "Corner_Relay_Alpha_C6_Reference_v0.1/run_with_provenance.py": true,
+        "Corner_Relay_Alpha_C6_Reference_v0.1/README.md": true,
+        "Corner_Relay_Alpha_C6_Reference_v0.1/corner_relay.py": true,
+        "Corner_Relay_Alpha_C6_Reference_v0.1/source_binding.json": true,
+        "Corner_Relay_Alpha_C6_Reference_v0.1/execution_provenance.json": true
+      }
+    },
+    {
+      "check": "initial upgrade ZIP is empty",
+      "passed": true,
+      "evidence": {
+        "bytes": 22,
+        "member_count": 0,
+        "sha256": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85"
+      }
+    }
+  ]
+}
