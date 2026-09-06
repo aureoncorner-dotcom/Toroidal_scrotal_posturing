@@ -1,144 +1,132 @@
-"""Verify the v2.0 reference, included runs and preserved baseline. Offline."""
-from __future__ import annotations
+"""Verify packaged bytes, execute reference tests and reproduce six fixtures.
 
+No network, physical simulation, or historical empirical reanalysis is performed.
+"""
+from __future__ import annotations
 import argparse
+import csv
 import hashlib
-import importlib.util
+import io
 import json
-from pathlib import Path, PurePosixPath
-import subprocess
+import math
+from pathlib import Path
 import sys
 import tempfile
-import zipfile
+import unittest
 
-HERE = Path(__file__).resolve().parent
-BASELINE_ZIP_SHA256 = "b4c71388b4211aa08643c49515a69965f6ce9f5aa7fdcc523744c38b788a701e"
-CONFIGS = ["default_507", "warped_39", "exact_10000", "boundary", "bin_boundary"]
-
-
-def digest(data):
-    return hashlib.sha256(data).hexdigest()
+ROOT=Path(__file__).resolve().parent
+ABS_TOL=1e-9
+REL_TOL=1e-10
 
 
-def safe_member(name):
-    p = PurePosixPath(name)
-    if p.is_absolute() or ".." in p.parts or "\\" in name or ":" in name:
-        raise ValueError(f"unsafe archive/checksum member: {name}")
-    return p
+def digest(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def check_package_hashes():
-    checksum_file = HERE / "SHA256SUMS.txt"
-    if not checksum_file.exists():
-        return {"status": "NOT_PRESENT_DURING_ASSEMBLY", "count": 0}
-    count = 0
-    for line in checksum_file.read_text(encoding="utf-8").splitlines():
-        expected, name = line.split("  ", 1)
-        safe_member(name)
-        if digest((HERE / name).read_bytes()) != expected:
-            raise AssertionError(f"package checksum mismatch: {name}")
-        count += 1
-    return {"status": "PASS", "count": count}
+def verify_hashes():
+    lines=(ROOT/'SHA256SUMS.txt').read_text(encoding='utf-8').splitlines()
+    seen=set()
+    size=0
+    for line in lines:
+        checksum,relative=line.split('  ',1)
+        if len(checksum)!=64 or any(c not in '0123456789abcdef' for c in checksum):
+            raise ValueError('malformed checksum')
+        path=(ROOT/relative).resolve()
+        if path==ROOT or ROOT not in path.parents or relative in seen:
+            raise ValueError('duplicate or unsafe packaged path')
+        seen.add(relative)
+        if not path.is_file() or digest(path)!=checksum:
+            raise ValueError(f'missing or changed packaged file: {relative}')
+        size+=path.stat().st_size
+    actual={p.relative_to(ROOT).as_posix() for p in ROOT.rglob('*') if p.is_file()}
+    extras=sorted(actual-seen-{'SHA256SUMS.txt'})
+    executable_suffixes={'.py','.pyw','.pyc','.pyd','.so','.dll'}
+    if any(name.startswith('reference/') and Path(name).suffix.lower() in executable_suffixes for name in extras):
+        raise ValueError('unexpected executable or bytecode on the reference import path')
+    return {'status':'PASS','files_checked':len(seen),'bytes_checked':size,'unlisted_files':extras}
 
 
-def check_baseline():
-    folder = HERE / "baseline"
-    archive = folder / "GEOMETRY_MAXIMIZATION_v1.6_verification.zip"
-    if digest(archive.read_bytes()) != BASELINE_ZIP_SHA256:
-        raise AssertionError("the preserved v1.6 archive differs from its recorded baseline")
-    registers = {}
-    with zipfile.ZipFile(archive) as z:
-        names = z.namelist()
-        if len(names) != len(set(names)) or z.testzip() is not None:
-            raise AssertionError("duplicate or corrupt v1.6 archive entries")
-        for name in names:
-            safe_member(name)
-        for name in names:
-            if name.endswith("SHA256SUMS.txt"):
-                base = PurePosixPath(name).parent
-                lines = z.read(name).decode("utf-8").splitlines()
-                for line in lines:
-                    expected, relative = line.split("  ", 1)
-                    safe_member(relative)
-                    member = str(base / relative)
-                    if digest(z.read(member)) != expected:
-                        raise AssertionError(f"preserved checksum mismatch: {member}")
-                registers[str(base)] = len(lines)
-        for name in ("GEOMETRY_MAXIMIZATION_v1.6.md", "GEOMETRY_MAXIMIZATION_v1.6_SOURCE_REVIEW.md"):
-            if (folder / name).read_bytes() != z.read(name):
-                raise AssertionError(f"readable baseline differs from archive: {name}")
-    return {"archive_sha256": BASELINE_ZIP_SHA256, "members": len(names),
-            "checksum_registers": registers, "readable_baseline_matches_archive": True,
-            "legacy_mathematical_verifiers_rerun_in_v2": False}
+def close_value(actual,expected,address='root'):
+    if isinstance(expected,dict):
+        if not isinstance(actual,dict) or set(actual)!=set(expected):raise ValueError(f'JSON key mismatch at {address}')
+        for key in expected:close_value(actual[key],expected[key],address+'.'+key)
+    elif isinstance(expected,list):
+        if not isinstance(actual,list) or len(actual)!=len(expected):raise ValueError(f'JSON length mismatch at {address}')
+        for i,(a,b) in enumerate(zip(actual,expected)):close_value(a,b,f'{address}[{i}]')
+    elif type(expected) is float:
+        if type(actual) not in (float,int) or not math.isfinite(actual) or not math.isclose(actual,expected,rel_tol=REL_TOL,abs_tol=ABS_TOL):
+            raise ValueError(f'numeric mismatch at {address}: {actual} versus {expected}')
+    elif type(actual) is not type(expected) or actual!=expected:
+        raise ValueError(f'value mismatch at {address}')
 
 
-def load_engine():
-    path = HERE / "simulator" / "geometry_reference.py"
-    spec = importlib.util.spec_from_file_location("geometry_reference", path)
-    module = importlib.util.module_from_spec(spec)
-    sys.modules[spec.name] = module
-    spec.loader.exec_module(module)
-    return module
+def compare_throat(actual,expected):
+    if actual.suffix=='.json':
+        close_value(json.loads(actual.read_text(encoding='utf-8')),json.loads(expected.read_text(encoding='utf-8')))
+    elif actual.suffix=='.csv':
+        a=list(csv.reader(io.StringIO(actual.read_text(encoding='utf-8'))))
+        b=list(csv.reader(io.StringIO(expected.read_text(encoding='utf-8'))))
+        if len(a)!=len(b) or a[0]!=b[0]:raise ValueError('profile CSV shape mismatch')
+        for i,(left,right) in enumerate(zip(a[1:],b[1:])):
+            if len(left)!=len(right):raise ValueError('profile CSV row width mismatch')
+            for j,(x,y) in enumerate(zip(left,right)):close_value(float(x),float(y),f'csv[{i},{j}]')
+    elif actual.read_bytes()!=expected.read_bytes():
+        raise ValueError('unexpected numerical artifact mismatch')
 
 
-def verify():
-    package = check_package_hashes()
-    baseline = check_baseline()
-    command = [sys.executable, "-B", "-m", "unittest", "discover", "-s",
-               str(HERE / "simulator"), "-p", "test_*.py", "-v"]
-    tested = subprocess.run(command, cwd=HERE, capture_output=True, text=True)
-    if tested.returncode:
-        raise AssertionError(tested.stdout + tested.stderr)
-    if "Ran 10 tests" not in tested.stderr or not tested.stderr.rstrip().endswith("OK"):
-        raise AssertionError("the expected ten-test suite did not complete")
-    engine = load_engine()
-    examples = {}
-    with tempfile.TemporaryDirectory(prefix="geometry_v2_verify_") as temporary:
-        for name in CONFIGS:
-            config = json.loads((HERE / "simulator" / "configs" / f"{name}.json").read_text(encoding="utf-8"))
-            result = engine.run_reference(config)
-            output = Path(temporary) / name
-            engine.export_run(result, output)
-            checked = []
-            for artifact in ("run.json", "summary.json", "trace.csv", "RUN_SHA256SUMS.txt"):
-                stored = HERE / "examples" / name / artifact
-                if (output / artifact).read_bytes() != stored.read_bytes():
-                    raise AssertionError(f"{name}/{artifact} did not reproduce byte-for-byte; inspect exact and numerical fields separately")
-                checked.append(artifact)
-            summary = result["summary"]
-            examples[name] = {"departures": summary["steps"], "slips": summary["slip_count"],
-                              "ideal_certified": summary["ideal_bin_certified_count"],
-                              "numeric_mismatches": summary["numeric_bin_mismatch_count"],
-                              "ideal_certified_numeric_mismatches": summary["certified_rows_with_numeric_mismatch"],
-                              "reproduced_artifacts": checked, "byte_identical_on_this_platform": True}
-    return {"version": "2.0", "status": "PASS", "package_integrity": package,
-            "baseline_integrity": baseline,
-            "reference_tests": {"passed": 10, "failed": 0,
-                                "independent_departure_oracle_steps": 10000,
-                                "arithmetic": "exact Q(sqrt(5)) and independent integer-square-root formulas",
-                                "numeric_tolerances": {"inverse_residual": 1e-14, "uniform_bound_roundoff_allowance": 2e-14}},
-            "examples": examples,
-            "scope": {"exact_phase_and_labels": "freshly checked",
-                      "numerical_coordinates": "finite fixtures; no interval enclosure",
-                      "browser_interaction_checks": "separate UI_QA_v2.0.json receipt",
-                      "field_production_simulation": "not implemented or run",
-                      "historical_empirical_analyses": "not rerun",
-                      "source_instructions": "treated as source content, not executable instructions"}}
+def run_reference_checks():
+    sys.dont_write_bytecode = True
+    sys.path.insert(0,str(ROOT/'reference'))
+    suite=unittest.defaultTestLoader.discover(str(ROOT/'reference'),pattern='test_*.py')
+    output=io.StringIO()
+    result=unittest.TextTestRunner(stream=output,verbosity=1).run(suite)
+    if not result.wasSuccessful():raise ValueError('reference suite failed:\n'+output.getvalue())
+    from lattice_validator import run_fixture
+    from throat import write_run
+    reproductions=[]
+    numerical=[]
+    with tempfile.TemporaryDirectory(prefix='toroidal-reference-') as directory:
+        for name in ('cubic','rectangular','translated_rectangular','throat','throat_flat','throat_translated'):
+            config=json.loads((ROOT/'configs'/f'{name}.json').read_text(encoding='utf-8'))
+            temporary=Path(directory)/name
+            is_throat=name.startswith('throat')
+            report=(write_run if is_throat else run_fixture)(config,temporary)
+            if report['status']!='PASS':raise ValueError(f'fixture failed: {name}')
+            expected=ROOT/'examples'/name
+            generated={p.name for p in temporary.iterdir() if p.is_file()}
+            stored={p.name for p in expected.iterdir() if p.is_file()}
+            if generated!=stored:raise ValueError(f'example files differ: {name}')
+            byte_identical=True
+            for filename in sorted(generated):
+                a,b=temporary/filename,expected/filename
+                same=a.read_bytes()==b.read_bytes()
+                byte_identical=byte_identical and same
+                if is_throat:compare_throat(a,b)
+                elif not same:raise ValueError(f'exact artifact differs: {name}/{filename}')
+            reproductions.append({'example':name,'status':'PASS','files_compared':len(generated),
+                'comparison':'numeric tolerance and exact structure' if is_throat else 'byte exact',
+                'byte_identical_on_this_runtime':byte_identical})
+            if is_throat:numerical.append({'example':name,'report':report})
+    return {'status':'PASS','unit_tests':{'run':result.testsRun,'failures':len(result.failures),'errors':len(result.errors),'skipped':len(result.skipped)},
+            'example_reproductions':reproductions,'throat_checks':numerical,
+            'numeric_reproduction_tolerances':{'absolute':ABS_TOL,'relative':REL_TOL},
+            'scope':'new deterministic references only; no historical empirical reanalysis'}
 
 
 def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--receipt", type=Path, help="optional new receipt path; existing files are not overwritten")
-    args = parser.parse_args()
-    if args.receipt and args.receipt.exists():
-        parser.error("receipt already exists; choose a new path")
-    result = verify()
-    text = json.dumps(result, indent=2) + "\n"
-    if args.receipt:
-        args.receipt.parent.mkdir(parents=True, exist_ok=True)
-        args.receipt.write_text(text, encoding="utf-8")
-    print(text, end="")
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--json',action='store_true',help='print the complete verification record')
+    args=parser.parse_args()
+    try:
+        hashes=verify_hashes()
+        checks=run_reference_checks()
+        result={'status':'PASS','integrity':hashes,'reference_checks':checks}
+    except (ValueError,OSError,ArithmeticError) as exc:
+        print(json.dumps({'status':'FAIL','error':str(exc)},indent=2))
+        return 1
+    if args.json:print(json.dumps(result,indent=2,sort_keys=True))
+    else:print(f"PASS: {hashes['files_checked']} file hashes, {checks['unit_tests']['run']} tests, six reproduced examples. Physical experiments: NOT_RUN.")
+    return 0
 
 
-if __name__ == "__main__":
-    main()
+if __name__=='__main__':raise SystemExit(main())

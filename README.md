@@ -1,58 +1,36 @@
-# Geometry Maximization v2.0
+# Toroidal Geometry v1.0
 
-The exact phase model is now packaged as a concise document and a working reference simulator. The field-theory and simulation documents have matching, scoped amendments.
+**Consolidated mathematics, exact lattice validation, and curved-throat kinematics**  
+6 September 2026
 
-**Start here:** open [EXPLORER.html](EXPLORER.html) in a browser. It works offline and shows the supplied exact runs, the coordinate approximation, slip events and any numerical label mismatches. No installation is needed to explore those runs.
+Start with [the core update](00_TOROIDAL_GEOMETRY_v1.0.md). This release turns the toroidal corrections in Geometry Maximization v2.0 into one coordinated reference packet, with runnable examples and preserved sources.
 
-## Read
+The new executable checks finite toroidal currents, membranes, sectors and operator records. The throat executable checks a circular curved tube against conservation and material tangency. These are mathematical reference computations. Q1, Q2, Q3 and the empirical throat comparison remain `NOT_RUN` in this release.
 
-- [Geometry Maximization v2.0](GEOMETRY_MAXIMIZATION_v2.0.md): the operational core.
-- [Field Theory Update v0.3](FIELD_THEORY_UPDATE_v0.3.md): the applicable toroidal changes.
-- [Simulation Protocol v0.5](SIMULATION_PROTOCOL_v0.5.md): inputs, outputs, error contract and future field requirements.
-- [Technical appendix](TECHNICAL_APPENDIX_v2.0.md): formulas and a map to the preserved proofs.
-- [Release report](RELEASE_REPORT_v2.0.md): what was checked and what remains unresolved.
-- [Change log](CHANGELOG_v2.0.md) and [evidence ledger](EVIDENCE_LEDGER_v2.0.json).
+| Open | Purpose |
+|---|---|
+| [Core update](00_TOROIDAL_GEOMETRY_v1.0.md) | What changed and what the results mean |
+| [Field theory](01_Field_Theory_Update_v0.4_Consolidated.md) | One set of definitions for winding, sources and ensembles |
+| [Protocol](02_Simulation_Protocol_v0.6_Consolidated.md) | Run the validator; understand its limits and production requirements |
+| [Exact lattice appendix](03_Appendix_A_v0.3_Exact_Lattice.md) | Proofs, rectangular tori and modular currents |
+| [Accessibility appendix](04_Appendix_B_v0.3_Accessibility_Mixing.md) | Paths, clocks, closure and counterexamples |
+| [Curved throat](05_TTSC_1_v0.4_Curved_Throat.md) | Metric, corrected velocity, material and fixed-radius charts |
+| [Integration manifest](15_Integration_Manifest_v0.3.md) | Every successor and its predecessor |
+| [Verification receipt](VERIFICATION_RESULTS.json) | Actual test counts, example comparisons and numerical residuals |
 
-## Generate your own run
+## Run locally
 
-Use Python 3.10 or later; only its standard library is required. From this extracted package folder:
-
-```text
-python -B simulator/geometry_reference.py --config simulator/configs/default_507.json --out my_runs/default_507
-```
-
-On Windows, `py -3` can replace `python` if that is how your Python installation is launched. The executable refuses to overwrite an existing run. Choose a new output folder for a new run.
-
-To change the start, length or warp, copy one of the small configuration files and edit its three values. For example:
-
-```json
-{
-  "steps": 507,
-  "theta0": "1/7",
-  "epsilon": "0.01"
-}
-```
-
-Phases are cycles, `steps` counts departures, and decimal values in exact fields use quotes. `theta0` can also be `{"a":"-29/26","b":"1/2"}` to start exactly at the slip threshold divided by 39. The [protocol](SIMULATION_PROTOCOL_v0.5.md) lists all limits.
-
-Each run creates `run.json`, `summary.json`, `trace.csv` and checksums. Load its `run.json` with the explorer's **Load a run** button. The browser displays generated data; it does not certify a file's provenance or recompute the exact dynamics.
-
-## Reproduce the release checks
+Python 3.10 or later; the validator, throat computations and verification suite use only the standard library. The optional figure generator uses Matplotlib. Open a terminal in this extracted release folder. Replace `python` with your Python executable if needed. Output folders must not already exist.
 
 ```text
+python -B reference/lattice_validator.py --config configs/rectangular.json --out my-lattice-run
+python -B reference/lattice_validator.py --state examples/rectangular/state_input.json --out my-state-check
+python -B reference/throat.py --config configs/throat.json --out my-throat-run
 python -B verify_release.py
 ```
 
-This runs the ten reference tests, checks the preserved baseline archive and regenerates all five included runs in temporary folders. It compares the exact states and labels, and checks numerical reproducibility on the executing platform. To save a new receipt outside the frozen release files:
+The last command checks packaged hashes, runs the tests, and reproduces the six included examples in a temporary folder. It leaves frozen examples untouched. Extra user output folders are allowed; unexpected files are listed, while unexpected executable code on the reference import path fails verification. Exit status zero means the declared reference checks passed. It does not certify a physical field theory.
 
-```text
-python -B verify_release.py --receipt my_verification.json
-```
+Three lattice fixtures cover a cube, a rectangular torus and a translated reference origin. Three throat fixtures cover the throat, flat control and translated throat. The [figure](figures/curved_throat.png) summarizes the baseline throat profile; its numbers are in [the CSV](examples/throat/throat_profile.csv).
 
-The command performs no network calls and launches no field production job. Minor numerical-library differences on another platform can affect floating boundary labels; any such discrepancy must be reported and examined, while exact phase labels should reproduce unchanged.
-
-## Interpret the result
-
-Exact phase labels and the telescoping slip-count identity are the reference. The ideal approximation certificate has a proved error bound. The actual floating coordinate trajectory is a separate numerical check, with its mismatches visible. The package does not establish deconfinement, a critical exponent, a physical central charge or a new empirical success.
-
-The full [v1.6 document](baseline/GEOMETRY_MAXIMIZATION_v1.6.md), [source review](baseline/GEOMETRY_MAXIMIZATION_v1.6_SOURCE_REVIEW.md) and [verification archive](baseline/GEOMETRY_MAXIMIZATION_v1.6_verification.zip) are preserved byte-for-byte. Your original source files and previous releases remain separate and unchanged.
+The intact [Geometry Maximization v2.0 archive](baseline/GEOMETRY_MAXIMIZATION_v2.0.zip) preserves the earlier phase explorer, reference simulator, proofs and nested source archives. Selected readable baseline documents and fifteen original toroidal documents are also included. Use the intact archive for the baseline documents' original link context. Original files were not edited. Hashes establish which bytes are present; they do not supply an external pre-output trust anchor.

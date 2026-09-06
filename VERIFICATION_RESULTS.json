@@ -1,0 +1,389 @@
+{
+  "baseline_zip_sha256": "263681efe82513b062b75bdc23d9d16be2ed8bdee96adf01c562944d2960c3cb",
+  "date": "2026-09-06",
+  "document_audit": {
+    "documents": [
+      {
+        "document": "00_TOROIDAL_GEOMETRY_v1.0.md",
+        "local_links_checked": 5,
+        "math_delimiters": "BALANCED",
+        "words": 797
+      },
+      {
+        "document": "01_Field_Theory_Update_v0.4_Consolidated.md",
+        "local_links_checked": 6,
+        "math_delimiters": "BALANCED",
+        "words": 774
+      },
+      {
+        "document": "02_Simulation_Protocol_v0.6_Consolidated.md",
+        "local_links_checked": 5,
+        "math_delimiters": "BALANCED",
+        "words": 1009
+      },
+      {
+        "document": "03_Appendix_A_v0.3_Exact_Lattice.md",
+        "local_links_checked": 0,
+        "math_delimiters": "BALANCED",
+        "words": 749
+      },
+      {
+        "document": "04_Appendix_B_v0.3_Accessibility_Mixing.md",
+        "local_links_checked": 1,
+        "math_delimiters": "BALANCED",
+        "words": 602
+      },
+      {
+        "document": "05_TTSC_1_v0.4_Curved_Throat.md",
+        "local_links_checked": 2,
+        "math_delimiters": "BALANCED",
+        "words": 774
+      },
+      {
+        "document": "06_Rotating_Lattice_Run_Report_v0.3_Evidence_Status.md",
+        "local_links_checked": 2,
+        "math_delimiters": "BALANCED",
+        "words": 354
+      },
+      {
+        "document": "08_Conditional_Closure_v0.3.md",
+        "local_links_checked": 1,
+        "math_delimiters": "BALANCED",
+        "words": 312
+      },
+      {
+        "document": "09_Q1_Q2_Q3_Dependency_Graph_v0.3.md",
+        "local_links_checked": 2,
+        "math_delimiters": "BALANCED",
+        "words": 207
+      },
+      {
+        "document": "10_GQG_Relation_Typing_v0.3.md",
+        "local_links_checked": 0,
+        "math_delimiters": "BALANCED",
+        "words": 302
+      },
+      {
+        "document": "11_Dual_Ledger_v0.3.md",
+        "local_links_checked": 2,
+        "math_delimiters": "BALANCED",
+        "words": 268
+      },
+      {
+        "document": "12_Provenance_Trust_v0.3.md",
+        "local_links_checked": 1,
+        "math_delimiters": "BALANCED",
+        "words": 269
+      },
+      {
+        "document": "13_SW1_Post_Freeze_v0.3.md",
+        "local_links_checked": 1,
+        "math_delimiters": "BALANCED",
+        "words": 240
+      },
+      {
+        "document": "14_Confinement_Radius_v0.3.md",
+        "local_links_checked": 1,
+        "math_delimiters": "BALANCED",
+        "words": 326
+      },
+      {
+        "document": "15_Integration_Manifest_v0.3.md",
+        "local_links_checked": 33,
+        "math_delimiters": "BALANCED",
+        "words": 385
+      },
+      {
+        "document": "README.md",
+        "local_links_checked": 12,
+        "math_delimiters": "BALANCED",
+        "words": 420
+      }
+    ],
+    "local_links_checked": 74,
+    "scope": "new root documents; preserved source/baseline text retains original context",
+    "status": "PASS",
+    "word_count": 7788
+  },
+  "figure": {
+    "dimensions": [
+      1500,
+      1350
+    ],
+    "generator": "Matplotlib 3.11.1; optional dependency",
+    "path": "figures/curved_throat.png",
+    "review_scope": "labels, curves, legend text, clipping and consistency with generated CSV",
+    "visual_review": "PASS"
+  },
+  "not_tested": [
+    "production field sampling",
+    "physical Q1/Q2/Q3",
+    "empirical TTSC",
+    "two-clock outcome model",
+    "independent third-party reproduction",
+    "fresh historical empirical reanalysis"
+  ],
+  "packaging_note": "SHA256SUMS covers this receipt. Archive round-trip result is in the adjacent release checks file.",
+  "reference_checks": {
+    "example_reproductions": [
+      {
+        "byte_identical_on_this_runtime": true,
+        "comparison": "byte exact",
+        "example": "cubic",
+        "files_compared": 7,
+        "status": "PASS"
+      },
+      {
+        "byte_identical_on_this_runtime": true,
+        "comparison": "byte exact",
+        "example": "rectangular",
+        "files_compared": 7,
+        "status": "PASS"
+      },
+      {
+        "byte_identical_on_this_runtime": true,
+        "comparison": "byte exact",
+        "example": "translated_rectangular",
+        "files_compared": 7,
+        "status": "PASS"
+      },
+      {
+        "byte_identical_on_this_runtime": true,
+        "comparison": "numeric tolerance and exact structure",
+        "example": "throat",
+        "files_compared": 3,
+        "status": "PASS"
+      },
+      {
+        "byte_identical_on_this_runtime": true,
+        "comparison": "numeric tolerance and exact structure",
+        "example": "throat_flat",
+        "files_compared": 3,
+        "status": "PASS"
+      },
+      {
+        "byte_identical_on_this_runtime": true,
+        "comparison": "numeric tolerance and exact structure",
+        "example": "throat_translated",
+        "files_compared": 3,
+        "status": "PASS"
+      }
+    ],
+    "numeric_reproduction_tolerances": {
+      "absolute": 1e-09,
+      "relative": 1e-10
+    },
+    "scope": "new deterministic references only; no historical empirical reanalysis",
+    "status": "PASS",
+    "throat_checks": [
+      {
+        "example": "throat",
+        "report": {
+          "cartesian_points_checked": 12,
+          "checks": {
+            "cartesian_divergence": true,
+            "fixed_control_volume_conservation": true,
+            "material_tangency_finite_difference": true,
+            "material_throughflow_constancy": true,
+            "spatial_cocycle_additivity": true
+          },
+          "divergence_tolerance": 1e-07,
+          "evidence_kind": "KINEMATIC_NUMERICAL_FIXTURE",
+          "exact_domain": "Rc < A and R0^2 < A^2(1-epsilon), with positive scales and 0 <= epsilon < 1",
+          "finite_difference_step": 0.0001,
+          "flux_integrals": [
+            {
+              "absolute_residual": 2.5306867712515668e-11,
+              "cap_flux_difference": -2.3621575127133942,
+              "integrated_side_flux": -2.362157512738701,
+              "offset_turns": [
+                -0.31,
+                -0.04
+              ]
+            },
+            {
+              "absolute_residual": 7.220977749783495e-18,
+              "cap_flux_difference": 0.0,
+              "integrated_side_flux": -7.220977749783495e-18,
+              "offset_turns": [
+                -0.12,
+                0.12
+              ]
+            },
+            {
+              "absolute_residual": 1.8060664075392197e-11,
+              "cap_flux_difference": 2.293580456925345,
+              "integrated_side_flux": 2.2935804569434057,
+              "offset_turns": [
+                0.06,
+                0.31
+              ]
+            },
+            {
+              "absolute_residual": 8.344997871212058e-17,
+              "cap_flux_difference": 0.0,
+              "integrated_side_flux": 8.344997871212058e-17,
+              "offset_turns": [
+                -0.5,
+                0.5
+              ]
+            }
+          ],
+          "flux_tolerance": 7.068583470577035e-08,
+          "material_flux_maximum_residual": 8.881784197001252e-16,
+          "maximum_cartesian_divergence_residual": 1.0938515718206254e-11,
+          "maximum_material_tangency_residual": 7.589224387816174e-13,
+          "maximum_uncorrected_straight_field_divergence": 0.0022851370132638896,
+          "minimum_sampled_h": 0.8845299461620748,
+          "physical_field_verdict": "NOT_RUN",
+          "spatial_cocycle_residual": 0.0,
+          "status": "PASS",
+          "tangency_tolerance": 1e-07
+        }
+      },
+      {
+        "example": "throat_flat",
+        "report": {
+          "cartesian_points_checked": 12,
+          "checks": {
+            "cartesian_divergence": true,
+            "fixed_control_volume_conservation": true,
+            "material_tangency_finite_difference": true,
+            "material_throughflow_constancy": true,
+            "spatial_cocycle_additivity": true
+          },
+          "divergence_tolerance": 1e-07,
+          "evidence_kind": "KINEMATIC_NUMERICAL_FIXTURE",
+          "exact_domain": "Rc < A and R0^2 < A^2(1-epsilon), with positive scales and 0 <= epsilon < 1",
+          "finite_difference_step": 0.0001,
+          "flux_integrals": [
+            {
+              "absolute_residual": 0.0,
+              "cap_flux_difference": 0.0,
+              "integrated_side_flux": 0.0,
+              "offset_turns": [
+                -0.31,
+                -0.04
+              ]
+            },
+            {
+              "absolute_residual": 0.0,
+              "cap_flux_difference": 0.0,
+              "integrated_side_flux": 0.0,
+              "offset_turns": [
+                -0.12,
+                0.12
+              ]
+            },
+            {
+              "absolute_residual": 0.0,
+              "cap_flux_difference": 0.0,
+              "integrated_side_flux": 0.0,
+              "offset_turns": [
+                0.06,
+                0.31
+              ]
+            },
+            {
+              "absolute_residual": 0.0,
+              "cap_flux_difference": 0.0,
+              "integrated_side_flux": 0.0,
+              "offset_turns": [
+                -0.5,
+                0.5
+              ]
+            }
+          ],
+          "flux_tolerance": 7.068583470577035e-08,
+          "material_flux_maximum_residual": 0.0,
+          "maximum_cartesian_divergence_residual": 7.494005416219807e-12,
+          "maximum_material_tangency_residual": 0.0,
+          "maximum_uncorrected_straight_field_divergence": 7.494005416219807e-12,
+          "minimum_sampled_h": 0.9,
+          "physical_field_verdict": "NOT_RUN",
+          "spatial_cocycle_residual": 0.0,
+          "status": "PASS",
+          "tangency_tolerance": 1e-07
+        }
+      },
+      {
+        "example": "throat_translated",
+        "report": {
+          "cartesian_points_checked": 12,
+          "checks": {
+            "cartesian_divergence": true,
+            "fixed_control_volume_conservation": true,
+            "material_tangency_finite_difference": true,
+            "material_throughflow_constancy": true,
+            "spatial_cocycle_additivity": true
+          },
+          "divergence_tolerance": 1e-07,
+          "evidence_kind": "KINEMATIC_NUMERICAL_FIXTURE",
+          "exact_domain": "Rc < A and R0^2 < A^2(1-epsilon), with positive scales and 0 <= epsilon < 1",
+          "finite_difference_step": 0.0001,
+          "flux_integrals": [
+            {
+              "absolute_residual": 2.5306867712515668e-11,
+              "cap_flux_difference": -2.3621575127133942,
+              "integrated_side_flux": -2.362157512738701,
+              "offset_turns": [
+                -0.31,
+                -0.04
+              ]
+            },
+            {
+              "absolute_residual": 4.9048150753246384e-18,
+              "cap_flux_difference": 0.0,
+              "integrated_side_flux": -4.9048150753246384e-18,
+              "offset_turns": [
+                -0.12,
+                0.12
+              ]
+            },
+            {
+              "absolute_residual": 1.8060664075392197e-11,
+              "cap_flux_difference": 2.293580456925344,
+              "integrated_side_flux": 2.293580456943405,
+              "offset_turns": [
+                0.06,
+                0.31
+              ]
+            },
+            {
+              "absolute_residual": 3.443292510195715e-16,
+              "cap_flux_difference": 0.0,
+              "integrated_side_flux": 3.443292510195715e-16,
+              "offset_turns": [
+                -0.5,
+                0.5
+              ]
+            }
+          ],
+          "flux_tolerance": 7.068583470577035e-08,
+          "material_flux_maximum_residual": 8.881784197001252e-16,
+          "maximum_cartesian_divergence_residual": 1.1265944774296877e-11,
+          "maximum_material_tangency_residual": 7.589224387816174e-13,
+          "maximum_uncorrected_straight_field_divergence": 0.002285137031166236,
+          "minimum_sampled_h": 0.8845299461620748,
+          "physical_field_verdict": "NOT_RUN",
+          "spatial_cocycle_residual": 0.0,
+          "status": "PASS",
+          "tangency_tolerance": 1e-07
+        }
+      }
+    ],
+    "unit_tests": {
+      "errors": 0,
+      "failures": 0,
+      "run": 26,
+      "skipped": 0
+    }
+  },
+  "release": "TOROIDAL_GEOMETRY_v1.0",
+  "runtime": {
+    "platform": "win32",
+    "python": "3.12.14"
+  },
+  "source_bindings_checked": 20,
+  "status": "PASS"
+}

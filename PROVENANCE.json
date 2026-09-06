@@ -1,0 +1,227 @@
+{
+  "baseline_zip_sha256": "263681efe82513b062b75bdc23d9d16be2ed8bdee96adf01c562944d2960c3cb",
+  "bindings": [
+    {
+      "bytes": 34973,
+      "fresh_raw_experiment_verification": false,
+      "packaged_path": "sources/01_Field_Theory_Update_v0.2_Orbit_Quotient_Cocycle.md",
+      "sha256": "f86875e34ec1972721a9f8f4cb08d49d03c8982bd9523862dc684b848dc85ac0",
+      "source": "C:\\Users\\drewd\\Documents\\Codex\\2026-09-06\\files-mentioned-by-the-user-geometry\\work\\v1_2\\package\\sources\\01_Field_Theory_Update_v0.2_Orbit_Quotient_Cocycle.md"
+    },
+    {
+      "bytes": 52089,
+      "fresh_raw_experiment_verification": false,
+      "packaged_path": "sources/02_Simulation_Protocol_v0.4_RC1_Orbit_Quotient_Cocycle.md",
+      "sha256": "38b1abfb494d9663d4f8c58b1c89da4d2db7b302d7f40666cf9df059f7010547",
+      "source": "C:\\Users\\drewd\\Documents\\Codex\\2026-09-06\\files-mentioned-by-the-user-geometry\\work\\v1_2\\package\\sources\\02_Simulation_Protocol_v0.4_RC1_Orbit_Quotient_Cocycle.md"
+    },
+    {
+      "bytes": 26090,
+      "fresh_raw_experiment_verification": false,
+      "packaged_path": "sources/03_Appendix_A_v0.2_Three_Axis_Orbit_Cocycle.md",
+      "sha256": "6179da0f506abae7f9e42a3a1e97ea17b8ddbefb930d4a9fff33b96e325211fc",
+      "source": "C:\\Users\\drewd\\Documents\\Codex\\2026-09-06\\files-mentioned-by-the-user-geometry\\work\\v1_2\\package\\sources\\03_Appendix_A_v0.2_Three_Axis_Orbit_Cocycle.md"
+    },
+    {
+      "bytes": 73776,
+      "fresh_raw_experiment_verification": false,
+      "packaged_path": "sources/04_Appendix_B_v0.2_Orbit_Accessibility_Mixing.md",
+      "sha256": "0e40972512c62e3d327d61ad71f1d0a2506ce5029d70fe8cae41e23d041772c7",
+      "source": "C:\\Users\\drewd\\Documents\\Codex\\2026-09-06\\files-mentioned-by-the-user-geometry\\work\\v1_2\\package\\sources\\04_Appendix_B_v0.2_Orbit_Accessibility_Mixing.md"
+    },
+    {
+      "bytes": 9653,
+      "fresh_raw_experiment_verification": false,
+      "packaged_path": "sources/05_TTSC_1_v0.3_Dual_Chart_Spatial_Cocycle.md",
+      "sha256": "750e99995679bab3bed39c524fedd7212748ed1b423c990ec902ecf04fbaa62c",
+      "source": "C:\\Users\\drewd\\Documents\\Codex\\2026-09-06\\files-mentioned-by-the-user-geometry\\work\\v1_2\\package\\sources\\05_TTSC_1_v0.3_Dual_Chart_Spatial_Cocycle.md"
+    },
+    {
+      "bytes": 7304,
+      "fresh_raw_experiment_verification": false,
+      "packaged_path": "sources/06_Rotating_Lattice_Run_Report_v0.2_Two_Clock_Prospective.md",
+      "sha256": "e3d29aa1ba155ec965a63504ef2e40ade57e4f2301f0ab3210d9b07038cfb560",
+      "source": "C:\\Users\\drewd\\Documents\\Codex\\2026-09-06\\files-mentioned-by-the-user-geometry\\work\\v1_2\\package\\sources\\06_Rotating_Lattice_Run_Report_v0.2_Two_Clock_Prospective.md"
+    },
+    {
+      "bytes": 1637,
+      "fresh_raw_experiment_verification": false,
+      "packaged_path": "sources/07_Rotating_Lattice_Two_Clock_Spec_v0.1.json",
+      "sha256": "dc8b70f5513ea7b9190abe1e45140f5b8997142f45f1f7ac48c6c32c07c81308",
+      "source": "C:\\Users\\drewd\\Documents\\Codex\\2026-09-06\\files-mentioned-by-the-user-geometry\\work\\v1_2\\package\\sources\\07_Rotating_Lattice_Two_Clock_Spec_v0.1.json"
+    },
+    {
+      "bytes": 9381,
+      "fresh_raw_experiment_verification": false,
+      "packaged_path": "sources/08_Conditional_Closure_v0.2_Orbit_Accessibility.md",
+      "sha256": "47cac898eb8612fbdf4795976ec4ecd1eadfa472e64d2fb4144a8c05eebe22cb",
+      "source": "C:\\Users\\drewd\\Documents\\Codex\\2026-09-06\\files-mentioned-by-the-user-geometry\\work\\v1_2\\package\\sources\\08_Conditional_Closure_v0.2_Orbit_Accessibility.md"
+    },
+    {
+      "bytes": 7366,
+      "fresh_raw_experiment_verification": false,
+      "packaged_path": "sources/09_Q1_Q2_Q3_Dependency_Graph_v0.2_Orbit_Cocycle.md",
+      "sha256": "a4287973d7ae84538e4717601718c6ed4503dbfc970f293ef94c741a4dd416f1",
+      "source": "C:\\Users\\drewd\\Documents\\Codex\\2026-09-06\\files-mentioned-by-the-user-geometry\\work\\v1_2\\package\\sources\\09_Q1_Q2_Q3_Dependency_Graph_v0.2_Orbit_Cocycle.md"
+    },
+    {
+      "bytes": 8545,
+      "fresh_raw_experiment_verification": false,
+      "packaged_path": "sources/10_GQG_Relation_Typing_v0.2_Orbit_Cocycle.md",
+      "sha256": "95d4e47ce58ca7e4393cd17ce9fd0c505f3a30b8da9c3fb7368c396761e95233",
+      "source": "C:\\Users\\drewd\\Documents\\Codex\\2026-09-06\\files-mentioned-by-the-user-geometry\\work\\v1_2\\package\\sources\\10_GQG_Relation_Typing_v0.2_Orbit_Cocycle.md"
+    },
+    {
+      "bytes": 7645,
+      "fresh_raw_experiment_verification": false,
+      "packaged_path": "sources/11_Dual_Ledger_v0.2_Orbit_Cocycle.md",
+      "sha256": "09db3b67049297e933f36ab595f022d3a218258b3e78cfc4d0acf93d05099579",
+      "source": "C:\\Users\\drewd\\Documents\\Codex\\2026-09-06\\files-mentioned-by-the-user-geometry\\work\\v1_2\\package\\sources\\11_Dual_Ledger_v0.2_Orbit_Cocycle.md"
+    },
+    {
+      "bytes": 9427,
+      "fresh_raw_experiment_verification": false,
+      "packaged_path": "sources/12_Provenance_Trust_v0.2_Two_Clock.md",
+      "sha256": "871c91d1c516e521a9a5ea3b2a9ea04d818d5c1b4a974c8ca47459559abf2cea",
+      "source": "C:\\Users\\drewd\\Documents\\Codex\\2026-09-06\\files-mentioned-by-the-user-geometry\\work\\v1_2\\package\\sources\\12_Provenance_Trust_v0.2_Two_Clock.md"
+    },
+    {
+      "bytes": 8234,
+      "fresh_raw_experiment_verification": false,
+      "packaged_path": "sources/13_SW1_Post_Freeze_v0.2_Signed_Winding_Cocycle.md",
+      "sha256": "403117e24aa75b15f1827b4082a07014b133535a11859ee5126e431766bc0660",
+      "source": "C:\\Users\\drewd\\Documents\\Codex\\2026-09-06\\files-mentioned-by-the-user-geometry\\work\\v1_2\\package\\sources\\13_SW1_Post_Freeze_v0.2_Signed_Winding_Cocycle.md"
+    },
+    {
+      "bytes": 8913,
+      "fresh_raw_experiment_verification": false,
+      "packaged_path": "sources/14_Confinement_Radius_v0.2_Orbit_Accessibility_Firewall.md",
+      "sha256": "f9236ead1cbc2b97debe207c98b8f0a20936006e5923f4ed2eaf5f39f8e6d93b",
+      "source": "C:\\Users\\drewd\\Documents\\Codex\\2026-09-06\\files-mentioned-by-the-user-geometry\\work\\v1_2\\package\\sources\\14_Confinement_Radius_v0.2_Orbit_Accessibility_Firewall.md"
+    },
+    {
+      "bytes": 3533,
+      "fresh_raw_experiment_verification": false,
+      "packaged_path": "sources/15_Ultra_Review_Handoff_Manifest_v0.2_Toroidal_Orbit_Cocycle.md",
+      "sha256": "00d0191fa835b4ac3cf7243999f3ac87b66268363d81f0f489984add9ac52956",
+      "source": "C:\\Users\\drewd\\Documents\\Codex\\2026-09-06\\files-mentioned-by-the-user-geometry\\work\\v1_2\\package\\sources\\15_Ultra_Review_Handoff_Manifest_v0.2_Toroidal_Orbit_Cocycle.md"
+    },
+    {
+      "bytes": 9043524,
+      "fresh_raw_experiment_verification": false,
+      "packaged_path": "baseline/GEOMETRY_MAXIMIZATION_v2.0.zip",
+      "sha256": "263681efe82513b062b75bdc23d9d16be2ed8bdee96adf01c562944d2960c3cb",
+      "source": "C:\\Users\\drewd\\Documents\\Codex\\2026-09-06\\files-mentioned-by-the-user-geometry\\outputs\\GEOMETRY_MAXIMIZATION_v2.0.zip"
+    },
+    {
+      "bytes": 12491,
+      "fresh_raw_experiment_verification": false,
+      "packaged_path": "baseline/GEOMETRY_MAXIMIZATION_v2.0.md",
+      "sha256": "8dbfb68e16b97c3731aec1bcb43fe75f6027d4fc5bac6d2c4cbe1d9a41cb1dbb",
+      "source": "C:\\Users\\drewd\\Documents\\Codex\\2026-09-06\\files-mentioned-by-the-user-geometry\\outputs\\GEOMETRY_MAXIMIZATION_v2.0\\GEOMETRY_MAXIMIZATION_v2.0.md"
+    },
+    {
+      "bytes": 10209,
+      "fresh_raw_experiment_verification": false,
+      "packaged_path": "baseline/FIELD_THEORY_UPDATE_v0.3.md",
+      "sha256": "a7a6817668f20376e7f386904e9e82365908ba5aab998338f9ac9ba63e5b0746",
+      "source": "C:\\Users\\drewd\\Documents\\Codex\\2026-09-06\\files-mentioned-by-the-user-geometry\\outputs\\GEOMETRY_MAXIMIZATION_v2.0\\FIELD_THEORY_UPDATE_v0.3.md"
+    },
+    {
+      "bytes": 12154,
+      "fresh_raw_experiment_verification": false,
+      "packaged_path": "baseline/SIMULATION_PROTOCOL_v0.5.md",
+      "sha256": "ee6b41543623392268748fed46421f5947d4bdb7cdd5cbcceec32aa2056a6f72",
+      "source": "C:\\Users\\drewd\\Documents\\Codex\\2026-09-06\\files-mentioned-by-the-user-geometry\\outputs\\GEOMETRY_MAXIMIZATION_v2.0\\SIMULATION_PROTOCOL_v0.5.md"
+    },
+    {
+      "bytes": 262971,
+      "fresh_raw_experiment_verification": false,
+      "packaged_path": "baseline/GEOMETRY_MAXIMIZATION_v1.6.md",
+      "sha256": "9c62dcc439f67ce117d7caaacc6d140d2ea411104cf0dc8d1f3b5d62a11c8185",
+      "source": "C:\\Users\\drewd\\Documents\\Codex\\2026-09-06\\files-mentioned-by-the-user-geometry\\outputs\\GEOMETRY_MAXIMIZATION_v1.6.md"
+    }
+  ],
+  "date": "2026-09-06",
+  "external_trust_anchor": "NOT_ESTABLISHED",
+  "independent_third_party_reproduction": false,
+  "integration_map": [
+    {
+      "predecessor": "sources/01_Field_Theory_Update_v0.2_Orbit_Quotient_Cocycle.md",
+      "scope": "Field definitions, sources and ensembles",
+      "successor": "01_Field_Theory_Update_v0.4_Consolidated.md"
+    },
+    {
+      "predecessor": "sources/02_Simulation_Protocol_v0.4_RC1_Orbit_Quotient_Cocycle.md",
+      "scope": "Executable reference and future production requirements",
+      "successor": "02_Simulation_Protocol_v0.6_Consolidated.md"
+    },
+    {
+      "predecessor": "sources/03_Appendix_A_v0.2_Three_Axis_Orbit_Cocycle.md",
+      "scope": "Rectangular chains, homology and modular currents",
+      "successor": "03_Appendix_A_v0.3_Exact_Lattice.md"
+    },
+    {
+      "predecessor": "sources/04_Appendix_B_v0.2_Orbit_Accessibility_Mixing.md",
+      "scope": "Paths, clocks and scoped closure",
+      "successor": "04_Appendix_B_v0.3_Accessibility_Mixing.md"
+    },
+    {
+      "predecessor": "sources/05_TTSC_1_v0.3_Dual_Chart_Spatial_Cocycle.md",
+      "scope": "Curved metric, tangency and conserved flux",
+      "successor": "05_TTSC_1_v0.4_Curved_Throat.md"
+    },
+    {
+      "predecessor": "sources/06_Rotating_Lattice_Run_Report_v0.2_Two_Clock_Prospective.md",
+      "scope": "Historical null and prospective leads",
+      "successor": "06_Rotating_Lattice_Run_Report_v0.3_Evidence_Status.md"
+    },
+    {
+      "predecessor": "sources/07_Rotating_Lattice_Two_Clock_Spec_v0.1.json",
+      "scope": "Explicit unresolved inputs and timing conventions",
+      "successor": "07_Two_Clock_Spec_v0.2.json"
+    },
+    {
+      "predecessor": "sources/08_Conditional_Closure_v0.2_Orbit_Accessibility.md",
+      "scope": "Conditional verdict composition",
+      "successor": "08_Conditional_Closure_v0.3.md"
+    },
+    {
+      "predecessor": "sources/09_Q1_Q2_Q3_Dependency_Graph_v0.2_Orbit_Cocycle.md",
+      "scope": "Measurement and interpretation dependencies",
+      "successor": "09_Q1_Q2_Q3_Dependency_Graph_v0.3.md"
+    },
+    {
+      "predecessor": "sources/10_GQG_Relation_Typing_v0.2_Orbit_Cocycle.md",
+      "scope": "Cross-model relation scope",
+      "successor": "10_GQG_Relation_Typing_v0.3.md"
+    },
+    {
+      "predecessor": "sources/11_Dual_Ledger_v0.2_Orbit_Cocycle.md",
+      "scope": "Definition and evidence records",
+      "successor": "11_Dual_Ledger_v0.3.md"
+    },
+    {
+      "predecessor": "sources/12_Provenance_Trust_v0.2_Two_Clock.md",
+      "scope": "Content integrity versus trust",
+      "successor": "12_Provenance_Trust_v0.3.md"
+    },
+    {
+      "predecessor": "sources/13_SW1_Post_Freeze_v0.2_Signed_Winding_Cocycle.md",
+      "scope": "Source-free signed-winding supplement",
+      "successor": "13_SW1_Post_Freeze_v0.3.md"
+    },
+    {
+      "predecessor": "sources/14_Confinement_Radius_v0.2_Orbit_Accessibility_Firewall.md",
+      "scope": "Complete non-overlapping scale rule",
+      "successor": "14_Confinement_Radius_v0.3.md"
+    },
+    {
+      "predecessor": "sources/15_Ultra_Review_Handoff_Manifest_v0.2_Toroidal_Orbit_Cocycle.md",
+      "scope": "This integration map",
+      "successor": "15_Integration_Manifest_v0.3.md"
+    }
+  ],
+  "release": "TOROIDAL_GEOMETRY_v1.0",
+  "source_handling": "byte copies; originals unchanged"
+}

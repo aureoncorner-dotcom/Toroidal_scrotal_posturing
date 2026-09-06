@@ -1,0 +1,73 @@
+{
+  "analysis": {
+    "holdout_rule": null,
+    "multiplicity_rule": null,
+    "output_data_id": null,
+    "parameter_search_allowed": false,
+    "prospective_freeze_id": null,
+    "verdict": "NOT_RUN"
+  },
+  "evidence": {
+    "autonomous_distance_dynamics_claimed": false,
+    "moving_lattice_validated": false,
+    "old_null_overridden": false,
+    "platform_instantiation": "UNRESOLVED"
+  },
+  "execution_status": "NOT_RUN",
+  "lattice_clock": {
+    "T_g": null,
+    "anchor_id": null,
+    "direction": "clockwise",
+    "g0": null,
+    "g_between_resets": "frac(g_j_plus - (t-tau_j)/T_g)",
+    "labelled_reference_id": null,
+    "labelled_site_period": "T_g",
+    "q": null,
+    "reset_boundary_convention": null,
+    "reset_ledger_completeness": "UNRESOLVED",
+    "resets": [],
+    "sites_labelled": false,
+    "unlabelled_configuration_period": "T_g/q"
+  },
+  "message_clock": {
+    "alpha_exact": "(3-sqrt(5))/2",
+    "reset_ledger_completeness": "UNRESOLVED",
+    "reset_rule": null,
+    "resets": [],
+    "theta0": null
+  },
+  "opportunities": {
+    "boundary_rule": "delta <= w is CATCH for eligible resolved opportunities",
+    "catch_distance": "norm_to_nearest_integer(q*(theta_n-g(t_n)))/q",
+    "catch_is_observed_outcome": false,
+    "eligibility_rule_id": null,
+    "lag_convention": null,
+    "numerical_boundary_ambiguity": "UNRESOLVED",
+    "outcome_codebook_id": null,
+    "prediction_codes": [
+      "CATCH",
+      "MISS",
+      "INELIGIBLE",
+      "UNRESOLVED"
+    ],
+    "timestamp_source": null,
+    "w": null,
+    "width_domain": "0 <= w < 1/(2*q)"
+  },
+  "source_run": {
+    "claimed_results_sha256": "4a860d0f70885cc0e9221b29d3b758d1f8c9ea37c3b3c9bb67aaf9ac87b26973",
+    "result_hash_status": "SOURCE_REPORTED_NOT_RAW_FILE_REVERIFIED_HERE",
+    "run_id": "ROTATING_LATTICE_CONFIRMATION_2026-08-24",
+    "verdict": "NULL_DYNAMIC_LATTICE_UNDER_EXACT_CONTINUOUS_GATE_TEST",
+    "verdict_changed": false
+  },
+  "source_spec": "sources/07_Rotating_Lattice_Two_Clock_Spec_v0.1.json",
+  "spec_version": "0.2",
+  "status": "PROSPECTIVE_FORMAL_ONLY",
+  "units": {
+    "phase": "cycles",
+    "time_standard": null,
+    "timestamp_origin": null,
+    "timestamp_unit": null
+  }
+}

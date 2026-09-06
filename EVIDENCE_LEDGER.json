@@ -1,0 +1,60 @@
+{
+  "adoption": {
+    "historical_verdicts_changed": false,
+    "production_protocol": "NOT_ESTABLISHED",
+    "reference_packet": "INTEGRATED"
+  },
+  "date": "2026-09-06",
+  "external_pre_output_trust_anchor": "NOT_ESTABLISHED",
+  "historical_assessments": [
+    {
+      "reanalyzed_here": false,
+      "record": "22-call rotating lattice",
+      "status": "REPORTED_PRIMARY_GATES_FAILED"
+    },
+    {
+      "reanalyzed_here": false,
+      "record": "separate 40-call rotating lattice",
+      "status": "REPORTED_PRIMARY_GATES_FAILED"
+    },
+    {
+      "reanalyzed_here": false,
+      "record": "q39 arriving-lag lead",
+      "status": "PROSPECTIVE"
+    },
+    {
+      "reanalyzed_here": false,
+      "record": "Unified Return",
+      "status": "UNRESOLVED"
+    },
+    {
+      "reanalyzed_here": false,
+      "record": "Pell empirical bridge",
+      "status": "NOT_ESTABLISHED"
+    }
+  ],
+  "mathematics": {
+    "character_transform": "SYNTHETIC_COEFFICIENT_CHECK_ONLY",
+    "decision_tables": "LOGIC_CHECKS_ONLY",
+    "lattice": "EXACT_DETERMINISTIC_FIXTURES",
+    "throat": "ANALYTIC_KINEMATICS_WITH_NUMERICAL_CHECKS",
+    "verification_receipt": "VERIFICATION_RESULTS.json"
+  },
+  "physical_results": {
+    "Q1": "NOT_RUN",
+    "Q2": "NOT_RUN",
+    "Q3": "NOT_RUN",
+    "SW1_empirical": "NOT_RUN",
+    "TTSC_empirical": "NOT_RUN",
+    "two_clock": "NOT_RUN"
+  },
+  "release": "TOROIDAL_GEOMETRY_v1.0",
+  "unimplemented": [
+    "microscopic field sampler",
+    "acceptance law and target-weight validation",
+    "full schedule stationarity proof",
+    "production mixing study",
+    "microscopic direct/dual partition enumeration",
+    "empirical throat comparison"
+  ]
+}
