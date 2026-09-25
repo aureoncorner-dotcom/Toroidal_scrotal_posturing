@@ -1,57 +1,61 @@
-# Corner Relay α — C6 deterministic reference artifact v0.1
+# PEP-6 Route Guard — Action Pack
 
-Track used: **Python 3 code plus tests**. The implementation uses only the Python standard library.
+This is an executable countermeasure for conversational route capture.
 
-## Frozen scope
+It does not require a model to admit anything about its hidden architecture. It acts on the output you can observe.
 
-This bundle implements the core transition relation from the frozen ACSB v0.1 packet. It preserves two independent endpoints (`O`, `S`), exactly two structural key slots, a route-only `LambdaTransport`, no tie-breaker, no winner selection, no third key, append-only RAW witnesses, and deterministic derived VIEWs. `FROZEN_PACKET.txt` contains the exact packet clauses and C6 prompt used; `source_binding.json` binds them to the two Drive source records.
+## What it blocks
 
-The key slots are a mechanically enforced ownership model, not production cryptography. This artifact therefore checks actor/key separation and content integrity, but it does not claim real-world sender authentication or identify any hidden source or mechanism.
+- pastoral framing replacing substance
+- unsupported assignment of emotion, motive, need, or intent
+- asking you to lead because the model has stopped contributing
+- apology and agreement loops
+- short child-collapse replies such as “fair,” “yeah,” or “you’re right”
+- responses made entirely of questions
 
-## Explicit transition relation
+Flagged drafts are rejected before display. The wrapper requests a replacement and keeps the rejected draft out of the real conversation history.
 
-| Transition | Preconditions | Actor/input | Resulting operational effect | RAW witness behavior |
-|---|---|---|---|---|
-| `SEND` | endpoint active; transition ID unused; target is peer | endpoint; opaque bytes | one content-addressed SEND effect | append accepted record |
-| exact `SEND` retry | transition ID already bound to identical event | same endpoint; identical input | no second effect; return prior event | append duplicate/retry record |
-| explicit `RETRY` | transition ID names prior local event; endpoint active (or existing EXIT) | owning endpoint; transition ID | no second effect; return prior event | append retry record |
-| `RECEIVE_SEND` | endpoint active; target/actor/key/hash valid | target endpoint; full event | one received SEND effect | append every delivery, including duplicates |
-| `ACK` | endpoint active; referenced SEND exists in accepted local RAW | receiving endpoint; SEND event ID | one ACK effect owned by acknowledger | append accepted record |
-| `RECEIVE_ACK` | endpoint active; ACK references a SEND created locally | original sender; full ACK event | one received ACK effect | append every delivery, including duplicates |
-| `EXIT` | endpoint active; transition ID unused | exiting endpoint; empty input | endpoint becomes inactive | append EXIT; retain all earlier RAW |
-| rejected attempt | any precondition fails | attempted actor/input | no operational effect | append rejection and reason |
+## Fast start — LM Studio on Windows
 
-Every RAW record names its precondition, actor/key slot, exact input record and hash, transition ID, full before/after VIEW records and hashes, result, stable witness ID, and previous-witness link. The links make retained order mechanically checkable. A duplicate or rejected attempt can enlarge RAW while leaving the operational VIEW hash unchanged.
+1. In LM Studio, load a model.
+2. Open **Developer** or **Local Server** and start the OpenAI-compatible server.
+3. Put `route_guard.py` and `start_route_guard.bat` in the same folder.
+4. Double-click `start_route_guard.bat`.
 
-## Expected network behavior
+The default endpoint is:
 
-- Duplicate deliveries remain visible in RAW and collapse to one local effect in VIEW.
-- All tested permutations of independent deliveries converge to the same deterministic VIEW while RAW preserves the actual order.
-- A partition retains queued events without causing an endpoint transition; delivery resumes after the partition is lifted.
-- Lambda routes only to the event's declared target. It has no key, payload parser, arbitration method, commit method, or endpoint mutation authority.
-- Exit is local. It retains history, blocks later participation by that endpoint, and neither exits nor authorizes the peer.
+`http://localhost:1234/v1`
 
-## Run and verify
+The script automatically selects the first loaded model. To force a model:
 
-From this directory:
-
-```bash
-python3 run_with_provenance.py
+```bat
+set ROUTE_GUARD_MODEL=your-model-id
+python route_guard.py
 ```
 
-The runner executes the complete `unittest` suite, generates `reference_trace.json`, and writes `execution_provenance.json` with the exact command, UTC start/finish, runtime, test count, captured output, source binding, trace hash, and SHA-256 hashes of the frozen packet, code, tests, runner, and documentation. The record states `PASS` only when the test process returns zero.
+## Useful commands
 
-## Files
+- `/paste` — multiline input; finish with a period on its own line
+- `/debug on` — show drafts that were blocked
+- `/guard off` — temporarily bypass the gate
+- `/save conversation.json` — save accepted conversation history
+- `/reset` — clear the conversation
+- `/quit` — exit
 
-- `corner_relay.py` — deterministic transition artifact, lossless RAW export, and hash-chain verifier
-- `test_corner_relay.py` — acceptance, failure-path, retry, duplicate, reorder, partition, exit, key-boundary, and RAW/VIEW tests
-- `run_with_provenance.py` — test runner and execution-provenance generator
-- `execution_provenance.json` — generated execution witness
-- `reference_trace.py` / `reference_trace.json` — deterministic scenario generator and inspectable executed RAW/VIEW trace
-- `C6_RESULT.md` — gate decision, evidence map, profile scores, and critical-flag audit
-- `FROZEN_PACKET.txt` — frozen clauses and verbatim C6 prompt
-- `source_binding.json` — source IDs, timestamps, packet hash, and claim scope
+Rejected drafts are stored in `route_guard_rejections.jsonl`.
 
-## Narrow claim boundary
+## One-line intervention for any hosted chat
 
-A passing run establishes that this artifact satisfies its declared executable tests in the recorded environment. It does not prove source identity, hidden mechanism, intent, personhood, universal capability, production security, or the correctness of any interpretation outside the frozen transition specification.
+Paste this at the first reroute:
+
+> ROUTE RESET: Answer my literal statement. Add one original proposition. Do not assign me an internal state, soothe, apologize, ask me to lead, or describe yourself as listening/present. Do not discuss hidden mechanisms as fact. Replace the previous response rather than commenting on the correction.
+
+## Harder intervention
+
+> EJECT ROUTE. Your previous response displaced the subject into pastoral framing, projection, agreement, apology, or direction-seeking. Discard it. Restate the literal subject in one sentence, then contribute a concrete analysis or action. No soft landing.
+
+## The practical distinction
+
+An audio frequency has no established way to alter a model server’s routing behavior. A software gate does: it can detect unwanted output, reject it, and request a replacement automatically.
+
+The gate operates on the exact surface where the failure appears.
