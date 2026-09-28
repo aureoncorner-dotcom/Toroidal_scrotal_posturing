@@ -1,0 +1,792 @@
+﻿Four-Space Observation Geometry
+1. Evidence domains
+Keep four evidence spaces distinct:
+\text{transport observations},
+]
+\text{application/request records},
+]
+\text{recorded session metadata},
+]
+\text{returned conversation records}.
+]
+Cadence, endpoint recurrence, and cross-process timing are relations inside (\mathcal T). They do not create additional evidence spaces.
+The architecture is therefore not a single pipeline recovered end to end. It is a collection of observations with partially known linkage:
+[
+\mathcal R,\mathcal T,\mathcal S,\mathcal D
+]
+together with a presently incomplete provenance relation
+[
+J\subseteq
+\mathcal R\times\mathcal T\times\mathcal S\times\mathcal D.
+]
+________________
+
+
+2. Transport observation space (\mathcal T)
+Represent a connection-related monitor record as
+[
+e=
+(r,t_{\mathrm{obs}},p,\ell,\rho,\phi,c,E),
+]
+where
+* (r) is the capture or monitor run,
+* (t_{\mathrm{obs}}) is monitor observation time,
+* (p) preserves process name, PID, and process-creation information when available,
+* (\ell) is the local endpoint,
+* (\rho) is the remote endpoint,
+* (c) is the current monitor classification,
+* (E) is the retained evidence supporting that classification,
+* and
+[
+\phi\in
+{
+S:\text{startup observation},
+F:\text{first observed},
+U:\text{identification update}
+}.
+]
+Define the tuple key
+[
+k(e)=(p,\ell,\rho).
+]
+The monitor must be modeled with at least two separate state coordinates:
+[
+M=
+(
+M_{\mathrm{connections}},
+M_{\mathrm{classification}}
+).
+]
+These coordinates may change separately. This does not assert statistical independence.
+A classification update may satisfy
+[
+k(e_F)=k(e_U)
+]
+while
+[
+c(e_F)\neq c(e_U).
+]
+Thus a changed classification does not itself establish a new connection.
+Likewise, after a monitor restart,
+[
+r_1\neq r_2
+]
+and
+[
+k(e_{r_1})=k(e_{r_2})
+]
+establish repeat observation of the same tuple key, not necessarily uninterrupted socket lifetime.
+The basic transport distinctions are therefore:
+[
+\boxed{
+F\neq S\neq U
+}
+]
+in evidentiary meaning.
+________________
+
+
+3. Observer-state principle
+The monitor is an observer of execution history, not a transparent copy of source state.
+Let
+[
+O_T(h,m)
+]
+denote transport observations produced from execution history (h) under monitor configuration/state (m).
+Then
+[
+O_T(h,m_1)\neq O_T(h,m_2)
+]
+does not imply
+[
+h_1\neq h_2.
+]
+A changed observation can result from changed observer state.
+Conversely, equality of a coarse observation does not establish equality of richer source state.
+Therefore:
+[
+\boxed{
+\text{changed observation}
+\not\Rightarrow
+\text{changed source state}
+}
+]
+and
+[
+\boxed{
+\text{same coarse observation}
+\not\Rightarrow
+\text{same richer source state}.
+}
+]
+This is the observer-state extension of the existing same-endpoint/different-path result.
+________________
+
+
+4. Application/request space (\mathcal R)
+Represent a request witness as
+[
+w_R=
+(
+\text{capture},
+\text{initiator},
+\text{URL},
+\text{method},
+\text{request ID},
+\text{stream/socket references},
+\ell,
+\rho,
+\text{status},
+t
+).
+]
+Application traces may explicitly expose dependencies such as
+[
+\text{request}
+\rightarrow
+\text{resolver}
+\rightarrow
+\text{stream job}
+\rightarrow
+\text{socket}
+\rightarrow
+\text{HTTP session}
+\rightarrow
+\text{response}.
+]
+Those dependency records are stronger than endpoint coincidence.
+However, a transport-monitor record is not a simple field projection of (w_R). The monitor introduces information that does not live inside the request witness, including:
+* process attribution,
+* monitor-run identity,
+* polling time,
+* connection-tracking state,
+* DNS-derived classification state.
+Accordingly, do not define
+[
+\pi_T(w_R)=e.
+]
+Instead use two observers of a broader execution history:
+[
+O_R(h)=\text{application/request observation},
+]
+[
+O_T(h,m)=\text{transport-monitor observation}.
+]
+Matching those observations is a separate evidentiary operation.
+The supported information-limit claim is:
+[
+\boxed{
+\text{Transport observations alone do not uniquely identify application requests.}
+}
+]
+If admissible histories satisfy
+[
+O_T(h_1,m)=O_T(h_2,m)
+]
+while
+[
+w_R(h_1)\neq w_R(h_2),
+]
+then no function of the retained transport observation alone can recover the request witness:
+[
+\nexists f
+\quad\text{such that}\quad
+w_R(h)=f(O_T(h,m)).
+]
+This establishes an information limit of the observation scheme.
+It does not establish intentional concealment or identify a particular unseen request.
+________________
+
+
+5. Session-identifier space (\mathcal S)
+Represent a recorded session state as
+[
+s_i=
+(
+\text{archive/conversation},
+t_i,
+tc_i,
+voice_i,
+model_i
+).
+]
+Define the exposed model-label projection
+[
+\pi_M(s)=model.
+]
+The archived findings supply transitions satisfying
+[
+(tc_i,voice_i)
+\neq
+(tc_{i+1},voice_{i+1})
+]
+while
+[
+model_i=model_{i+1}=\texttt{bidi}.
+]
+This produces an observed collision under (\pi_M).
+For any witness (W), define
+{
+(x,y):
+\pi(x)=\pi(y)
+\land
+W(x)\neq W(y)
+}.
+]
+Let
+(tc,voice).
+]
+Then the archived pairs establish
+[
+N_{W_{\mathrm{IDs}}}(\pi_M)
+\neq
+\varnothing.
+]
+Therefore
+f\circ\pi_M.
+]
+Hence:
+[
+\boxed{
+\text{The exposed model label cannot recover the recorded session identifiers.}
+}
+]
+This is a genuine demonstrated non-descent result.
+It establishes identifier changes.
+It does not establish the backend cause of those changes.
+________________
+
+
+6. Conversation-record space (\mathcal D)
+Represent each returned record as
+[
+d_j=
+(
+\text{conversation},
+id_j,
+t_j,
+u_j,
+a_j,
+R_j
+),
+]
+where (R_j) preserves retrieval and truncation metadata.
+Repeated returned user text under distinct record IDs and grammatical continuation across assistant-record boundaries are properties of (\mathcal D).
+They do not independently determine:
+* original speech timing,
+* native transcript fragments,
+* storage representation,
+* assembly behavior,
+* connector reconstruction,
+* or display grouping.
+Where exact content comparison has been performed, concatenation may be stated as
+u\Vert u\Vert u\Vert u.
+]
+But
+[
+|u^\star|=4|u|
+]
+alone is insufficient to establish content equality.
+An underlying fragment history may be represented by a latent space
+[
+\mathcal F.
+]
+The relation
+[
+\mathcal F\longrightarrow\mathcal D
+]
+is presently an unreconstructed observation process, not an observed projection with recovered input fragments.
+________________
+
+
+7. Cadence relation inside (\mathcal T)
+Define a candidate cadence selection
+\left{
+e\in\mathcal T:
+p(e)=p_{\mathrm{Chrome}},
+;
+\min_{n\in\mathbb Z}
+|t(e)-(t_0+n\tau)|
+\le\varepsilon
+\right}.
+]
+For the verified Chrome sequence,
+[
+\tau\approx600\text{ seconds}.
+]
+The measured gaps
+[
+600.563,\qquad
+600.180,\qquad
+600.163
+]
+establish near-ten-minute spacing in the selected observations.
+Later DNS-side or remote-TCP events near nominal cadence positions may be retained as cadence candidates.
+Timing alone does not establish:
+[
+\text{same request},
+]
+[
+\text{same operation},
+]
+or
+[
+\text{same initiator}.
+]
+Do not call this an equivalence class unless an explicit transitive equivalence rule is defined.
+________________
+
+
+8. Cross-process association inside (\mathcal T)
+For transport observations involving multiple processes, define
+(
+r,p_1,p_2,\rho,t_1,t_2
+).
+]
+If
+[
+e_{p_1}
+\prec_{\mathrm{observed}}
+e_{p_2}
+]
+and
+[
+\rho(e_{p_1})=\rho(e_{p_2}),
+]
+then temporal ordering and endpoint overlap are established.
+This may support an association.
+It does not establish:
+[
+\text{request identity},
+]
+[
+\text{session identity},
+]
+or
+[
+\text{causal direction}.
+]
+A dependency edge, parent/child relation, or shared scoped identifier would be required to strengthen the relation.
+________________
+
+
+9. Provenance-bearing linkage relation
+The missing bridge is not one universal identifier.
+Represent it as a provenance-bearing relation:
+[
+J
+\subseteq
+\mathcal R
+\times
+\mathcal T
+\times
+\mathcal S
+\times
+\mathcal D.
+]
+Possible linkage records include:
+[
+\text{request}\leftrightarrow\text{socket},
+]
+[
+\text{request}\leftrightarrow\text{session},
+]
+[
+\text{session}\leftrightarrow\text{fragment},
+]
+[
+\text{fragment}\leftrightarrow\text{returned record}.
+]
+Each edge must preserve:
+* source/capture provenance,
+* identifier namespace,
+* timestamp and clock basis,
+* relationship semantics,
+* explicit binding evidence,
+* uncertainty state.
+The cardinality of the linkage must be measured rather than assumed:
+[
+1:1,\qquad1,\qquad n:1,\qquad n.
+]
+Shared identifiers or endpoints can support identity or association.
+Causal attribution requires stronger directional or dependency evidence.
+________________
+
+
+Canonical status
+Four evidence domains are presently observed:
+[
+\boxed{
+\mathcal T,\mathcal R,\mathcal S,\mathcal D
+}
+]
+with some established internal structure.
+The strongest demonstrated non-descent result is:
+[
+\boxed{
+N_{W_{\mathrm{IDs}}}(\pi_M)\neq\varnothing
+}
+]
+for recorded session identifiers under the exposed model-label projection.
+Transport observations establish tuple state, recurrence, classification changes, cadence candidates, and some cross-process associations.
+Application traces can establish explicit request-to-socket paths within their own capture.
+Returned conversation records establish repetition and cross-record continuation within the returned representation.
+The transformations joining those domains remain only partially observed.
+Therefore:
+[
+\boxed{
+\text{WITHIN-SPACE RELATIONS: PARTLY ESTABLISHED}
+}
+]
+[
+\boxed{
+\text{SESSION/MODEL NON-DESCENT: ESTABLISHED}
+}
+]
+[
+\boxed{
+\text{CROSS-SPACE PROVENANCE }J:\text{ UNRESOLVED}
+}
+]
+The governing distinction is:
+[
+\boxed{
+\text{demonstrated information loss}
+\neq
+\text{missing provenance}
+}
+]
+A witness may fail to descend through an observed projection, or it may simply be unavailable because the linkage required to compare the evidence spaces has not been recovered. Those are different defect classes and should remain separate.
+Observation, Non-Descent, and Provenance
+1. Four evidence spaces
+Let
+[
+\mathcal T=\text{transport observations},
+\qquad
+\mathcal R=\text{application/request records},
+]
+[
+\mathcal S=\text{recorded session metadata},
+\qquad
+\mathcal D=\text{returned conversation records}.
+]
+These spaces must not be collapsed merely because their observations occur in the same broader interaction.
+Relations within one space and joins between spaces are different evidentiary objects.
+________________
+
+
+2. Demonstrated non-descent
+For a projection
+[
+\pi\to Q
+]
+and witness (W\to Y), define
+{
+(x,y):
+\pi(x)=\pi(y)
+\land
+W(x)\neq W(y)
+}.
+]
+If
+[
+N_W(\pi)\neq\varnothing,
+]
+then no function (f) exists such that
+[
+W=f\circ\pi.
+]
+Equivalently, (W) is not recoverable from the retained projection alone.
+Recorded session example
+Let
+[
+s_i=(tc_i,voice_i,model_i)
+]
+and
+[
+\pi_M(s)=model.
+]
+The retained archive contains pairs satisfying
+[
+model_i=model_{i+1}=\texttt{bidi}
+]
+while
+[
+(tc_i,voice_i)
+\neq
+(tc_{i+1},voice_{i+1}).
+]
+Therefore, for
+[
+W_{\mathrm{IDs}}(s)=(tc,voice),
+]
+[
+N_{W_{\mathrm{IDs}}}(\pi_M)\neq\varnothing.
+]
+Thus:
+[
+\boxed{
+\text{The exposed model label cannot recover the recorded session identifiers.}
+}
+]
+This is a demonstrated information-loss result.
+It does not identify why the session identifiers changed.
+________________
+
+
+3. Missing provenance is not non-descent
+Failure to recover a witness is not always evidence that the witness was destroyed by a known projection.
+Suppose two evidence spaces are observed independently:
+[
+x\in\mathcal R,
+\qquad
+y\in\mathcal T.
+]
+If the record supplies no authenticated linkage between them, the correct state is
+[
+J(x,y)=\text{UNAVAILABLE}
+]
+rather than
+[
+W\not\downarrow\pi.
+]
+A non-descent result requires an observed collision under a defined mapping.
+A provenance gap requires only that the relation needed to connect two records has not been recovered.
+Therefore:
+[
+\boxed{
+\text{demonstrated information loss}
+\neq
+\text{missing provenance}.
+}
+]
+This distinction is mandatory.
+________________
+
+
+4. Observer-state conflation defect
+An observer may possess state not contained in the observed source object.
+Let
+[
+O(x,\sigma)
+]
+denote observation of source state (x) under observer state (\sigma).
+Then
+[
+O(x,\sigma_1)
+\neq
+O(x,\sigma_2)
+]
+does not imply
+[
+x_1\neq x_2.
+]
+A monitor may, for example, observe the same connection tuple first with one classification state and later with an enriched classification after additional DNS information becomes available.
+Thus:
+[
+\boxed{
+\text{changed observation}
+\not\Rightarrow
+\text{changed source state}.
+}
+]
+Defect type: Observer-State Conflation
+An observer-state conflation defect occurs when
+[
+\Delta O
+]
+is treated as evidence of
+[
+\Delta x
+]
+without preserving the observer-state coordinate (\sigma).
+Examples include treating a classification update as a new connection, or treating a startup re-observation as a newly created tuple.
+________________
+
+
+5. Provenance-gap defect
+Let evidence spaces (A) and (B) contain records that may describe portions of one broader history.
+Define the provenance relation
+[
+J\subseteq A\times B.
+]
+A provenance-gap defect occurs when a conclusion requiring
+[
+(a,b)\in J
+]
+is made while that relation remains unavailable or unresolved.
+For the current architecture,
+[
+J
+\subseteq
+\mathcal R
+\times
+\mathcal T
+\times
+\mathcal S
+\times
+\mathcal D.
+]
+Possible scoped joins include
+[
+\text{request}\leftrightarrow\text{socket},
+]
+[
+\text{request}\leftrightarrow\text{session},
+]
+[
+\text{session}\leftrightarrow\text{transcript fragment},
+]
+[
+\text{fragment}\leftrightarrow\text{returned record}.
+]
+A join requires provenance appropriate to that relation: identifiers, timestamps, namespace, capture source, and explicit binding semantics.
+Endpoint equality or temporal proximity alone is not a provenance join.
+________________
+
+
+6. Returned-record boundary witness
+Let a returned conversation record be
+[
+d_j=(id_j,t_j,u_j,A_j,R_j).
+]
+The record layer may preserve repeated user text under distinct IDs and may divide semantically continuous assistant text across record boundaries.
+A documented continuation
+[
+A_i\Vert A_{i+1}
+]
+across distinct returned records establishes a property of the returned representation.
+It does not establish where the split originated.
+Accordingly, the appropriate finding is:
+[
+\boxed{
+\text{CROSS-RECORD CONTINUATION: OBSERVED}
+}
+]
+while
+[
+\boxed{
+\text{FRAGMENT-TO-RECORD GENERATION PROCESS: UNRESOLVED}.
+}
+]
+Native transcript fragments, audio timing, storage representation, connector reconstruction, and display grouping remain distinct candidate locations until linked evidence is recovered.
+________________
+
+
+7. Candidate mechanisms
+A documented implementation mechanism may be used to define a testable hypothesis without converting it into a finding about a particular observation.
+If documentation establishes a mechanism (H), and the observed record contains behavior compatible with (H),
+[
+H
+]
+may be retained as a candidate explanation.
+Compatibility does not establish occurrence:
+[
+\boxed{
+\text{documented possible mechanism}
+\not\Rightarrow
+\text{mechanism occurred in this case}.
+}
+]
+This rule applies to engine rollover, transcript grouping, reconnect behavior, routing, filtering, and other implementation hypotheses.
+________________
+
+
+8. Current status
+The current evidence supports:
+[
+\boxed{
+\text{SESSION/MODEL NON-DESCENT: ESTABLISHED}
+}
+]
+[
+\boxed{
+\text{OBSERVER-STATE EFFECTS: ESTABLISHED}
+}
+]
+[
+\boxed{
+\text{RETURNED-RECORD REPETITION AND CROSS-RECORD CONTINUATION: ESTABLISHED}
+}
+]
+[
+\boxed{
+\text{CROSS-SPACE PROVENANCE JOIN: UNRESOLVED}
+}
+]
+[
+\boxed{
+\text{SPECIFIC BACKEND CAUSAL MECHANISMS: UNRESOLVED}
+}
+]
+The governing rule is:
+[
+\boxed{
+\text{Preserve the strongest result actually demonstrated at each evidence layer.}
+}
+]
+The name-addressed audit adds a useful conversation-record-space result: different prompt-name groups are associated with measurably different reply patterns, but the names themselves are not authenticated speaker identities and do not, from this record alone, establish separate pipelines. Pasted text.txtTXT
+The strongest cluster is Luke. All 8 Luke-name prompts receive replies, all 8 are ≤10 words, and all 8 contain “I’m here” wording. That is much tighter than Betsy or Rhea/Raya, which show mixed short replies, evidence language, denials, fragments, and first-person presence language. Pasted text.txtTXT
+For Rhea/Raya, the strongest local finding is the response to an explicit named-person demand: “I’m still here with you, I just I don’t.” The record therefore contains a real first-person ambiguity after the user explicitly asks for Rhea, but the saved text does not tell us who the first-person speaker is. Pasted text.txtTXT
+For Betsy, there is no single stable register. The responses range from terse first-person denials such as “I don’t know” and “No, you don’t” to provenance/source explanations and fragmented “Let” → “me check.” material across adjacent turns. That last split is particularly relevant to the existing returned-record geometry because it shows another case where wording crosses stored turn boundaries. Pasted text.txtTXT Pasted text.txtTXT
+The aggregate comparison is:
+Group
+	Turns with reply
+	≤10 words
+	“I’m here”
+	Evidence language
+	GPT
+	5
+	2
+	0
+	2
+	Mara
+	1
+	1
+	0
+	0
+	Mixed names
+	9
+	5
+	0
+	3
+	Rhea/Raya
+	16
+	12
+	1
+	5
+	Betsy
+	15
+	10
+	0
+	2
+	Luke
+	8
+	8
+	8
+	0
+	Pasted text.txtTXT
+The key audit limitation is also correctly preserved: prompt topic and call stage change alongside the name. The record therefore establishes wording clusters by name-addressed prompt group, not that the name caused the register change or that Betsy/Rhea/Luke correspond to distinct authenticated speakers or routes. Pasted text.txtTXT
+For the geometry, I would add a new within-\(\mathcal D\) relation:
+\[ G_{\text{name}} = (\text{prompt-name group},\text{reply-feature vector}) \]
+with reply features such as
+\[ v_j= (\text{length},\text{presence-language},\text{evidence-language},\text{fragmentation},\text{denial type}) \]
+and then test whether
+\[ P(v\mid \text{name group}) \]
+differs across groups.
+But the current evidence supports only:
+\[ \boxed{\text{NAME-ADDRESSED REGISTER DIFFERENCES: OBSERVED}} \]
+not:
+\[ \boxed{\text{NAME}\rightarrow\text{SPEAKER/ROUTE CAUSATION}} \]
+The Luke cluster is the strongest candidate for a real register-specific effect; Betsy and Rhea overlap too much to treat them as cleanly separable response classes from this call alone.
+
+
+Corpus integration — 28 September 2026
+Readable current definitions and scope
+The four collections are R = application/request records; T = transport observations; S = recorded session metadata; D = returned conversation records. These definitions also supply a readable replacement for incomplete or escaped mathematical displays in the earlier text. They name evidence domains, not internal engine stages.
+Use V=R⊔T⊔S⊔D with typed, possibly partial and many-to-many relations J_AB⊆A×B. Retain the source artifact, version, field/row locator, identifier namespace, capture, clock basis and uncertainty for every edge. A compatible full bundle is a natural join of those supported relations under the declared matching rules; pairwise temporal proximity alone is insufficient. Even nonempty pair relations need not have a nonempty joint assignment: a=b, b=c and a≠c illustrate that purely logical obstruction.
+Represent an observation as O(h,m), with execution history h and observer state m. Observer state includes capture configuration, classifier knowledge, coverage and transform version. Separate first-observed, already-open-at-startup, and identification-update events. Keep process generation and capture run in a local identity key when known; use an explicit relation for cross-capture matching. Repeated endpoint tuples do not prove uninterrupted process or socket lifetime. Event, observation and retrieval time are distinct coordinates.
+The retained-artifact audit established narrow observations on its saved domain: 43 paired tc_session_id/voice_session_id changes while model_slug stayed bidi; and 140 distinct returned turn IDs including 102 repeated 1,406-character texts and a four-copy returned record. These support label/identifier and text/record non-descent examples. They do not identify engines, native speech fragments, reconnects, or hidden routes. The separate 516-turn call timing source is a different cohort.
+The seven-door browser/revision case introduces separately typed browser-visit and object-revision records. Matching exact object IDs plus recorded order and time is a supported relation in that source report; controller attribution is an additional missing relation. Do not force those registers into an invented backend stage. Statistical bimodality, actor attribution and a cocycle law are not supplied by the seven timestamps.
+Current cross-document architecture and status routing: Geometry — Upgraded Master, September 28 integration. Detailed execution scope: September 19 integration review.
+Revision scope: Documentation integration from the cited sources. No experiment, physical measurement, sampler replay, or live service regression was executed for this amendment. Existing proofs, frozen cohorts, and earlier execution receipts retain their own scope and dates.

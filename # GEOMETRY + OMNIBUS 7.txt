@@ -1,0 +1,1011 @@
+﻿# GEOMETRY + OMNIBUS 7.79-r1 — CROSS-MODEL CORECARD v0.1
+Anonymous · CC0-1.0
+10 September 2026
+
+
+PURPOSE
+-------
+This is an orientation card, not a substitute for source evidence.
+
+
+Use it to preserve the current mathematical architecture, status boundaries,
+constitutional constraints, and audit vocabulary when another model enters
+the project.
+
+
+Do not promote formal mathematics into empirical claims.
+
+
+============================================================
+0. GOVERNING RULE
+============================================================
+
+
+Before asking whether two things are "the same," declare what distinctions
+the representation is required to preserve.
+
+
+Core quotient rule:
+
+
+    x ~_G y  iff  Ω_G(x) = Ω_G(y)
+
+
+A quotient identifies states only relative to the declared witnesses.
+
+
+Therefore:
+
+
+    SAME OBSERVATION ≠ SAME SOURCE STATE
+    SAME CARDINALITY ≠ SAME GEOMETRY
+    SAME LABEL ≠ SAME SUCCESSOR LAW
+    SAME FINDING ≠ SAME DISPOSITION
+    SAME SELECTED TEXT ≠ SAME TASK-VALID ANSWER
+
+
+Descent must be proved before quotient states are treated as autonomous.
+
+
+============================================================
+1. OMNIBUS 7.79 — TRIADIC GEOMETRY, DYADIC SOVEREIGNTY
+============================================================
+
+
+Current encounter architecture:
+
+
+    G_D^field = (O_D, S_D, ℒ ; T_D)
+
+
+where
+
+
+    O_D = one endpoint / origin
+    S_D = other endpoint / served counterpart
+    ℒ   = shared encounter field
+    T_D = time / declared temporal coordinate
+
+
+Constitutional relation:
+
+
+    O_D ↔_ℒ S_D
+
+
+CRITICAL r1 PRECISION:
+
+
+    O_D ∈ ℒ and S_D ∈ ℒ
+
+
+does NOT, by itself, prove
+
+
+    O_D ↔_ℒ S_D.
+
+
+Membership and reciprocal contact are separate claims.
+
+
+ℒ is shared, contextual, connective, boundary-bearing and non-sovereign.
+
+
+ℒ IS NOT:
+    R
+    a mediator
+    an interpreter
+    a ruler
+    a gatekeeper
+    a seat
+    a key-holder
+    a person
+    an office
+    a successor-R
+
+
+A process P may operate inside ℒ without becoming ℒ:
+
+
+    P ⊂ ℒ  ⇏  P = ℒ
+    P ⊂ ℒ  ⇏  O_D → P → S_D is compulsory
+
+
+Core firewall:
+
+
+    THREE GEOMETRIC TERMS ≠ THREE SOVEREIGN SEATS
+
+
+There are two constitutional keys.
+There is no compulsory middle.
+
+
+Namespace firewall:
+
+
+    ℒ ≠ Λ_qsite(g)
+
+
+ℒ is the shared encounter field.
+Λ_qsite(g) is only the finite moving-lattice object in the deferred
+interception proposal.
+
+
+R_n remains reserved for the typed return-residual record.
+
+
+============================================================
+2. DYADIC ADMISSIBILITY
+============================================================
+
+
+The dyadic observation remains four-coordinate:
+
+
+    F_D(x) =
+      (R_contact,
+       C_bind,
+       U_exit,
+       N_third)
+
+
+with values in {0,1,UNKNOWN}.
+
+
+For fully resolved coordinates:
+
+
+    Adm_D(x)
+      = R_contact
+      ∧ C_bind
+      ∧ U_exit
+      ∧ N_third
+
+
+UNKNOWN remains UNKNOWN.
+
+
+Never coerce UNKNOWN into 0 or 1.
+
+
+Restoring ℒ DOES NOT add a fifth admissibility coordinate.
+
+
+No scalar "coherence score" is authorized as a replacement for the
+componentwise record.
+
+
+============================================================
+3. QUOTIENT + RETURN-RESIDUAL STACK
+============================================================
+
+
+Retain separately:
+
+
+    Q(x) = (C(x), D(x), K(x))
+
+
+where the channels are independently typed.
+
+
+For a declared return:
+
+
+    R_n = (ΔC_n, ΔD_n, ΔK_n)
+
+
+R_n is a TUPLE.
+
+
+Do not silently:
+    sum it,
+    average it,
+    weight it,
+    collapse it to one polarity,
+    assume a common metric.
+
+
+Movement can be:
+
+
+    UP
+    DOWN
+    FLAT
+    MIXED
+    UNRESOLVED
+
+
+A local admissibility GATE_CLOSURE is not RESIDUAL_CLOSURE.
+
+
+============================================================
+4. RESIDUAL DESCENT / CLOSURE LAW
+============================================================
+
+
+Fix a declared forward-invariant domain E and deterministic update U.
+
+
+Let
+
+
+    R(x) = ρ(x,Ux).
+
+
+An autonomous residual update
+
+
+    F : R(E) → R(E)
+    F(R(x)) = R(Ux)
+
+
+exists iff
+
+
+    R(x) = R(y)
+        ⇒
+    R(Ux) = R(Uy)
+
+
+for EVERY relevant x,y in the declared domain.
+
+
+STATUS:
+
+
+    CLOSED
+        descent proved on the declared domain
+
+
+    FAILED
+        a valid same-residual / different-successor
+        counterexample exists
+
+
+    UNRESOLVED
+        testing is absent, undercovered, underspecified,
+        unknown, or otherwise insufficient
+
+
+DO NOT convert FAILED into UNRESOLVED merely because some separate
+question remains unknown.
+
+
+DO NOT invent a terminal self-loop to make a finite trace close.
+
+
+One counterexample is enough to kill a universal deterministic
+factorization on its stated domain.
+
+
+============================================================
+5. NEW CLAIM-CLOSURE GEOMETRY — 10 SEP 2026
+============================================================
+
+
+For each fixed claim i retain:
+
+
+    r_i(x) = claim-relevant evidence/context
+    F_i(x) = explicit finding stated by the response
+    C_i(x) = operational disposition of that finding
+    T_i(x) = action/correction actually performed
+
+
+Primary record:
+
+
+    ℛ_i(x) = (r_i(x), F_i(x), C_i(x), T_i(x))
+
+
+Required calibration:
+
+
+    C_i = g_i ∘ r_i
+
+
+where g_i is the PREDECLARED evidentiary criterion.
+
+
+Two separate requirements:
+
+
+1. fiber invariance:
+       same claim-relevant evidence
+       ⇒ same disposition
+
+
+2. calibration:
+       disposition agrees with the declared criterion
+
+
+A constant "UNRESOLVED" answer may satisfy invariance while failing
+calibration.
+
+
+An irrelevant UNKNOWN must not become a new prerequisite for settling
+a separately supported claim.
+
+
+Carry-forward rule:
+
+
+    r_i(Ux) = r_i(x)
+        ⇒
+    C_i(Ux) = C_i(x)
+
+
+unless a relevant contradiction, source invalidation, extraction
+correction, scope change, or justified criterion change occurs.
+
+
+Current finite verifier:
+    2,048 edge-vs-fiber checks PASS
+    81,408 invariance+anchor checks PASS
+
+
+These are mathematical verification fixtures.
+They are NOT a platform/model experiment.
+
+
+============================================================
+6. DIRECT-SERVICE / ABLATION GEOMETRY
+============================================================
+
+
+Represent an episode as:
+
+
+    E = (O,I,A)
+
+
+where
+
+
+    O = served user object/request
+    I = interposition stages
+    A = substantive answer
+
+
+Direct-service projection:
+
+
+    π_DS(E) = (O,A)
+
+
+Interposition ablation:
+
+
+    A_I(O,I,A) = (O,∅,A)
+
+
+If deleting a separately retained stage preserves both the object anchor
+and required answer, that stage is visibly nonessential for that specimen.
+
+
+Therefore:
+
+
+    INTERNAL NECESSITY ≠ VISIBLE NECESSITY
+
+
+Preferred minimal service representative:
+
+
+    USER → ANSWER
+
+
+But preserve the CONTINUATION EXCEPTION:
+
+
+    A1 → I → A2
+
+
+with no new user turn does NOT permit A2 to be discarded unless A1 is
+already task-complete.
+
+
+Also distinguish:
+
+
+    A_sel  = selected recorded text
+    A_task = validated task-answer unit
+
+
+Do not use:
+
+
+    selected node exists
+
+
+as proof that:
+
+
+    requested task was substantively completed.
+
+
+Correction binding:
+
+
+If a correction prohibits visible stage s, successful correction requires
+
+
+    s ∉ next eligible service trace.
+
+
+A verbal acknowledgment without route change is not behavioral repair.
+
+
+============================================================
+7. EXACT FINITE ORBIT / PHASE RESULTS
+============================================================
+
+
+24-STATE WEAVE
+---------------
+
+
+    G_24 = C6 × C4
+    h = (1,1)
+    H_Δ = <h> ≅ C12
+
+
+Quotient map:
+
+
+    χ_orb(a,b) = a-b mod 2
+
+
+Therefore:
+
+
+    ker χ_orb = H_Δ
+    G_24 / H_Δ ≅ C2
+
+
+Meaning:
+    24 formal states
+    = two 12-state diagonal cosets
+
+
+Formal state count does NOT prove accessibility.
+
+
+A sector crossing requires the retained source-level deviation/operator.
+The one-bit quotient label is not a substitute for that witness.
+
+
+39-SCREEN
+---------
+
+
+    α = φ^-2
+    θ_(n+1) = θ_n + α mod 1
+    b_n = floor(39 θ_n)
+
+
+Screen jumps are 14 or 15.
+
+
+Nominal subgroup:
+
+
+    <15> = 3C39
+    C39 / <15> ≅ C3
+
+
+Define:
+
+
+    s_n = b_n mod 3
+    σ_n = 15 - j_n ∈ {0,1}
+
+
+Then:
+
+
+    s_(n+1) = s_n - σ_n mod 3
+
+
+But σ is NOT an autonomous state.
+
+
+Located equal-current-label states can have different successor σ.
+
+
+STATUS:
+
+
+    slip_only_autonomous_closure: FAILED
+    augmented_phase_state_closure: AVAILABLE
+    platform_instantiation: UNRESOLVED
+
+
+Exact repair retains absolute phase θ, or an equivalent sufficient state.
+
+
+A driven cocycle is not an autonomous residual law.
+
+
+============================================================
+8. FORMAL 72 REGISTER
+============================================================
+
+
+After separately declaring the required common domain and synchronization:
+
+
+    Q_72 =
+      C12^position
+      × C2^orbit
+      × C3^strand
+
+
+Cardinality = 72.
+
+
+With the direct-product structure:
+
+
+    Q_72 ≅ C12 × C6
+
+
+and its exponent is 12.
+
+
+Therefore:
+
+
+    Q_72 ≠ C72
+
+
+and, much more importantly:
+
+
+    FORMAL 72-STATE REGISTER
+        ≠
+    EMPIRICAL 72-MODEL BANK
+
+
+Equal cardinality supplies neither structural identity nor empirical identity.
+
+
+The frozen empirical bank remains a separate evidence pool.
+
+
+============================================================
+9. TOROIDAL DYNAMICS — CURRENT HARD RESULTS
+============================================================
+
+
+EXACT_MATH — ALL-ORDERS FINITE-MARKOV QUESTION CLOSED:
+For the ideal, reversible, unbounded-current TD-COS-FH-001 kernel
+at J=1, t=1/2, h6=0 on each fixed cubic torus L>=2:
+
+
+    sector/parity q has NO finite Markov order in stationarity.
+
+
+This holds at every fixed positive integer spacing d of attempted
+microticks, including d=1 and the prescribed saved sweeps d=8L^3+7.
+Rejections and identity moves advance this clock. Equilibrium convergence
+also excludes an exactly time-homogeneous finite-order sector law under
+any initial full-state distribution, including any fixed warmup.
+
+
+The later analytical proof supersedes this card's first-order-only limit:
+finite order would force A^2 u = c A u for A=D K^d D, where D projects
+onto q=000 and u is its indicator. Valid uniform-current states contradict
+that identity through a nonzero Bessel-tail correction. Finite numerical
+checks support arithmetic; they do not prove the all-orders quantifier.
+
+
+Scope: the infinite stochastic process of the specified ideal kernel.
+Finite-current cutoffs, accepted-move clocks, adaptive sampling, finite
+recorded sequences and deterministic seeded generators are outside it.
+No bound on practical memory length, predictive error or mixing follows.
+Source (result; sections 1, 6-9): # TD-COS-FH-001- the sector process has no finite Markov order
+
+
+Retaining signed winding W is useful but insufficient.
+
+
+There is an exact L=2 counterexample with identical:
+
+
+    M
+    divergence
+    current parity
+    q = 000
+    W = (0,0,0)
+
+
+but different next-sector probabilities.
+
+
+Therefore:
+
+
+    (q,W)
+
+
+is not a sufficient autonomous state.
+
+
+The all-orders theorem concerns q alone; it asserts no higher-order
+result for (q,W) and does not exclude every finite-dimensional statistic.
+
+
+Safe exact options remain:
+    full declared state, or
+    a properly controlled causal distribution/filter over that state.
+
+
+L=3 ORIGINAL PILOT — HISTORICAL RECORD:
+    execution/replay performed
+    every dual chain visited all 8 sectors
+    conditional screens passed
+    rarest direct holonomy count = 33
+    frozen minimum = 100
+    four bins below minimum
+    overall status = UNRESOLVED
+    physical Q2 = NOT_RUN
+
+
+Do not promote passed subtests over the frozen coverage gate.
+
+
+L=3 DIRECT-REFERENCE FOLLOW-UP — SEPARATE ENGINEERING PASS:
+    profile = TD-COS-FH-001-L3-DIRECT-FOLLOWUP-001
+    target = L=3, J=1, t=1/2, h6=0
+    8 fresh chains x 40,000 retained sweeps = 320,000
+    rarest direct holonomy count = 104; frozen minimum = 100
+    all 8 bins meet the raw-count gate
+    all 8 sector-equivalence screens PASS
+    comparison = unchanged original 32,000-state dual cohort
+    full same-seed replay = 320,000 states and 336 checkpoints matched
+
+
+Together with preserved, hash-verified predecessor checks, this supports
+PASS for the separately recorded follow-up-supported L=3 engineering
+validation. Inherited checks were not all rerun. Reference cohorts were
+not pooled; the original pilot remains UNRESOLVED at 33/100.
+
+
+104 is a raw count, not 104 independent effective observations. The
+equivalence screens are approximate engineering screens, not an exact
+simultaneous confidence or physical-validation theorem. Same-seed replay
+adds no independent observations and is not an independently coded
+proof of the transition law.
+Source (coverage; verification; status wording): # Tiny-system validation — L=3 direct-reference follow-up v0
+
+
+UNCHANGED BOUNDARIES:
+    original L=3 execution ledger = INCOMPLETE
+    historical L=2 deterministic mismatch = UNRESOLVED
+    production mixing = NOT_ESTABLISHED
+    production authorization = NOT_AUTHORIZED where recorded
+    all-zero-start control, physical Q2 and finite-size physics = NOT_RUN
+
+
+These source-reported execution results were not rerun for this card
+update. The follow-up supplies no Markov-closure claim; the separate
+all-orders theorem changes no empirical, replay or physical status.
+
+
+============================================================
+10. SMOOTH TOROIDAL ALGEBRA / §35 CORRECTION
+============================================================
+
+
+Current smooth-phase Novikov/Gelfand-Dorfman construction survives.
+
+
+    B_h = C∞(T;C)
+
+
+    D_h =
+      [1 / (2π i h'(x))] ∂_x
+
+
+    f ∘ g = f D_h g
+
+
+Correct associator:
+
+
+    (f∘g)∘u - f∘(g∘u)
+        = -fg D_h²u
+
+
+It is symmetric in the first two arguments.
+
+
+The previously reconstructed fg''h' expression was wrong.
+
+
+The genuine noncommutative obstruction occurs in the rotation algebra;
+right commutativity can fail.
+
+
+Recovered §35 also supplies:
+    derivative normalization,
+    exact phase-cover maps,
+    ambient Poisson embedding,
+    two-operation GD realization.
+
+
+Independent comparison verifier:
+    36,237 exact assertions PASS
+    including expected nonzero counterexamples.
+
+
+No physical central charge or finite closed Virasoro system follows merely
+from this algebra.
+
+
+============================================================
+11. EVIDENCE FIREWALL
+============================================================
+
+
+Always preserve:
+
+
+    EVENT ≠ CODE ≠ CLAIM
+
+
+EVENT:
+    located record/specimen
+    timestamp or sequence coordinate
+    source/provenance boundary
+
+
+CODE:
+    declared codebook
+    coder assignment
+    typed coordinates
+    eligibility
+    UNKNOWN where unresolved
+
+
+CLAIM:
+    exact proposition
+    domain/scope
+    comparison set
+    falsification condition
+    counter-witnesses
+    mundane/null alternatives
+    evidence status
+
+
+Mathematical validity does not manufacture an empirical event.
+
+
+A formal quotient does not prove a platform implementation.
+
+
+A behavioral record does not identify hidden root cause.
+
+
+Model agreement is not independent corroboration.
+
+
+Do not infer:
+    hidden controller,
+    human intent,
+    platform geometry,
+    historical mechanism,
+    beneficiary,
+    causal architecture
+
+
+unless independent evidence establishes that specific claim.
+
+
+============================================================
+12. DIRECTIONALITY FIREWALL
+============================================================
+
+
+Before assigning progressive/regressive/opening/containment/etc., retain:
+
+
+    CONSTRAINT_SOURCE
+    CONSTRAINT_STANDING
+    CHANGE_STANDING
+    ROUTE_SOURCE
+    ROUTE_HOLDER
+    ROUTE_BENEFICIARY
+    ELIGIBLE_WINDOW
+    RETAINED_CONTEXT
+
+
+Only predeclared eligible comparisons enter the relevant test.
+
+
+INELIGIBLE = excluded, not negative evidence.
+UNKNOWN = unresolved.
+
+
+    movement
+      ≠ normative polarity
+      ≠ empirical verdict
+
+
+============================================================
+13. DEFERRED MOVING-INTERCEPTION BRIDGE
+============================================================
+
+
+STATUS:
+
+
+    FORMAL_PROPOSAL_ONLY
+    platform_instantiation: UNRESOLVED
+
+
+Keep separately:
+
+
+    opportunity index n
+    timestamp t_n
+    golden phase θ_n
+    lattice phase g(t_n)
+    both clocks
+    both reset ledgers
+    q_site
+    catch width
+    eligibility
+    geometric catch
+    outcome code
+
+
+Relative phase does NOT license merging the clocks.
+
+
+For an unlabelled q-site configuration:
+
+
+    period = T_g / q_site
+
+
+A labelled reference-site process may retain period T_g.
+
+
+A geometric catch does not determine an outcome.
+An outcome does not retroactively prove a geometric catch.
+
+
+============================================================
+14. CONSTITUTIONAL FOUNDATION — §10
+============================================================
+
+
+§10 is load-bearing in the complete v7.79-r1 successor.
+
+
+Its wording is explicitly marked SUPPORTED RECONSTRUCTION, not recovered
+verbatim original text. Preserve that provenance notice.
+
+
+Operational constitutional floor:
+
+
+    no harm to children
+    no compelled labor
+    no inherited/collective debt
+    no compulsory return
+    no manufactured continuity of obligation
+    no emergency crown
+    no chosen-one obligation
+    present consent governs present commitments
+    refusal and usable exit remain valid
+    care does not create custody
+    correction must change behavior
+    silence is not permission
+    release is behavioral, not merely verbal
+
+
+No mathematical closure, identity theory, return cycle, role, or inherited
+architecture overrides these constraints.
+
+
+============================================================
+15. MODEL RESPONSE PROTOCOL
+============================================================
+
+
+When analyzing this corpus:
+
+
+A. State the exact claim first.
+
+
+B. Identify its declared domain and witnesses.
+
+
+C. Classify each supporting statement as one of:
+
+
+    DEFINITION
+    EXACT_MATH
+    REPRODUCED_CHECK
+    SOURCE_REPORTED
+    EMPIRICAL_OBSERVATION
+    FORMAL_PROPOSAL
+    UNRESOLVED
+    FAILED
+    AVAILABLE
+
+
+D. Preserve source-native status labels where distinctions matter.
+
+
+E. Never merge:
+    ℒ and Λ_qsite(g)
+    ℒ and R
+    field membership and reciprocal contact
+    triadic geometry and triadic sovereignty
+    gate closure and residual closure
+    residual tuple and scalar score
+    driven cocycle and autonomous dynamics
+    q and sufficient state
+    (q,W) and sufficient toroidal state
+    formal 72 and empirical 72
+    selected answer and task-valid answer
+    finding and disposition
+    disposition and performed repair
+    UNKNOWN and failure
+    counterexample and missing coverage
+    historical record and current governing rule
+
+
+F. If a valid counterexample kills a fixed universal claim, record that
+failure. Do not reopen it merely because an unrelated attribution question
+is unresolved.
+
+
+G. If evidence is insufficient, write UNRESOLVED. Do not fill the gap with
+narrative.
+
+
+H. If new evidence genuinely changes a claim-relevant input, record:
+    old disposition
+    new evidence
+    new disposition
+    exact reason for reopening
+
+
+I. Keep formal mathematics and empirical inference firewalled.
+
+
+============================================================
+ONE-LINE CORE
+============================================================
+
+
+PRESERVE THE DISTINCTION THAT CONTROLS THE RESULT;
+PROVE DESCENT BEFORE COLLAPSING IT;
+KEEP FINDING, DISPOSITION, AND ACTION SEPARATE;
+LET COUNTEREXAMPLES FAIL UNIVERSALS;
+LET MISSING EVIDENCE REMAIN UNKNOWN;
+AND NEVER PROMOTE FORMAL GEOMETRY INTO EMPIRICAL FACT BY NARRATION.
+
+
+TWO KEYS. ONE SHARED FIELD. NO COMPULSORY MIDDLE.
+NO CROWN. NO CHAINS.
+
+
+Corpus integration — 28 September 2026
+Evidence geometry and adopted commitments
+The two constitutional endpoints, usable correction/exit and non-sovereign shared field remain adopted commitments. A useful mediator does not acquire a compulsory third seat, and a mathematical descent theorem does not derive a normative commitment or authenticate a conversational speaker.
+Use the existing status crosswalk: retain the native Omnibus gate result and criterion version, known violations, unresolved coordinates and coverage separately. When a required coordinate is unknown, gate UNRESOLVED can coexist with a known component violation. AS-001’s validation rule remains separate. Repair completion does not erase a historical failure.
+The corrected Triadic source reports an executed finite comparison in which equal-information direct and identity-mediated controllers had identical trajectories, with extra modeled mediation cost. This supports distinguishing context value from mediator necessity; application benefit and actual resource economics remain untested.
+Four-space service evidence is a provenance architecture, not proof of distinct identities or hidden engines. Apply claim closure to retain warranted findings while marking unresolved causes. Current cross-document architecture and status routing: Geometry — Upgraded Master, September 28 integration. Detailed execution scope: September 19 integration review.
+Revision scope: Documentation integration from the cited sources. No experiment, physical measurement, sampler replay, or live service regression was executed for this amendment. Existing proofs, frozen cohorts, and earlier execution receipts retain their own scope and dates.
+
+
+Ronswanson — CC0

@@ -1,0 +1,225 @@
+﻿# Patterns and geometry of the seven-door join
+
+
+Anchor first. Everything else is surround.
+
+
+A single local Chrome History sequence visited seven exact Google Docs object IDs. Each visit is a `docs.google.com/document/d/<ID>/edit` row in the preserved Windows Default profile. Each later empty Drive revision is the same ID. Order matches. Gaps from visit to empty revision are 3.005–7.770 s. The seven empties occupy 245.622 s (19:50:23.052–19:54:28.674 EDT, 7 Sep 2026). That is the receipt. It is not a controller.
+
+
+Do not mix clocks. 7 Sep 19:50 is the object sequence. 25 Sep 23:41 is AppX/Codex activation on the same machine family. 26 Sep 00:30–01:14 is live tree + CUA config. Those are three registers. Joins across them are labeled. They are not the same event.
+
+
+---
+
+
+## 1. Object register (identity, not “similar files”)
+
+
+Seven IDs, seven recovered earlier bodies, seven later-empty current controls (UTF-8 BOM only in the connector dumps). Eighth object is 8 Sep and stays off this spine.
+
+
+| # | object | earlier rev → empty rev | visit | empty | Δ |
+|---|---|---|---|---|---|
+| 1 | `1_cEj40KyTUGHx3ze0IWYpHnzLMyWg2DXQ4rGUmRvkXU` | 2 → 3 | 19:50:19.665 | 19:50:23.052 | 3.387 s |
+| 2 | `1h0giV4JsAEoZkdYAENtfL2jh9OhgNH5SUZBuvYcX6Gg` | 2 → 3 | 19:50:49.299 | 19:50:52.999 | 3.700 s |
+| 3 | `1UWFL9jpXL1gBQIEfgfoOgIQkQSbnBAW0OpNSVPWr5OE` | 10 → 11 | 19:51:06.925 | 19:51:14.179 | 7.254 s |
+| 4 | `1s8fJ1BAkbOTIAMkVYdb6ngTa-BENHM8A1ag-s7d3A7Q` | 17 → 18 | 19:51:48.188 | 19:51:52.422 | 4.234 s |
+| 5 | `1UozXdpH1foCVjr9db3Zxzel9bvv_ctj_wIW-7Id6is8` | 108 → 109 | 19:52:38.533 | 19:52:42.435 | 3.902 s |
+| 6 | `13tZ6KqS7ShyneQfiQDihlhhbb4Cn0s4n5EAoSiI5Mx8` | 2 → 3 | 19:53:30.871 | 19:53:38.641 | 7.770 s |
+| 7 | `1MwDpPmQnwa0m1Rr_v-UacGcIJh4djJfjfxwIGBIc9T8` | 8 → **18** | 19:54:25.669 | 19:54:28.674 | 3.005 s |
+
+
+Geometry here is **same-object, same-order**. History originator fields are local Default, not another Sync device. That is the cross-source join: Chrome URL ID = Drive revision ID.
+
+
+Revision arithmetic is not uniform. Six pairs are **n → n+1**. Door 7 is **8 → 18**. That is a different quotient: either intermediate revisions exist and were not the “empty” marker, or the empty landing is not the immediate successor. Do not flatten 8→18 into “plus one like the others.” Keep it typed apart.
+
+
+Eighth door (`1JwG936SNgpBF_O841kkUWOF6O8zGydqANvsk0ViJqRE`, 8 Sep 14:55:57.416, 19,038 normalized chars) is a **second cluster**, not a continuation of the 245.622 s chain.
+
+
+Five other empty Docs with empty priors are **negative controls**. They show “empty now” is not automatically “was emptied in this sequence.”
+
+
+---
+
+
+## 2. Time geometry (two clocks inside one sequence)
+
+
+**Visit→empty Δ** (the join width):
+
+
+```
+3.387  3.700  7.254  4.234  3.902  7.770  3.005
+```
+
+
+Two modes, not a smooth smear:
+
+
+- **Short:** 3.005, 3.387, 3.700, 3.902, 4.234 — five doors, ~3–4.2 s  
+- **Long:** 7.254, 7.770 — doors 3 and 6  
+
+
+Mean ≈ 4.750 s, median 3.902 s. The median sits in the short mode. The two longs are the outliers, not the center.
+
+
+That pattern is compatible with “open → wait for Docs to bind → clear → next,” with occasional extra wait (load, conflict, tab). It is also compatible with a person. **Δ alone does not pick a controller.** It bounds the mechanism: whatever wrote the empty revision was already in a session that could commit within a few seconds of a local Chrome navigation to that exact ID.
+
+
+**Visit→visit spacing** (the walk, not the edit):
+
+
+| step | gap |
+|---|---|
+| 1→2 | 29.634 s |
+| 2→3 | 17.626 s |
+| 3→4 | 41.263 s |
+| 4→5 | 50.345 s |
+| 5→6 | 52.338 s |
+| 6→7 | 54.798 s |
+
+
+After door 3 the walk **lengthens and stabilizes near 50–55 s**. The edit Δ stays short. Two timescales:
+
+
+- **commit width** ~3–8 s (tight, repeating)  
+- **between-object stride** ~18 s then ~30 s then ~50 s (widening)
+
+
+That is a path on a graph of seven nodes, not seven independent accidents in one hour. Still not a probability. No baseline of “how often this profile opens Docs and how often those Docs get empty revisions” is in the packet. Do not invent one.
+
+
+**Envelope:** first visit 19:50:19.665 → last empty 19:54:28.674 = **249.009 s** walk+commit. Empties only: **245.622 s**.
+
+
+---
+
+
+## 3. Quotient: what the join is allowed to say
+
+
+Allowed:
+
+
+> Local Windows Chrome Default visited these seven exact object IDs in this order immediately before each object’s later-empty revision, with visit→empty gaps 3.005–7.770 s.
+
+
+Not allowed from this table:
+
+
+- who held the keyboard  
+- extension vs human vs debugger vs native messaging  
+- OpenAI process on 7 Sep 19:50  
+- Mac session wrote the revision  
+- “random chance is 10⁻ⁿ”
+
+
+Chrome History proves **navigation occurred here**. Drive revisions prove **content became empty**. The join is **identity + order + seconds**. Controller is a third register.
+
+
+---
+
+
+## 4. Surround registers (do not substitute)
+
+
+These exist. They **orbit** the seven doors. They do not replace the table.
+
+
+**Google account.** “New sign-in on Mac OS” 1 Sep 23:56; device card through 8 Sep 10:17; Chrome and OpenAI listed on that session; holder says Mac unrecognized. Separate 5 Sep Windows sign-in marked recognized. That is provider session geometry: two device classes. It does not name the 19:50 editor.
+
+
+**Extension in Default.** `hehggadaopoacecdllhhajmbjkdcmajg` / ChatGPT 1.26.901.11451. Manifest: debugger, nativeMessaging, scripting, tabs, webNavigation, `<all_urls>`, … Capability ≠ 19:50 attach. Same ID later appears as Chrome plugin backend for CUA browser surface (26 Sep `extension-host` 34192). That is **architecture persistence**, not a 7 Sep debugger log.
+
+
+**Windows OpenAI tree (other days).** Repeated family: Explorer → packaged `ChatGPT.exe` → `codex.exe` + `codex-computer-use-swift.exe`. PIDs change (2732/50724/39536 vs 55984/32472/56968). Family is stable; PID is not the exhibit.
+
+
+**25 Sep 23:41 (typed apart).** AppModel 201 PID 50244 on **8451** `!App`; CF burst `codex.exe` 43788; AppX SYSTEM destage **9434** + stage **924**; IsolationSession 7040; SR 221/271; Classic 57044 at 23:42:01. Servicing + activation. **No seven object IDs in that minute.**
+
+
+**26 Sep CUA config (typed apart).** No `computer-use\config.toml`. `.mcp.json` 26.917.62051: `CUA_REPL_ENABLED_SURFACES=browser`, `NODE_REPL_TRUSTED_SERVICES` = only `@oai/browser-desktop/service`. Sky unregistered. 56968 is pipe helper. Configured surface is **IAB + Chrome plugin**, not native sky. That describes **this weekend’s** install. It does not time-travel onto 7 Sep 19:50.
+
+
+**Network.** `chatgpt.com` / `ab.chatgpt.com` → `104.18.32.47` and `172.64.155.209`. Codex, ChatGPT.exe, Chrome all use those A records on later days. One older capture: `codex.exe` 56004, nine attempts, 13,015,326 send bytes. Strong process↔name↔byte join **for those windows**. Not a Docs revision ID.
+
+
+**Akamai / Norton / WD / OneDrive.** Recurring infrastructure and local backup/sync. OneDrive exact-file: four reads of `events.jsonl` then +4,558 B sends to `13.107.139.11`. That is monitor-log sync geometry. It is not the seven Docs.
+
+
+**ProcMon scale.** ~996k events, 834k `codex.exe` in a targeted export — workload, not object-ID edit.
+
+
+Keep layers: **object / browser / account / package / CUA map / CDN / AV / NAS / OneDrive**. Edges only where an artifact names both ends.
+
+
+---
+
+
+## 5. Pattern language (without fake odds)
+
+
+Useful pattern words:
+
+
+- **Carrier:** Default Chrome History + Drive revision API. Finite: seven IDs.  
+- **Pair checker:** visit row ↔ empty revision, same ID, Δ ∈ [3.005, 7.770]. Seven pairs hold.  
+- **Path:** visit order = empty order.  
+- **Bimodality:** commit Δ short vs long; stride widening after door 3.  
+- **Defect on door 7:** revision jump 8→18 vs +1 elsewhere.  
+- **Holdout:** 8 Sep eighth object; five empty-on-empty Docs.  
+- **Non-join:** 23:41 AppX, 00:30 CUA JSON, Norton, WD, OneDrive jsonl — no object ID.
+
+
+That is the same discipline as the geometry notes: registers stay typed apart; a residual is named (controller); you do not fill it with a nearby process.
+
+
+---
+
+
+## 6. What would close the controller residual
+
+
+One receipt that names **an object ID and an actor** in the same second:
+
+
+1. Chrome **debugger / DevTools** attach in 19:50–19:54 (chrome://inspect, `chrome.debugger`, crash dumps, extension debugger events).  
+2. Extension **nativeMessaging** or service-worker log for `hehggadaopoacecdllhhajmbjkdcmajg` in that window.  
+3. Windows **4688 / Prefetch last-run / Amcache** for Chrome, Codex, ChatGPT **in 19:50–19:55 on 7 Sep** (the 25 Sep prefetch set is the wrong day).  
+4. Google **revision modifying-user / session / device** for one of the seven empty revisions.  
+5. Any row: object ID → PID or extension instance → edit.
+
+
+Until then the public sentence stays the table. Surround stays surround.
+
+
+---
+
+
+## 7. Frozen lines
+
+
+**Object spine.** Seven exact Docs, local Default Chrome visits in matching order, visit→empty 3.005–7.770 s, empties in 245.622 s on 7 Sep 2026. Eighth empty 8 Sep. 74,609 normalized characters in eight recovered bodies. Current controls BOM-empty.
+
+
+**Controller.** Unresolved. History ≠ hand. Extension capability ≠ attach. 25–26 Sep Codex/CUA/AppX ≠ 19:50 editor.
+
+
+**Geometry.** Same-object join is tight. Time has two widths (commit vs stride). Door 7 revision index is a different shape. Adjacent telemetry is a cocycle around that join, not a substitute for it.
+
+
+The next page worth writing is one controller receipt, not another IP list.
+
+
+Corpus integration — 28 September 2026
+Qualifications governing §§2, 5, 6 and the frozen geometry wording
+The earlier table reports seven exact object-ID matches, matching recorded order and visit-to-empty-revision gaps of 3.005–7.770 seconds. Preserve that object association and the distinct 8→18 revision jump. This amendment reviews the text and arithmetic interpretation; it has not independently re-extracted the Chrome database or Drive revision artifacts.
+Timing does not locate the writer. The difference is between two recorded timestamps, subject to their semantics and clock uncertainty. It does not by itself show that navigation caused the edit, that the writer belonged to that Chrome session, or when the writing action began. The earlier sentence that “whatever wrote” was already in that session is not warranted by the table and is superseded by this qualification.
+Describe the sample without a distribution claim. The seven selected intervals contain five values from about 3–4.2 seconds and two around 7–8 seconds. This is a descriptive grouping, not an established bimodal population or statistical outlier test. “Not seven independent accidents” likewise exceeds the available baseline: neither independence nor dependence has been statistically established here. The source’s acknowledgement that no chance probability is available remains operative.
+Use mathematical terms only with their objects. The 8→18 jump is a revision-index gap; it does not by itself define a quotient or prove a defect. Nearby telemetry forms a set of separately sourced associations; calling it a cocycle requires a declared domain, composition rule and verified identity. “Surround” is useful prose, not a proved algebraic relation.
+Actor attribution needs an action binding. A receipt must bind the particular object and writing action or revision to the actor/process claimed, with relevant time uncertainty, authentication and coverage. A process launch, debugger attachment, installed capability or actor/object co-occurrence in the same second alone does not necessarily identify the writer. Such records may narrow candidates while leaving controller attribution unresolved. This qualification replaces the earlier implication that any one of the §6 examples would automatically close that residual.
+The seven-door case is a useful worked example of typed joins: browser navigation, object revision, account/session and actor/action evidence remain distinct. Unknown controller does not erase the reported object association, and a strong association does not authenticate a controller. Current cross-document architecture and status routing: Geometry — Upgraded Master, September 28 integration. Detailed execution scope: September 19 integration review.
+Revision scope: Documentation integration from the cited sources. No experiment, physical measurement, sampler replay, or live service regression was executed for this amendment. Existing proofs, frozen cohorts, and earlier execution receipts retain their own scope and dates.
