@@ -1,0 +1,183 @@
+{
+  "schema": "geometry_pipeline_publication_review_v1",
+  "edition": "Geometry Master consolidation 2.8; publication addendum 1",
+  "reviewed_utc": "2026-10-19T06:29:35.108445+00:00",
+  "repository": "aureoncorner-dotcom/Toroidal_scrotal_posturing",
+  "base_commit": "56ee3c88c8eda58d242220c29bc1003663562947",
+  "prepublication_discovery": {
+    "branches": [
+      "main"
+    ],
+    "pull_requests_all_states": 0,
+    "tags": 0,
+    "already_published_2_8_commit": "56ee3c88c8eda58d242220c29bc1003663562947",
+    "existing_entry_point_edition": "2.7",
+    "finding": "The 2.8 content was already committed; the entry point and public source mapping needed synchronization."
+  },
+  "comparison": {
+    "drive_source": "https://docs.google.com/document/d/190AX7XXttW5CzsMakM44VhCZx1i2C9J8ka2LabL8r98/edit",
+    "drive_export_sha256": "73c9411fd4169b7afe662b86abb85511dbe55850719cfc42a732c0e81c066522",
+    "drive_body_editions": [
+      "2.7",
+      "2.7",
+      "2.7",
+      "2.8"
+    ],
+    "compared_drive_body": "Final master body, labelled consolidation 2.8",
+    "normalization": "Remove one Markdown punctuation-escape layer from the Docs export only; remove whitespace from both representations. No other content normalization.",
+    "final_drive_body_matches_existing_github_2_8": true,
+    "local_2_8_matches_github_bytes": true,
+    "repository_snapshots": {
+      "GEOMETRY_MASTER.md": {
+        "bytes": 136942,
+        "sha256": "cb76f06864881f097e40124b7f8f4ea1c473185e289d0f9022ff67548c1f3a01",
+        "git_blob": "b4188a7389847e3c83b0cc46c7c5b8a93081d568"
+      },
+      "geometry_master_2.7.md": {
+        "bytes": 136942,
+        "sha256": "cb76f06864881f097e40124b7f8f4ea1c473185e289d0f9022ff67548c1f3a01",
+        "git_blob": "b4188a7389847e3c83b0cc46c7c5b8a93081d568"
+      },
+      "geometrymaster2.8.md": {
+        "bytes": 141756,
+        "sha256": "2b73b052c3497b2983ac550d7670e6e18cd84d4f83ef98fd81a0f43500df8aa6",
+        "git_blob": "774018bf7390526eb1be25bd7ac74a871239366d"
+      },
+      "START_HERE.md": {
+        "bytes": 3678,
+        "sha256": "6f0153a2c29fa9df3b5c5812b334ac0712ccb1d63b762983c45fdf9233f5a477",
+        "git_blob": "ed371266e416787bdeae53f63237a077fbecc031"
+      }
+    }
+  },
+  "fresh_read_only_checks": {
+    "source_files_rehashed": 74,
+    "all_source_hashes_match": true,
+    "session_transcripts": 24,
+    "numbered_records": 20715,
+    "boundaries": 43,
+    "conversations_with_boundaries": 20,
+    "freshly_parsed_boundaries_match_all_retained_csv_fields": true,
+    "session_projection_matches": true,
+    "thread_exports": {
+      "files": 26,
+      "pages": 328,
+      "unique_turns": 3138,
+      "item_types": {
+        "userMessage": 3137,
+        "agentMessage": 2848
+      },
+      "duplicate_item_ids": 0,
+      "incomplete_exports": 1
+    },
+    "prior_content_revisions": 8,
+    "normalized_revision_characters": 74609,
+    "monitor_jsonl_row_counts": [
+      3270,
+      9515
+    ],
+    "xml_rows_freshly_parsed": 207,
+    "prior_receipt_recorded_checks": 403,
+    "prior_receipt_all_check_flags_true": true,
+    "full_prior_403_check_suite_rerun": false,
+    "security_event_join_calculations_rerun": false
+  },
+  "inherited_completed_intake_findings": {
+    "original_verification_recorded_utc": "2026-10-19T05:08:20.015196+00:00",
+    "passed_checks_in_original_receipt": 403,
+    "full_403_check_suite_rerun_for_publication": false,
+    "failed_guest_attempts_with_selected_cross_channel_joins": 4,
+    "localhost_share_establishments_with_session_tree_joins": 2,
+    "security_joins_recalculated_for_publication": false,
+    "rtf_extracted_characters": 7602,
+    "rtf_line_map_entries": 44,
+    "indexed_sources_hashed": 55,
+    "indexed_path_errors": 57,
+    "schema_inventory_files": 34,
+    "source_version_drift_before_capture": {
+      "primary_scan_bytes_initial_metadata": 61587,
+      "primary_scan_bytes_preserved": 2993,
+      "structured_overview_bytes_initial_metadata": 13565,
+      "structured_overview_bytes_preserved": 11609,
+      "earlier_bodies_captured": false,
+      "cause_attributed": false
+    },
+    "scope": "Saved representations and bounded selected joins. No live acquisition authenticity, actor, payload, hidden route or physical mechanism is established."
+  },
+  "source_reference_mapping": {
+    "S68": {
+      "private_original": "Review.txt",
+      "original_sha256": "1f8961379459ea25ee7071b31ac025b8c52cf7f799eec469c3bf6c85908d6a8c",
+      "public_counterpart": "GEOMETRY_MASTER_2.8_ADDENDUM.md",
+      "relationship": "Privacy-reviewed account; not an exact copy."
+    },
+    "S69": {
+      "private_original": "Verified_session_transitions.csv",
+      "original_sha256": "24d75d630df31c26f65e2d5baeb7d34e5f15569d5a7f745f031e40f6835fc331",
+      "public_counterpart": "GEOMETRY_PIPELINE_2.8_BOUNDARIES_PUBLIC.csv",
+      "relationship": "43-row derived projection with local case aliases and change properties. Raw identifiers, times, nodes, names and text withheld."
+    },
+    "S70": {
+      "private_original": "Verification.json",
+      "original_sha256": "d02353ee99fd055bd0a5c2a6c4e23784d8aeef14ffcedb2e8e0fffce9c6f1ef6",
+      "public_counterpart": "GEOMETRY_PIPELINE_2.8_VERIFICATION_PUBLIC.json",
+      "relationship": "Aggregate publication receipt; not the full original 403-check receipt."
+    }
+  },
+  "additional_private_source_identities": {
+    "Geometry_case.txt": "30bcf4b4d30f5d5699902c6afd40bd5aabc0f50e093d1132508acd6233acf069",
+    "Source_index.csv": "b3ee38f155aacd92a8c5ad0664922a3b15d0a2d81ca6d2ee0448dbe1b0105073"
+  },
+  "privacy_review": {
+    "scope": "Only the four new or modified publication files; not all existing repository history.",
+    "excluded": [
+      "Private account/contact details",
+      "Credential values and bearer or signed URLs",
+      "Raw session/message identifiers and precise event timestamps",
+      "Local account paths and source conversation names",
+      "Private network endpoints and security event payloads",
+      "Transcript and revision bodies",
+      "Original source index and full verification receipt"
+    ],
+    "public_projection_is_independent_corroboration": false,
+    "public_raw_source_reproducibility_claimed": false,
+    "raw_evidence_uploaded": false
+  },
+  "preservation": {
+    "GEOMETRY_MASTER.md_edition": "2.7",
+    "GEOMETRY_MASTER.md_changed": false,
+    "geometry_master_2.7.md_changed": false,
+    "geometrymaster2.8.md_changed": false,
+    "historical_2_7_entry_point": "https://github.com/aureoncorner-dotcom/Toroidal_scrotal_posturing/blob/56ee3c88c8eda58d242220c29bc1003663562947/START_HERE.md",
+    "older_kit_and_poster_relabelled": false,
+    "new_full_2_8_kit_or_poster_created": false
+  },
+  "open_statuses": {
+    "three_tempo_amendment": [
+      "PROPOSED",
+      "NOT_FROZEN",
+      "NOT_RUN"
+    ],
+    "physical_Q2": "NOT_RUN",
+    "production": "NOT_AUTHORIZED",
+    "historical_sampler_discrepancy": -1352,
+    "historical_sampler_cause": "UNRESOLVED",
+    "GPT_Live_mechanism": "UNVERIFIED",
+    "join_to_October_19_CLOSE_WAIT": "NOT_ESTABLISHED"
+  },
+  "publication_files_excluding_this_receipt": {
+    "GEOMETRY_MASTER_2.8_ADDENDUM.md": {
+      "bytes": 10475,
+      "sha256": "020950e4bbede992518eb8700e12cc43556bed578d80ea5c4254059904f1cdb8"
+    },
+    "GEOMETRY_PIPELINE_2.8_BOUNDARIES_PUBLIC.csv": {
+      "bytes": 1306,
+      "sha256": "cce0ca49e753b0c52e0af0600ec04fa7dbabc9805f60b9429642446151bd9ab4"
+    },
+    "START_HERE.md": {
+      "bytes": 3770,
+      "sha256": "d6d13f53b323d1042b2a0e6f9d2ed999f11d09766e90e421a92661e5f7c6dbb3"
+    }
+  },
+  "receipt_limit": "This receipt identifies reviewed content and source versions. Publication and merge completion require a separate GitHub readback; hashes do not establish source authorship or scientific validity."
+}
