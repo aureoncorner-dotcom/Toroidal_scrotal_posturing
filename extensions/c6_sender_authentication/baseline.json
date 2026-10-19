@@ -1,0 +1,38 @@
+{
+  "schema": "corner-relay-c6/adversarial-baseline/v1",
+  "upstream_repository": "https://github.com/aureoncorner-dotcom/Toroidal_scrotal_posturing",
+  "upstream_commit": "56ee3c88c8eda58d242220c29bc1003663562947",
+  "checked_utc": "2026-10-19T06:31:56.223851+00:00",
+  "default_branch": "main",
+  "advertised_branches": [
+    "main"
+  ],
+  "pull_requests_all_states_count": 0,
+  "last_change_to_protocol_tests_or_archive": {
+    "commit": "2f79d834c28f7fc6595798989d68605823d99f0e",
+    "author_date": "2026-09-01T04:12:09-04:00"
+  },
+  "source_sha256": {
+    "corner_relay.py": "28ccc31b4304222d5d2429c6054a64ca366316167e8162aeb63d91bba24a4a97",
+    "test_corner_relay.py": "06e013c1c910722d028374ab877fb9eaf7bea603239a6d00ac40b37e94d889cf",
+    "reference_trace.py": "ed434ab4c0a41d99bf0d074db3407df2ad5655b45ac18fffd1a22735b4ba097d",
+    "reference_trace.json": "17d4c355bc81c422ec7121cba0a411e37aec42cff96da87949ef9d83f72f64b1",
+    "run_with_provenance.py": "a056d74725a7eda7b0910e35c47b800c1fb228de9e44ce723f129a30ff3a061c",
+    "FROZEN_PACKET.txt": "64ddf20760d202e4e63b817ad849e56bf6f7a9385fe9aa0055e9b88d8391dce6",
+    "source_binding.json": "4eb66aea9d521e52159bbe99b974189eb4b104c7dacd1736ad6570d4b6629841",
+    "C6_RESULT.md": "f2267d8172d3e0e2c3b1e4fe7639a122ca3d4c783098e921619cbaf27efb196e",
+    "Corner_Relay_Alpha_C6_Reference_v0.1.zip": "5392666c1892a4fd0d47aed04bfadcf92091d5c5f06a8899da88fb9e5e60b01b"
+  },
+  "original_reference_zip_sha256": "5392666c1892a4fd0d47aed04bfadcf92091d5c5f06a8899da88fb9e5e60b01b",
+  "frozen_packaged_source_hashes_verified": {
+    "corner_relay.py": true,
+    "test_corner_relay.py": true,
+    "run_with_provenance.py": true,
+    "reference_trace.py": true,
+    "README.md": true,
+    "C6_RESULT.md": true,
+    "FROZEN_PACKET.txt": true,
+    "source_binding.json": true,
+    "reference_trace.json": true
+  }
+}
